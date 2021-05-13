@@ -1,10 +1,17 @@
 import React from 'react'
+import Content from './Content';
+import Navigation from './Navigation';
 
-const dashboard = () => {
+const dashboard = (props) => {
+    const handlelogout = () => {
+        localStorage.removeItem("authUser");
+        props.history.push('/login')
+    }
     return (
-        <div>
-            dashboard
-        </div>
+        <React.Fragment>
+            <Navigation handlelogout={handlelogout} />
+            <Content />
+        </React.Fragment>
     )
 }
 

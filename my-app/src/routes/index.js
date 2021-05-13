@@ -1,6 +1,6 @@
 import React from "react";
-import { Redirect } from "react-router";
-import dashboard from "../Page/Dashboard/dashboard";
+import { Redirect } from "react-router-dom";
+import dashboard from "../Page/Dashboard/Dashboard";
 import Login from '../Page/Login/Login'
 
 const authProtectedRoutes = [
