@@ -19,12 +19,8 @@ const Top = ({ classes, dashboardData, chartData }) => {
                             <div className={classes.boxTitleCard}>
                                 <Typography component="div" key='body1' variant='body1'>Task Completed</Typography>
                             </div>
-                            <div className={classes.boxContent}>
-                                <div className={classes.boxContentDesc}>
-                                    <Typography style={{ display: "inline" }} key='h1' variant='h1' color='primary'>{dashboardData.filter(x => x.completed === true).length}</Typography>/
+                            <Typography style={{ display: "inline" }} key='h1' variant='h1' color='primary'>{dashboardData.filter(x => x.completed === true).length}</Typography>/
                                     <Typography key='caption' variant='caption'>{dashboardData.length}</Typography>
-                                </div>
-                            </div>
                         </Paper>
                     </Grid>
                     <Grid item xs={12} md={4}>
@@ -34,22 +30,18 @@ const Top = ({ classes, dashboardData, chartData }) => {
                                     Latest Created Task
                             </Typography>
                             </div>
-                            <div className={classes.boxContent}>
-                                <div className={classes.boxContentDesc}>
-                                    <ul>
-                                        {dashboardData.map((x, i) => {
-                                            return i < 3 && <li key={i}><Typography key="body2" variant='body2' style={{ textDecoration: x.completed ? "line-through" : "none" }}>{x.name}</Typography></li>
-                                        })}
-                                    </ul>
-                                </div>
-                            </div>
+                            <ul>
+                                {dashboardData.map((x, i) => {
+                                    return i < 3 && <li key={i}><Typography key="body2" variant='body2' style={{ textDecoration: x.completed ? "line-through" : "none" }}>{x.name}</Typography></li>
+                                })}
+                            </ul>
                         </Paper>
                     </Grid>
                     <Grid item xs={12} md={4}>
                         <Paper className={classes.paper}>
                             <div className={classes.boxContent}>
                                 <div className={classes.boxContentDesc}>
-                                    <Pie height={137} data={chartData} options={options} />
+                                    <Pie height={"100%"} data={chartData} options={options} />
                                 </div>
                             </div>
                         </Paper>
