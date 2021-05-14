@@ -24,9 +24,6 @@ const useStyles = makeStyles(() => ({
         width: "70%",
         alignItems: "center",
         justifyContent: "flex-start"
-    },
-    title: {
-        marginLeft: 8
     }
 }));
 
@@ -44,7 +41,7 @@ const Navigation = ({ handlelogout }) => {
                         className={classes.purple}>
                         {!JSON.parse(localStorage.getItem('authUser')) ? '' : JSON.parse(localStorage.getItem('authUser')).token.name[0].toUpperCase()}
                     </Avatar>
-                    <Typography className={classes.title} component="div" key='h5' variant='h5'>{!JSON.parse(localStorage.getItem('authUser')) ? '' : `Hi, ${JSON.parse(localStorage.getItem('authUser')).token.name}`}</Typography>
+                    <Typography className='nav-title' component="div" key='h5' variant='h5'>{!JSON.parse(localStorage.getItem('authUser')) ? '' : `Hi, ${JSON.parse(localStorage.getItem('authUser')).token.name}`}</Typography>
                 </div>
                 <Button onClick={handlelogout}>Logout</Button>
             </div>

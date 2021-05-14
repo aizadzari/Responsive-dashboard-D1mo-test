@@ -45,6 +45,10 @@ body {
   }
 }
 
+.MuiTypography-root.nav-title.MuiTypography-h5 {
+  margin-left: 8px;
+}
+
 @media (max-width: 360px) {
   .MuiListItem-container .MuiListItem-secondaryAction {
     padding-right: 93px;
@@ -52,6 +56,15 @@ body {
 
   .MuiListItem-container .MuiListItem-secondaryAction .MuiListItemIcon-root{
     min-width: 45px;
+  }
+
+  .MuiTypography-root.nav-title.MuiTypography-h5 {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 180px;
+    margin-left: 8px;
   }
 }
 
@@ -78,6 +91,8 @@ body {
   margin-bottom: 8px;
 }
 
+
+
 @media (max-width: 600px) {
   .top-container{
     display: block;
@@ -98,5 +113,14 @@ body {
   .input-searching,
   .btn-add-task {
     width: 100%;
+  }
+
+  .MuiTypography-root.nav-title.MuiTypography-h5 {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 180px;
+    margin-left: 8px;
   }
 }

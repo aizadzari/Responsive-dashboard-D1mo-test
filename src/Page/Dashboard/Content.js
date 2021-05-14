@@ -98,6 +98,7 @@ const Content = () => {
         const copyData = [...dataSource.data]
         const re_map = copyData.map(x => { return x.name.toLowerCase() })
         const findIndex = re_map.indexOf(value.toLowerCase())
+        
         if (findIndex !== -1) {
             const filterArr = copyData.filter((x, i) => i === findIndex)
             if (filterArr !== undefined) {
@@ -189,14 +190,15 @@ const Content = () => {
             getTask(true)
         }
     }
+
     return (
         <React.Fragment>
-            {dataSource.loading && dataSource.data.length === 0 ?
+            {(dataSource.loading && (dataSource.data.length === 0)) ?
                 <div style={boxContent}>
                     <CircularProgress disableShrink />
                     <Typography variant="caption" component="div" style={{ marginLeft: 8 }}>Loading</Typography>
                 </div> :
-                dataSource.data.length === 0 ?
+                (dataSource.data.length === 0) ?
                     <EmptyPage handleVisibleModal={handleVisibleModal} /> :
                     <DashboardContent
                         dashboardData={dashboardData}
@@ -227,6 +229,7 @@ const Content = () => {
                     </div>
                 </div>
             </Modal>
+
         </React.Fragment>
     )
 }

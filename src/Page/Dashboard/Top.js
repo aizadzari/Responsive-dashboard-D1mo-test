@@ -5,8 +5,8 @@ import { Pie } from 'react-chartjs-2';
 let options = {
     legend: {
         display: false,
-        position: "right"
-    },
+        position: "right",
+    }
 }
 
 const Top = ({ classes, dashboardData, chartData }) => {
@@ -17,9 +17,7 @@ const Top = ({ classes, dashboardData, chartData }) => {
                     <Grid item xs={12} md={4}>
                         <Paper className={classes.paper}>
                             <div className={classes.boxTitleCard}>
-                                <Typography component="div" key='body1' variant='body1'>
-                                    Task Completed
-                            </Typography>
+                                <Typography component="div" key='body1' variant='body1'>Task Completed</Typography>
                             </div>
                             <div className={classes.boxContent}>
                                 <div className={classes.boxContentDesc}>
@@ -50,7 +48,7 @@ const Top = ({ classes, dashboardData, chartData }) => {
                     <Grid item xs={12} md={4}>
                         <Paper className={classes.paper}>
                             <div className={classes.boxContent}>
-                                <div className={classes.boxContentDesc}>
+                                <div className={classes.boxContentDesc} style={{ marginTop: 8, marginBottom: 8 }}>
                                     <Pie data={chartData} options={options} />
                                 </div>
                             </div>
