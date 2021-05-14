@@ -34,6 +34,23 @@ const useStyles = makeStyles((theme) => ({
         width: "100%",
         minHeight: 155,
         height: "100%"
+    },
+    boxContent: {
+        margin: 'auto',
+        position: "relative",
+        display: "flex",
+        width: "100%",
+        minHeight: 112,
+        height: "100%",
+        alignItems: "center",
+        justifyContent: "center"
+    },
+    boxContentTitle: {
+
+    },
+    boxContentDesc: {
+        width: "100%",
+        minHeight: 112,
     }
 }));
 

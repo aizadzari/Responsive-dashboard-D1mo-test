@@ -3,6 +3,17 @@ import React, { useEffect, useState } from 'react'
 import { get, post, remove, update } from '../Store/Helpers/Helpers'
 import DashboardContent from './DashboardContent'
 import EmptyPage from './EmptyPage'
+import CircularProgress from '@material-ui/core/CircularProgress';
+
+const boxContent = {
+    position: "relative",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    height: "calc(100vh - 64px)",
+    width: "100%",
+    backgroundColor: "#f1f1f1",
+}
 
 const useStyles = makeStyles(() => ({
     buttonStyles: {
@@ -180,9 +191,23 @@ const Content = () => {
     }
     return (
         <React.Fragment>
-            {dataSource.data.length === 0 ?
-                <EmptyPage handleVisibleModal={handleVisibleModal} /> :
-                <DashboardContent dashboardData={dashboardData} dataSource={dataSource} handleRemoveTask={handleRemoveTask} handleVisibleModal={handleVisibleModal} handleSearching={handleSearching} updateConfirmTask={updateConfirmTask} chartData={chartData} />
+            {dataSource.loading && dataSource.data.length === 0 ?
+                <div style={boxContent}>
+                    <CircularProgress disableShrink />
+                    <Typography variant="caption" component="div" style={{ marginLeft: 8 }}>Loading</Typography>
+                </div> :
+                dataSource.data.length === 0 ?
+                    <EmptyPage handleVisibleModal={handleVisibleModal} /> :
+                    <DashboardContent
+                        dashboardData={dashboardData}
+                        dataSource={dataSource}
+                        handleRemoveTask={handleRemoveTask}
+                        handleVisibleModal={handleVisibleModal}
+                        handleSearching={handleSearching}
+                        updateConfirmTask={updateConfirmTask}
+                        chartData={chartData}
+                        boxContent={boxContent}
+                    />
             }
 
             <Modal

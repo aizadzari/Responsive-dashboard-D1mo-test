@@ -1,10 +1,10 @@
 import axios from 'axios'
 
-export const apiRoot = 'https://dev-dl.tdcx.com:3092/'
+export const API_ROOT = 'https://dev-dl.tdcx.com:3092/'
 
 // Login Method
 export const postLogin = (url, data) => {
-    return axios.post(apiRoot + url, data, {
+    return axios.post(API_ROOT + url, data, {
     }).then(response => {
         if (response.status >= 200 || response.status <= 299)
             return response.data;
@@ -25,7 +25,7 @@ export const postLogin = (url, data) => {
 
 // GET Method
 export const get = (url) => {
-    return axios.get(apiRoot + url, {
+    return axios.get(API_ROOT + url, {
         headers: {
             Authorization: `Bearer ` + JSON.parse(localStorage.getItem('accesstoken'))
         }
@@ -48,7 +48,7 @@ export const get = (url) => {
 }
 
 export const post = (url, data) => {
-    return axios.post(apiRoot + url, data, {
+    return axios.post(API_ROOT + url, data, {
         headers: {
             Authorization: `Bearer ` + JSON.parse(localStorage.getItem('accesstoken'))
         }
@@ -71,7 +71,7 @@ export const post = (url, data) => {
 }
 
 export const update = (url, data) => {
-    return axios.put(apiRoot + url, data, {
+    return axios.put(API_ROOT + url, data, {
         headers: {
             Authorization: `Bearer ` + JSON.parse(localStorage.getItem('accesstoken'))
         }
@@ -94,7 +94,7 @@ export const update = (url, data) => {
 }
 
 export const remove = (url) => {
-    return axios.delete(apiRoot + url, {
+    return axios.delete(API_ROOT + url, {
         headers: {
             Authorization: `Bearer ` + JSON.parse(localStorage.getItem('accesstoken'))
         }

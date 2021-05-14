@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 // Material Component
 import Button from '@material-ui/core/Button';
@@ -9,6 +9,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { Card } from '@material-ui/core';
 import { postLogin } from '../Store/Helpers/Helpers'
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 export const UseStyles = makeStyles((theme) => ({
     container: {
@@ -41,15 +42,24 @@ export const UseStyles = makeStyles((theme) => ({
     },
 }));
 
-const login = (props) => {
+const Login = (props) => {
     const classes = UseStyles();
+    const [formLogin, setFormLogin] = useState({
+        name: "",
+        apiKey: ""
+    })
+    const [loading, setLoading] = useState(false)
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        let data = {
-            "name": "John Doe",
-            "apiKey": "b10ce6bf7468a1f1"
-        }
+        setLoading(true)
+
+        // let data = {
+        //     "name": "John Doe",
+        //     "apiKey": "b10ce6bf7468a1f1"
+        // }
+
+        let data = formLogin;
 
         const response = await postLogin('login', data);
         if (response !== undefined || response !== null) {
@@ -57,6 +67,7 @@ const login = (props) => {
             localStorage.setItem("accesstoken", JSON.stringify(response.token.token));
             props.history.push('/')
         }
+        setLoading(false)
     }
     return (
         <React.Fragment>
@@ -67,7 +78,7 @@ const login = (props) => {
                         <div className={classes.paper}>
                             <Typography component="h1" variant="h5">Login</Typography>
 
-                            <form className={classes.form} noValidate>
+                            <form className={classes.form} onSubmit={handleSubmit}>
                                 <TextField
                                     className={classes.input}
                                     variant="outlined"
@@ -79,6 +90,8 @@ const login = (props) => {
                                     name="email"
                                     autoComplete="email"
                                     autoFocus
+                                    value={formLogin.name}
+                                    onChange={e => setFormLogin({ ...formLogin, name: e.target.value })}
                                 />
                                 <TextField
                                     className={classes.input}
@@ -90,16 +103,19 @@ const login = (props) => {
                                     label="Password"
                                     type="password"
                                     id="password"
+                                    value={formLogin.apiKey}
                                     autoComplete="current-password"
+                                    onChange={e => setFormLogin({ ...formLogin, apiKey: e.target.value })}
                                 />
 
                                 <Button
                                     fullWidth
                                     variant="contained"
                                     color="primary"
-                                    onClick={handleSubmit}
+                                    type="submit"
+                                    // onClick={handleSubmit}
                                     className={classes.submit}
-                                >Login</Button>
+                                >{loading && <CircularProgress disableShrink style={{ marginRight: 8, color: "#ffffff" }} size={20} />} Login</Button>
                             </form>
                         </div>
                     </Container>
@@ -109,4 +125,4 @@ const login = (props) => {
     )
 }
 
-export default login
+export default Login
