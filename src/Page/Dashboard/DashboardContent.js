@@ -19,7 +19,6 @@ const useStyles = makeStyles((theme) => ({
     },
     paper: {
         position: "relative",
-        // display: "flex",
         height: 130,
         padding: theme.spacing(2),
         color: theme.palette.text.secondary,
@@ -29,14 +28,6 @@ const useStyles = makeStyles((theme) => ({
         fontSize: 20,
         margin: "0 0 5px 0",
         width: "100%",
-    },
-    boxContainer: {
-        // margin: 'auto',
-        // position: "relative",
-        // display: "block",
-        // width: "100%",
-        // minHeight: 155,
-        // height: "100%"
     },
     boxContent: {
         margin: 'auto',
@@ -48,16 +39,12 @@ const useStyles = makeStyles((theme) => ({
         alignItems: "center",
         justifyContent: "center"
     },
-    boxContentTitle: {
-
-    },
     boxContentDesc: {
         position: "relative",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
         height: "100%",
-        // minHeight: 112,
     }
 }));
 
