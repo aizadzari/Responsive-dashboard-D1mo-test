@@ -48,8 +48,8 @@ const Top = ({ classes, dashboardData, chartData }) => {
                     <Grid item xs={12} md={4}>
                         <Paper className={classes.paper}>
                             <div className={classes.boxContent}>
-                                <div className={classes.boxContentDesc} style={{ marginTop: 8, marginBottom: 8 }}>
-                                    <Pie data={chartData} options={options} />
+                                <div className={classes.boxContentDesc}>
+                                    <Pie height={137} data={chartData} options={options} />
                                 </div>
                             </div>
                         </Paper>
