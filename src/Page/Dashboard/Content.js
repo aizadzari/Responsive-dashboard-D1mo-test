@@ -85,28 +85,29 @@ const Content = () => {
     })
     const [dashboardData, setDashboardData] = useState(false)
     const [chartData, setChartData] = useState(initialData)
+    const [dataSourceList, setDataSourceList] = useState({
+        data: [],
+        loading: false
+    })
 
     useEffect(() => {
         getTask(true)
     }, [])
 
     const handleSearching = (value) => {
-        setDataSource({
+        setDataSourceList({
             ...dataSource,
             loading: true
         })
+        
         const copyData = [...dataSource.data]
-        const re_map = copyData.map(x => { return x.name.toLowerCase() })
-        const findIndex = re_map.indexOf(value.toLowerCase())
+        const filter = copyData.filter(x => x.name === value)
 
-        if (findIndex !== -1) {
-            const filterArr = copyData.filter((x, i) => i === findIndex)
-            if (filterArr !== undefined) {
-                setDataSource({
-                    loading: false,
-                    data: filterArr
-                })
-            }
+        if (filter.length !== 0) {
+            setDataSourceList({
+                loading: false,
+                data: filter
+            })
         }
 
         if (value.length === 0) {
@@ -123,11 +124,15 @@ const Content = () => {
         })
         const response = await get('tasks');
         if (response) {
-            
+
             const sortItem = response.tasks.reverse()
 
             setDashboardData(sortItem)
             setDataSource({
+                data: sortItem,
+                loading: false
+            })
+            setDataSourceList({
                 data: sortItem,
                 loading: false
             })
@@ -205,7 +210,7 @@ const Content = () => {
                     <EmptyPage handleVisibleModal={handleVisibleModal} /> :
                     <DashboardContent
                         dashboardData={dashboardData}
-                        dataSource={dataSource}
+                        dataSource={dataSourceList}
                         handleRemoveTask={handleRemoveTask}
                         handleVisibleModal={handleVisibleModal}
                         handleSearching={handleSearching}
