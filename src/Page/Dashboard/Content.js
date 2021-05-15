@@ -98,7 +98,7 @@ const Content = () => {
         const copyData = [...dataSource.data]
         const re_map = copyData.map(x => { return x.name.toLowerCase() })
         const findIndex = re_map.indexOf(value.toLowerCase())
-        
+
         if (findIndex !== -1) {
             const filterArr = copyData.filter((x, i) => i === findIndex)
             if (filterArr !== undefined) {
@@ -123,9 +123,12 @@ const Content = () => {
         })
         const response = await get('tasks');
         if (response) {
-            setDashboardData(response.tasks)
+            
+            const sortItem = response.tasks.reverse()
+
+            setDashboardData(sortItem)
             setDataSource({
-                data: response.tasks,
+                data: sortItem,
                 loading: false
             })
 
@@ -135,7 +138,7 @@ const Content = () => {
                     datasets: [
                         {
                             ...prev.datasets[0],
-                            data: [response.tasks.filter(x => x.completed === true).length, response.tasks.filter(x => x.completed !== true).length]
+                            data: [sortItem.filter(x => x.completed === true).length, sortItem.filter(x => x.completed !== true).length]
                         }
                     ]
                 }

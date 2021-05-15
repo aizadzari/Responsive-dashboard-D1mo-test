@@ -41,7 +41,7 @@ const Top = ({ classes, dashboardData, chartData }) => {
                         <Paper className={classes.paper}>
                             <div className={classes.boxContent}>
                                 <div className={classes.boxContentDesc}>
-                                    <Pie height={"100%"} data={chartData} options={options} />
+                                    <Pie height={120} width={120} data={chartData} options={options} />
                                 </div>
                             </div>
                         </Paper>
