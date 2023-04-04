@@ -1,6 +1,7 @@
 import React from 'react'
 import { Switch, BrowserRouter as Router } from "react-router-dom";
 import "./App.css"
+import "./Landing.css"
 import { publicRoutes, authProtectedRoutes } from "./routes/index"
 import AppRoute from './routes/route';
 
