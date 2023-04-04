@@ -5,7 +5,7 @@ import Navbar from '../Components/Layout/Navbar'
 export const landingPage = () => {
   return (
     <React.Fragment>
-      <div className='container'>
+      <div className='container px-5 py-3' >
         <Navbar />
         <Content />
       </div>

@@ -21,7 +21,7 @@ const Content = () => {
     }
     return (
         <React.Fragment>
-            <div className='mb-5'>
+            <div className='pb-5'>
                 <div className='container-box position-relative my-2'>
                     <div className='row h-100'>
                         <div className='col-md-7 mb-3 col-sm-12'>
@@ -55,7 +55,7 @@ const Content = () => {
                             <div className='card shadow border-0 '>
                                 <div className='card-body p-5'>
                                     <h4 className='mb-4'>About me</h4>
-                                    <p>Hello there! My name is Aizad and I have a passion for crafting compelling digital experiences that thrive on the internet. My interest in web development began in 2016 when I experimented with custom website editing.</p>
+                                    <p>Hello there! My name is Aizad and I have a passion for crafting compelling digital experiences that thrive on the internet. My interest in web development began in 2016 when I had the opportunity to experiment with building a custom website using HTML, CSS, and JavaScript. This allowed me to gain a deeper understanding of web development and improve my skills in these technologies.</p>
                                     <p>I quickly realized my love for this field and decided to pursue it further. Since then, I have been fortunate enough to work with a start-up, where I have gained valuable experience in building accessible and inclusive products for diverse clients. My primary focus now is to continue honing my skills in web development and creating exceptional digital experiences that meet the highest standards of quality and user satisfaction.</p>
                                     <p className='mb-4'>Here are a few technologies I’ve been working with recently:</p>
 
