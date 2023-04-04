@@ -12,7 +12,7 @@ const AppRoute = ({
 			render={props => {
 				if (isAuthProtected && JSON.parse(localStorage.getItem("authUser")) === null) {
 					return (
-						<Redirect to={{ pathname: "/login", state: { from: props.location } }} />
+						<Redirect to={{ pathname: "/landing", state: { from: props.location } }} />
 					);
 				}
 				return (

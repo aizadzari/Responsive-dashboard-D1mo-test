@@ -1,9 +1,10 @@
 import React from 'react'
 import { Switch, BrowserRouter as Router } from "react-router-dom";
 import "./App.css"
-import "./Landing.css"
+import "./Landing.scss"
 import { publicRoutes, authProtectedRoutes } from "./routes/index"
 import AppRoute from './routes/route';
+import 'remixicon/fonts/remixicon.css'
 
 const App = () => {
   return (
