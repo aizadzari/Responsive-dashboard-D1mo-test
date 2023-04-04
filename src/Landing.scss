@@ -1,6 +1,10 @@
 @import "../node_modules/bootstrap/scss/bootstrap";
 
 
+body {
+    background: rgb(237, 241, 247);
+}
+
 .bg-custom-1 {
     background-image: linear-gradient(45deg, rgb(177, 39, 177), rgb(71, 71, 190));
 }
@@ -15,8 +19,21 @@
 .bg-img {
     height: 100%;
     width: 100%;
-    background-image: url('./imgprofile.jpeg');
+    background-image: url('./img/imgprofile.jpeg');
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.project-container {
+    position: relative;
+    height: 100vh;
+
+    .card-code {
+        z-index: 2;
+        left: -60px;
+        min-height: 100px;
+        // max-height: 266px;
+        width: calc(100% + 60px);
+    }
 }

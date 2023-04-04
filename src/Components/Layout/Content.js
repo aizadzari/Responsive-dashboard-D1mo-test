@@ -1,12 +1,16 @@
 import moment from 'moment'
 import React, { useState } from 'react'
-import img1 from "../../inference-logo.jpeg"
-import img2 from "../../delyva-logo.jpeg"
-import img3 from "../../AD-logo.jpeg"
-import img4 from "../../iridea-logo.png"
+import img1 from "../../img/inference-logo.jpeg"
+import img2 from "../../img/delyva-logo.jpeg"
+import img3 from "../../img/AD-logo.jpeg"
+import img4 from "../../img/iridea-logo.png"
+import Project1 from './Project1'
+import Project2 from './Project2'
+import Project3 from './Project3'
 
 const Content = () => {
     const [menu, setMenu] = useState('1')
+    const [project, setProject] = useState('ronda')
 
     const handleLinkedIn = () => {
         window.open('https://www.linkedin.com/in/aizad-zari-3b6026157/')
@@ -48,7 +52,7 @@ const Content = () => {
                 <div className='container-box position-relative my-2'>
                     <div className='row h-100 '>
                         <div className='col-md-5 mb-3'>
-                            <div className='card shadow border-0 h-100 '>
+                            <div className='card shadow border-0 '>
                                 <div className='card-body p-5'>
                                     <h4 className='mb-4'>About me</h4>
                                     <p>Hello there! My name is Aizad and I have a passion for crafting compelling digital experiences that thrive on the internet. My interest in web development began in 2016 when I experimented with custom website editing.</p>
@@ -91,8 +95,10 @@ const Content = () => {
                                                     <p className='small text-muted'>{moment('06-01-2021').format('MMM YYYY')} - Present</p>
                                                 </div>
                                             </div>
-                                            <div className='mb-3'><div className='d-flex'><i className="ri-arrow-right-line me-2"></i><div><p className='mb-2'>Develop web portal for Malaysian government sector client to manage and monitor real time-based road defect (loophole, faded landmarking) and analyse it using AI technology.</p><button className='btn btn-outline-dark rounded-pill btn-sm'>View project</button></div></div></div>
-                                            <div className='d-flex'><i className="ri-arrow-right-line me-2"></i><p>Web portal for GLC healthcare client for admin (doctor, pharmacist, participants clinics) and users to carry out telemedicine services that include consultation and prescription services. </p></div>
+                                            <div className='mb-3'><div className='d-flex'><i className="ri-arrow-right-line me-2"></i><div><p className='mb-2'>Develop web company website for Inference Tech .Sdn .Bhd. Easy to navigate, and provided a seamless user experience. while also ensuring that the website met industry standards and best practices</p><button className='btn btn-outline-dark rounded-pill btn-sm' onClick={() => setProject('inference')}>View project</button></div></div></div>
+                                            <div className='mb-3'><div className='d-flex'><i className="ri-arrow-right-line me-2"></i><div><p className='mb-2'>Develop web portal for Malaysian government sector client to manage and monitor real time-based road defect (loophole, faded landmarking) and analyse it using AI technology.</p><button className='btn btn-outline-dark rounded-pill btn-sm' onClick={() => setProject('ronda')}>View project</button></div></div></div>
+                                            <div className='mb-3'><div className='d-flex'><i className="ri-arrow-right-line me-2"></i><div><p className='mb-2'>Web portal for GLC healthcare client for admin (doctor, pharmacist, participants clinics) and users to carry out telemedicine services that include consultation and prescription services.</p><button className='btn btn-outline-dark rounded-pill btn-sm' onClick={() => setProject('selcare')}>View project</button></div></div></div>
+                                           
                                             <div className='d-flex'><i className="ri-arrow-right-line me-2"></i><p>Build a dashboard using JavaScript for telco service provider to monitor their project progress that can filter by region and site inventory.</p></div>
                                             <div className='d-flex'><i className="ri-arrow-right-line me-2"></i><p>Build a web application for hajj pilgrims organization for their hajj participant preparation before perform pilgrimage, that include ebook for reference and examination to verify their readiness before perform the worship.</p></div>
                                         </div> : null}
@@ -139,6 +145,12 @@ const Content = () => {
                         </div>
                     </div>
                 </div>
+
+                {project ? <div className='container-box position-relative my-5'>
+                    {project === 'ronda' ? <Project1 /> : null}
+                    {project === 'inference' ? <Project2 /> : null}
+                    {project === 'selcare' ? <Project3 /> : null}
+                </div> : null}
             </div>
         </React.Fragment>
     )

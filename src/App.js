@@ -4,6 +4,7 @@ import "./App.css"
 import "./Landing.scss"
 import { publicRoutes, authProtectedRoutes } from "./routes/index"
 import AppRoute from './routes/route';
+import 'bootstrap'
 import 'remixicon/fonts/remixicon.css'
 
 const App = () => {
