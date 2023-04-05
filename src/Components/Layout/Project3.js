@@ -43,16 +43,16 @@ const Project3 = () => {
                     </div>
 
                     <div className='d-flex font-monospace flex-wrap mt-4 w-100 pe-sm-0 pe-lg-5' style={{ paddingRight: "50px !important" }}>
-                        <div className='px-3 py-1 mb-2 border border-primary rounded-pill me-2 text-primary'>React</div>
-                        <div className='px-3 py-1 mb-2 border border-primary rounded-pill me-2 text-primary'>Redux</div>
-                        <div className='px-3 py-1 mb-2 border border-primary rounded-pill me-2 text-primary'>MSC Trustgate</div>
-                        <div className='px-3 py-1 mb-2 border border-primary rounded-pill me-2 text-primary'>Agora.io</div>
-                        <div className='px-3 py-1 mb-2 border border-primary rounded-pill me-2 text-primary'>Socket.io</div>
-                        <div className='px-3 py-1 mb-2 border border-primary rounded-pill me-2 text-primary'>Bootstrap</div>
-                        <div className='px-3 py-1 mb-2 border border-primary rounded-pill me-2 text-primary'>cryptr</div>
-                        <div className='px-3 py-1 mb-2 border border-primary rounded-pill me-2 text-primary'>Scss</div>
-                        <div className='px-3 py-1 mb-2 border border-primary rounded-pill me-2 text-primary'>jsPDF</div>
-                        <div className='px-3 py-1 mb-2 border border-primary rounded-pill me-2 text-primary'>Chartjs</div>
+                        <div className='px-3 py-1 mb-2 border border-secondary rounded-pill me-2 text-secondary fs-10 d-flex align-items-center'>React</div>
+                        <div className='px-3 py-1 mb-2 border border-secondary rounded-pill me-2 text-secondary fs-10 d-flex align-items-center'>Redux</div>
+                        <div className='px-3 py-1 mb-2 border border-secondary rounded-pill me-2 text-secondary fs-10 d-flex align-items-center'>MSC Trustgate</div>
+                        <div className='px-3 py-1 mb-2 border border-secondary rounded-pill me-2 text-secondary fs-10 d-flex align-items-center'>Agora.io</div>
+                        <div className='px-3 py-1 mb-2 border border-secondary rounded-pill me-2 text-secondary fs-10 d-flex align-items-center'>Socket.io</div>
+                        <div className='px-3 py-1 mb-2 border border-secondary rounded-pill me-2 text-secondary fs-10 d-flex align-items-center'>Bootstrap</div>
+                        <div className='px-3 py-1 mb-2 border border-secondary rounded-pill me-2 text-secondary fs-10 d-flex align-items-center'>cryptr</div>
+                        <div className='px-3 py-1 mb-2 border border-secondary rounded-pill me-2 text-secondary fs-10 d-flex align-items-center'>Scss</div>
+                        <div className='px-3 py-1 mb-2 border border-secondary rounded-pill me-2 text-secondary fs-10 d-flex align-items-center'>jsPDF</div>
+                        <div className='px-3 py-1 mb-2 border border-secondary rounded-pill me-2 text-secondary fs-10 d-flex align-items-center'>Chartjs</div>
                     </div>
                 </div>
                 <div className='position-relative col-lg-6 col-md-12'>

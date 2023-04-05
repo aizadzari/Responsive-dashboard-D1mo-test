@@ -27,11 +27,11 @@ const Project2 = () => {
                         </div>
                     </div>
                     <div className='d-flex font-monospace flex-row-reverse flex-wrap mt-4 w-100 ps-sm-0 ps-lg-5' style={{ paddingLeft: "50px !important" }}>
-                        <div className='px-3 py-1 mb-2 border border-primary rounded-pill me-2 text-primary'>Html</div>
-                        <div className='px-3 py-1 mb-2 border border-primary rounded-pill me-2 text-primary'>Css</div>
-                        <div className='px-3 py-1 mb-2 border border-primary rounded-pill me-2 text-primary'>JavaScript</div>
-                        <div className='px-3 py-1 mb-2 border border-primary rounded-pill me-2 text-primary'>Mapbox</div>
-                        <div className='px-3 py-1 mb-2 border border-primary rounded-pill me-2 text-primary'>Chartjs</div>
+                        <div className='px-3 py-1 mb-2 border border-secondary rounded-pill me-2 text-secondary fs-10 d-flex align-items-center'>Html</div>
+                        <div className='px-3 py-1 mb-2 border border-secondary rounded-pill me-2 text-secondary fs-10 d-flex align-items-center'>Css</div>
+                        <div className='px-3 py-1 mb-2 border border-secondary rounded-pill me-2 text-secondary fs-10 d-flex align-items-center'>JavaScript</div>
+                        <div className='px-3 py-1 mb-2 border border-secondary rounded-pill me-2 text-secondary fs-10 d-flex align-items-center'>Mapbox</div>
+                        <div className='px-3 py-1 mb-2 border border-secondary rounded-pill me-2 text-secondary fs-10 d-flex align-items-center'>Chartjs</div>
                     </div>
                 </div>
                 <div className='position-relative col-lg-6 col-md-12'>
@@ -60,11 +60,11 @@ const Project2 = () => {
                         </div>
                     </div>
                     <div className='d-flex font-monospace flex-row-reverse flex-wrap mt-4 w-100 ps-sm-0 ps-lg-5' style={{ paddingLeft: "50px !important" }}>
-                        <div className='px-3 py-1 mb-2 border border-primary rounded-pill me-2 text-primary'>Html</div>
-                        <div className='px-3 py-1 mb-2 border border-primary rounded-pill me-2 text-primary'>Css</div>
-                        <div className='px-3 py-1 mb-2 border border-primary rounded-pill me-2 text-primary'>JavaScript</div>
-                        <div className='px-3 py-1 mb-2 border border-primary rounded-pill me-2 text-primary'>Mapbox</div>
-                        <div className='px-3 py-1 mb-2 border border-primary rounded-pill me-2 text-primary'>Chartjs</div>
+                        <div className='px-3 py-1 mb-2 border border-secondary rounded-pill me-2 text-secondary fs-10 d-flex align-items-center'>Html</div>
+                        <div className='px-3 py-1 mb-2 border border-secondary rounded-pill me-2 text-secondary fs-10 d-flex align-items-center'>Css</div>
+                        <div className='px-3 py-1 mb-2 border border-secondary rounded-pill me-2 text-secondary fs-10 d-flex align-items-center'>JavaScript</div>
+                        <div className='px-3 py-1 mb-2 border border-secondary rounded-pill me-2 text-secondary fs-10 d-flex align-items-center'>Mapbox</div>
+                        <div className='px-3 py-1 mb-2 border border-secondary rounded-pill me-2 text-secondary fs-10 d-flex align-items-center'>Chartjs</div>
                     </div>
                 </div>
             </div>
