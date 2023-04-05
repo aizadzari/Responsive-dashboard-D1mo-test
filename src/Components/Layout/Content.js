@@ -107,7 +107,7 @@ const Content = () => {
                                                 <div className='shadow-sm rounded d-flex align-items-center overflow-hidden me-3' style={{ width: 50, height: 50 }}><img src={img1} className="w-100" alt="img1" /></div>
                                                 <div>
                                                     <h6 className='fw-bold mb-1'>Web Developer</h6>
-                                                    <p className='small text-muted'>{moment('2021-6-1').format('MMM YYYY')} - Present</p>
+                                                    <p className='small text-muted'>Jun 2021 - Present</p>
                                                 </div>
                                             </div>
                                             <div className='mb-3'><div className='d-flex'><i className="ri-arrow-right-line me-2"></i><div><p className='mb-2 small'>Web portal for GLC healthcare client for admin (doctor, pharmacist, participants clinics) and users to carry out telemedicine services that include consultation and prescription services.</p><button className='btn btn-outline-dark rounded-pill btn-sm' onClick={() => handleViewProject('selcare')}>View project</button></div></div></div>
@@ -122,7 +122,7 @@ const Content = () => {
                                                 <div className='shadow-sm rounded d-flex align-items-center overflow-hidden me-3' style={{ width: 50, height: 50 }}><img src={img2} className="w-100" alt="img1" /></div>
                                                 <div>
                                                     <h6 className='fw-bold mb-1'>Frontend Developer</h6>
-                                                    <p className='small text-muted'>{moment('2019-9-1').format('MMM YYYY')} - {moment('2021-5-1').format('MMM YYYY')}</p>
+                                                    <p className='small text-muted'>Sep 2019 - May 2021</p>
                                                 </div>
                                             </div>
                                             <div className='d-flex'><i className="ri-arrow-right-line me-2"></i><p className='small'>Played a key role in the development of a SAAS project that included the creation of revenue and sales monitoring dashboards, tracking orders and shipments, and customizing air waybills for courier service providers. This project required expertise in designing and implementing complex data visualization tools, integrating various APIs and technologies, and building secure and scalable web applications. The revenue and sales dashboard enabled clients to track and analyze their business metrics, while the order and shipment tracking feature streamlined logistics processes. Additionally, the air waybill customization allowed clients to brand their shipment documents and improve customer experience. Overall, this project helped clients optimize their operations and achieve better business outcomes.</p></div>
@@ -133,7 +133,7 @@ const Content = () => {
                                                 <div className='shadow-sm rounded d-flex align-items-center overflow-hidden me-3' style={{ width: 50, height: 50 }}><img src={img3} className=" w-100" alt="img1" /></div>
                                                 <div>
                                                     <h6 className='fw-bold mb-1'>Frontend Developer</h6>
-                                                    <p className='small text-muted'>{moment('2018-8-1').format('MMM YYYY')} - {moment('2019-9-1').format('MMM YYYY')}</p>
+                                                    <p className='small text-muted'>Aug 2018 - Sep 2021</p>
                                                 </div>
                                             </div>
                                             <div className='d-flex'><i className="ri-arrow-right-line me-2"></i><p className='small'>Design and maintain a secure web portal for an oil and gas company that manages work records, application requests, and digitizes paperwork. The portal will provide a user-friendly interface that streamlines the process of managing employee records, work applications, and other essential documents. Robust security measures will be implemented to ensure the confidentiality and integrity of the data stored within the portal. Regular maintenance and updates will also be carried out to ensure the portal's smooth operation.</p></div>
@@ -144,7 +144,7 @@ const Content = () => {
                                                 <div className='shadow-sm rounded d-flex align-items-center overflow-hidden me-3' style={{ width: 50, height: 50 }}><img src={img4} className="w-100" alt="img1" /></div>
                                                 <div>
                                                     <h6 className='fw-bold mb-1'>Graphic Designer</h6>
-                                                    <p className='small text-muted'>{moment('2017-1-1').format('MMM YYYY')} - {moment('2018-8-1').format('MMM YYYY')}</p>
+                                                    <p className='small text-muted'>Jan 2017 - Aug 2018</p>
                                                 </div>
                                             </div>
                                             <div className='d-flex'><i className="ri-arrow-right-line me-2"></i><p className='small'>Created several mockups and storyboards for the "Finding Your Own Chef" application. The mockups included designs for the user interface, user experience, and overall branding of the application. The storyboards demonstrated how users would interact with the application, and showcased how the different features would work together. The goal was to create a user-friendly and visually appealing application that allowed users to easily find and book a private chef for their special events. By incorporating feedback from stakeholders and utilizing the latest design trends, I ensured that the final product would meet user needs and exceed expectations.</p></div>
