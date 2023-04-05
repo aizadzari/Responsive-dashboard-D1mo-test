@@ -8,9 +8,19 @@ const Project2 = () => {
         setImg(key)
     }
     return (
-        <div className='project-container d-flex align-items-center'>
-            <div className='d-flex justify-content-between'>
-                <div className="position-relative w-50 overflow-hidden rounded">
+        <div className='project-container d-flex align-items-center' id='inference'>
+            <div className='row'>
+                <div className='position-relative col-lg-6 col-md-12'>
+                    <p className='text-start text-primary mb-1'>Featured Project</p>
+                    <p className='text-start text-dark fw-bold fs-4'>Company website</p>
+
+                    <div className='card-code is-left shadow rounded bg-light p-4 small'>
+                        <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Built a website from scratch using HTML, CSS and JavaScript.</p></div>
+                        <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Integrated Mapbox API into the application, including the placement of a custom marker at the organization's headquarters.</p></div>
+                        <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Deployed the website on Netlify.</p></div>
+                    </div>
+                </div>
+                <div className="position-relative col-lg-6 col-md-12 overflow-hidden rounded mb-4">
                     <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
                         <div className="carousel-indicators">
                             <button type="button" onClick={() => handleImgBtn('1')} data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
@@ -25,14 +35,12 @@ const Project2 = () => {
                             </div>
                         </div>
                     </div>
-                </div>
-                <div className='position-relative w-50'>
-                    <p className='text-end text-muted mb-1'>Featured Project</p>
-                    <p className='text-end text-dark fw-bold fs-4'>Company website</p>
-
-                    <div className='position-absolute card-code shadow rounded bg-light p-3'>
-                        <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Built a website from scratch using HTML, CSS and JavaScript.</p></div>
-                        <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Deployed the website on Netlify.</p></div>
+                    <div className='d-flex font-monospace flex-row-reverse flex-wrap mt-4 w-100 ps-sm-0 ps-lg-5' style={{ paddingLeft: "50px !important" }}>
+                        <div className='px-3 py-1 mb-2 border border-primary rounded-pill me-2 text-primary'>Html</div>
+                        <div className='px-3 py-1 mb-2 border border-primary rounded-pill me-2 text-primary'>Css</div>
+                        <div className='px-3 py-1 mb-2 border border-primary rounded-pill me-2 text-primary'>JavaScript</div>
+                        <div className='px-3 py-1 mb-2 border border-primary rounded-pill me-2 text-primary'>Mapbox</div>
+                        <div className='px-3 py-1 mb-2 border border-primary rounded-pill me-2 text-primary'>Chartjs</div>
                     </div>
                 </div>
             </div>

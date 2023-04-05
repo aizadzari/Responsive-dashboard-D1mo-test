@@ -1,5 +1,22 @@
-@import "../node_modules/bootstrap/scss/bootstrap";
+@import "./node_modules/bootstrap/scss/functions";
 
+$primary: rgb(177, 39, 177);
+$dark: rgb(30, 23, 30);
+$white: rgb(255, 255, 255);
+$light: rgb(255, 253, 255);
+
+$theme-colors: (
+  "primary": $primary,
+  "dark": $dark,
+  "light": $light,
+);
+
+@import "./node_modules/bootstrap/scss/variables";
+@import "./node_modules/bootstrap/scss/bootstrap";
+
+html {
+    scroll-behavior: duration(60000ms);
+  }
 
 body {
     background: rgb(237, 241, 247);
@@ -16,6 +33,7 @@ body {
     min-height: 400px;
     padding-left: 50px;
     padding-right: 50px;
+    
 }
 
 .bg-img {
@@ -27,19 +45,41 @@ body {
     background-size: cover;
 }
 
+.font-monospace {
+    font-size: .8rem !important;
+}
+
 .project-container {
     position: relative;
     min-height: 100vh;
 
     .card-code {
-        font-size: .745rem !important;
-        z-index: 2;
-        left: -60px;
+        position: sticky;
+        background-color: $white;
+        z-index: 10;
         min-height: 100px;
-        width: calc(100% + 60px);
+        font-size: .8rem;
+
+       
+        
+
+        @media (min-width: 990px) {
+            position: absolute;
+           
+
+            &.is-right {
+                left: -60px;
+                width: calc(100% + 60px);
+            }
+
+            &.is-left {
+                right: -60px;
+                width: calc(100% + 60px);
+            }
+        }
 
 
-        p{
+        p {
             margin-bottom: .745rem;
         }
     }

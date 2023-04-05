@@ -11,9 +11,9 @@ const Project3 = () => {
         setImg(key)
     }
     return (
-        <div className='project-container d-flex align-items-center'>
-            <div className='d-flex justify-content-between'>
-                <div className="position-relative w-50 overflow-hidden rounded">
+        <div className='project-container d-flex align-items-center' id='selcare'>
+            <div className='row'>
+                <div className="position-relative col-lg-6 col-md-12 overflow-hidden rounded mb-4">
                     <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
                         <div className="carousel-indicators">
                             <button type="button" onClick={() => handleImgBtn('1')} data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
@@ -40,18 +40,32 @@ const Project3 = () => {
                             </div>
                         </div>
                     </div>
+
+                    <div className='d-flex font-monospace flex-wrap mt-4 w-100 pe-sm-0 pe-lg-5' style={{ paddingRight: "50px !important" }}>
+                        <div className='px-3 py-1 mb-2 border border-primary rounded-pill me-2 text-primary'>React</div>
+                        <div className='px-3 py-1 mb-2 border border-primary rounded-pill me-2 text-primary'>Redux</div>
+                        <div className='px-3 py-1 mb-2 border border-primary rounded-pill me-2 text-primary'>MSC Trustgate</div>
+                        <div className='px-3 py-1 mb-2 border border-primary rounded-pill me-2 text-primary'>Agora.io</div>
+                        <div className='px-3 py-1 mb-2 border border-primary rounded-pill me-2 text-primary'>Socket.io</div>
+                        <div className='px-3 py-1 mb-2 border border-primary rounded-pill me-2 text-primary'>Bootstrap</div>
+                        <div className='px-3 py-1 mb-2 border border-primary rounded-pill me-2 text-primary'>cryptr</div>
+                        <div className='px-3 py-1 mb-2 border border-primary rounded-pill me-2 text-primary'>Scss</div>
+                        <div className='px-3 py-1 mb-2 border border-primary rounded-pill me-2 text-primary'>jsPDF</div>
+                        <div className='px-3 py-1 mb-2 border border-primary rounded-pill me-2 text-primary'>Chartjs</div>
+                    </div>
                 </div>
-                <div className='position-relative w-50'>
-                    <p className='text-end text-muted mb-1'>Featured Project</p>
+                <div className='position-relative col-lg-6 col-md-12'>
+                    <p className='text-end text-primary mb-1'>Featured Project</p>
                     <p className='text-end text-dark fw-bold fs-4'>Web portal for GLC healthcare client for admin</p>
 
-                    <div className='position-absolute card-code shadow rounded bg-light p-3'>
+                    <div className='card-code is-right shadow rounded bg-light p-4 small'>
                         <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Built a website from Templete using HTML, CSS, JavaScript and Reactjs.</p></div>
-                        <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Designed and developed user authentication.</p></div>
+                        <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Designed and developed secure user authentication industry-standard encryption algorithms and best practices to ensure data privacy and protect against unauthorized access.</p></div>
                         <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Utilized Redux Redux to manage the state structure, which simplified state management, improved performance, and provided a consistent state structure.</p></div>
                         <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Integrated with MSC Trustgate to enhance security and ensure compliance with regulations. This included using their API to establish a secure communication channel and implementing necessary security measures like two-factor authentication.</p></div>
                         <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Implement video call functionality. Agora.io was easy to set up and provided scalability and security features, such as end-to-end encryption and token authentication.</p></div>
-                        <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Utilized Socket.io to implement real-time chat and video call functionality in a project.</p></div>
+                        <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Utilized Socket.io to implement real-time chat functionality.</p></div>
+                        <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Implemented a comprehensive page dashboard with advanced data visualization capabilities, utilizing Chart.js library to create interactive charts.</p></div>
                         <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Deployed the website on Netlify.</p></div>
                     </div>
                 </div>

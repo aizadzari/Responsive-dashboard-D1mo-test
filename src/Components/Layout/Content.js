@@ -7,10 +7,11 @@ import img4 from "../../img/iridea-logo.png"
 import Project1 from './Project1'
 import Project2 from './Project2'
 import Project3 from './Project3'
+import Project4 from './Project4'
 
 const Content = () => {
     const [menu, setMenu] = useState('1')
-    const [project, setProject] = useState('ronda')
+    const [project, setProject] = useState('')
 
     const handleLinkedIn = () => {
         window.open('https://www.linkedin.com/in/aizad-zari-3b6026157/')
@@ -18,6 +19,16 @@ const Content = () => {
 
     const handleMenu = (key) => {
         setMenu(key)
+    }
+
+    const handleViewProject = key => {
+        setProject(key)
+
+        setTimeout(() => {
+            const targetElement = document.getElementById(key);
+            if (!targetElement) return;
+            targetElement.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" })
+        }, 100);
     }
     return (
         <React.Fragment>
@@ -51,15 +62,15 @@ const Content = () => {
 
                 <div className='container-box position-relative my-2'>
                     <div className='row h-100 '>
-                        <div className='col-md-5 mb-3'>
+                        <div className='col-lg-5 col-md-12 mb-3'>
                             <div className='card shadow border-0 '>
                                 <div className='card-body p-5'>
                                     <h4 className='mb-4'>About me</h4>
-                                    <p>Hello there! My name is Aizad and I have a passion for crafting compelling digital experiences that thrive on the internet. My interest in web development began in 2016 when I had the opportunity to experiment with building a custom website using HTML, CSS, and JavaScript. This allowed me to gain a deeper understanding of web development and improve my skills in these technologies.</p>
-                                    <p>I quickly realized my love for this field and decided to pursue it further. Since then, I have been fortunate enough to work with a start-up, where I have gained valuable experience in building accessible and inclusive products for diverse clients. My primary focus now is to continue honing my skills in web development and creating exceptional digital experiences that meet the highest standards of quality and user satisfaction.</p>
-                                    <p className='mb-4'>Here are a few technologies I’ve been working with recently:</p>
+                                    <p className='small'>Hello there! My name is Aizad and I have a passion for crafting compelling digital experiences that thrive on the internet. My interest in web development began in 2016 when I had the opportunity to experiment with building a custom website using HTML, CSS, and JavaScript. This allowed me to gain a deeper understanding of web development and improve my skills in these technologies.</p>
+                                    <p className='small'>I quickly realized my love for this field and decided to pursue it further. Since then, I have been fortunate enough to work with a start-up, where I have gained valuable experience in building accessible and inclusive products for diverse clients. My primary focus now is to continue honing my skills in web development and creating exceptional digital experiences that meet the highest standards of quality and user satisfaction.</p>
+                                    <p className='small mb-4'>Here are a few technologies I’ve been working with recently:</p>
 
-                                    <div className='d-flex justify-content-between'>
+                                    <div className='d-flex justify-content-evenly flex-md-wrap'>
                                         <div><i className="ri-javascript-fill ri-2x"></i></div>
                                         <div><i className="ri-css3-fill ri-2x"></i></div>
                                         <div><i className="ri-reactjs-fill ri-2x"></i></div>
@@ -72,22 +83,22 @@ const Content = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='col-md-7 mb-3'>
+                        <div className='col-lg-7 col-md-12 mb-3'>
                             <div className='card shadow border-0 h-100 '>
                                 <div className='card-body p-5'>
-                                    <h4 className='mb-4'>Experience</h4>
+                                    <h4 className='mb-2'>Experience</h4>
 
-                                    <div className='d-flex justify-content-between'>
-                                        <div className='w-25'>
-                                            <ul className="list-group">
-                                                <li style={{ cursor: 'pointer' }} className={`list-group-item border-top-0 border-bottom-0 border-end-0 ${menu === '1' ? 'border-start-1 border-primary' : 'border-start-0 text-muted'} rounded-0`} onClick={() => handleMenu('1')}>Inference Tech</li>
-                                                <li style={{ cursor: 'pointer' }} className={`list-group-item border-top-0 border-bottom-0 border-end-0 ${menu === '2' ? 'border-start-2 border-primary' : 'border-start-0 text-muted'} rounded-0`} onClick={() => handleMenu('2')}>Delyva</li>
-                                                <li style={{ cursor: 'pointer' }} className={`list-group-item border-top-0 border-bottom-0 border-end-0 ${menu === '3' ? 'border-start-2 border-primary' : 'border-start-0 text-muted'} rounded-0`} onClick={() => handleMenu('3')}>Aerodyne</li>
-                                                <li style={{ cursor: 'pointer' }} className={`list-group-item border-top-0 border-bottom-0 border-end-0 ${menu === '4' ? 'border-start-2 border-primary' : 'border-start-0 text-muted'} rounded-0`} onClick={() => handleMenu('4')}>Iridea</li>
+                                    <div className='d-flex flex-column'>
+                                        <div className='w-100 mb-4 overflow-scroll'>
+                                            <ul className="list-group list-group-horizontal">
+                                                <li style={{ cursor: 'pointer' }} className={`list-group-item border-top-0 border-bottom-1 border-end-0 border-start-0 px-0 me-4 ${menu === '1' ? ' border-primary text-primary' : 'border-light text-muted'}  rounded-0`} onClick={() => handleMenu('1')}>Inference Tech</li>
+                                                <li style={{ cursor: 'pointer' }} className={`list-group-item border-top-0 border-bottom-1 border-end-0 border-start-0 px-0 me-4 ${menu === '2' ? ' border-primary text-primary' : 'border-light text-muted'}  rounded-0`} onClick={() => handleMenu('2')}>Delyva</li>
+                                                <li style={{ cursor: 'pointer' }} className={`list-group-item border-top-0 border-bottom-1 border-end-0 border-start-0 px-0 me-4 ${menu === '3' ? ' border-primary text-primary' : 'border-light text-muted'} rounded-0`} onClick={() => handleMenu('3')}>Aerodyne</li>
+                                                <li style={{ cursor: 'pointer' }} className={`list-group-item border-top-0 border-bottom-1 border-end-0 border-start-0 px-0 me-4 ${menu === '4' ? ' border-primary text-primary' : 'border-light text-muted'}  rounded-0`} onClick={() => handleMenu('4')}>Iridea</li>
                                             </ul>
                                         </div>
 
-                                        {menu === '1' ? <div className='w-75'>
+                                        {menu === '1' ? <div className='w-100'>
                                             <div className='d-flex mb-3'>
                                                 <div className='shadow-sm rounded d-flex align-items-center overflow-hidden me-3' style={{ width: 50, height: 50 }}><img src={img1} className="w-100" alt="img1" /></div>
                                                 <div>
@@ -95,12 +106,11 @@ const Content = () => {
                                                     <p className='small text-muted'>{moment('06-01-2021').format('MMM YYYY')} - Present</p>
                                                 </div>
                                             </div>
-                                            <div className='mb-3'><div className='d-flex'><i className="ri-arrow-right-line me-2"></i><div><p className='mb-2'>Develop web company website for Inference Tech .Sdn .Bhd. Easy to navigate, and provided a seamless user experience. while also ensuring that the website met industry standards and best practices</p><button className='btn btn-outline-dark rounded-pill btn-sm' onClick={() => setProject('inference')}>View project</button></div></div></div>
-                                            <div className='mb-3'><div className='d-flex'><i className="ri-arrow-right-line me-2"></i><div><p className='mb-2'>Develop web portal for Malaysian government sector client to manage and monitor real time-based road defect (loophole, faded landmarking) and analyse it using AI technology.</p><button className='btn btn-outline-dark rounded-pill btn-sm' onClick={() => setProject('ronda')}>View project</button></div></div></div>
-                                            <div className='mb-3'><div className='d-flex'><i className="ri-arrow-right-line me-2"></i><div><p className='mb-2'>Web portal for GLC healthcare client for admin (doctor, pharmacist, participants clinics) and users to carry out telemedicine services that include consultation and prescription services.</p><button className='btn btn-outline-dark rounded-pill btn-sm' onClick={() => setProject('selcare')}>View project</button></div></div></div>
-                                           
-                                            <div className='d-flex'><i className="ri-arrow-right-line me-2"></i><p>Build a dashboard using JavaScript for telco service provider to monitor their project progress that can filter by region and site inventory.</p></div>
-                                            <div className='d-flex'><i className="ri-arrow-right-line me-2"></i><p>Build a web application for hajj pilgrims organization for their hajj participant preparation before perform pilgrimage, that include ebook for reference and examination to verify their readiness before perform the worship.</p></div>
+                                            <div className='mb-3'><div className='d-flex'><i className="ri-arrow-right-line me-2"></i><div><p className='mb-2 small'>Develop web company website for Inference Tech .Sdn .Bhd. Easy to navigate, and provided a seamless user experience. while also ensuring that the website met industry standards and best practices</p><button className='btn btn-outline-dark rounded-pill btn-sm' onClick={() => handleViewProject('inference')}>View project</button></div></div></div>
+                                            <div className='mb-3'><div className='d-flex'><i className="ri-arrow-right-line me-2"></i><div><p className='mb-2 small'>Develop web portal for Malaysian government sector client to manage and monitor real time-based road defect (loophole, faded landmarking) and analyse it using AI technology.</p><button className='btn btn-outline-dark rounded-pill btn-sm' onClick={() => handleViewProject('ronda')}>View project</button></div></div></div>
+                                            <div className='mb-3'><div className='d-flex'><i className="ri-arrow-right-line me-2"></i><div><p className='mb-2 small'>Web portal for GLC healthcare client for admin (doctor, pharmacist, participants clinics) and users to carry out telemedicine services that include consultation and prescription services.</p><button className='btn btn-outline-dark rounded-pill btn-sm' onClick={() => handleViewProject('selcare')}>View project</button></div></div></div>
+                                            <div className='mb-3'><div className='d-flex'><i className="ri-arrow-right-line me-2"></i><div><p className='small'>Build a dashboard using JavaScript for telco service provider to monitor their project progress that can filter by region and site inventory.</p><button className='btn btn-outline-dark rounded-pill btn-sm' onClick={() => handleViewProject('terra')}>View project</button></div></div></div>
+                                            <div className='d-flex'><i className="ri-arrow-right-line me-2"></i><p className='small'>Build a web application for hajj pilgrims organization for their hajj participant preparation before perform pilgrimage, that include ebook for reference and examination to verify their readiness before perform the worship.</p></div>
                                         </div> : null}
 
                                         {menu === '2' ? <div className='w-75'>
@@ -108,10 +118,10 @@ const Content = () => {
                                                 <div className='shadow-sm rounded d-flex align-items-center overflow-hidden me-3' style={{ width: 50, height: 50 }}><img src={img2} className="w-100" alt="img1" /></div>
                                                 <div>
                                                     <h6 className='fw-bold mb-1'>Frontend Developer</h6>
-                                                    <p className='small text-muted'>{moment('06-01-2021').format('MMM YYYY')} - {moment('06-01-2021').format('MMM YYYY')}</p>
+                                                    <p className='small text-muted'>{moment('09-01-2019').format('MMM YYYY')} - {moment('05-01-2021').format('MMM YYYY')}</p>
                                                 </div>
                                             </div>
-                                            <div className='d-flex'><i className="ri-arrow-right-line me-2"></i><p>Involves in building SAAS project that involved monitoring revenue & sales dashboard, tracking order and shipment as well as customizing air waybill for currier service provider.</p></div>
+                                            <div className='d-flex'><i className="ri-arrow-right-line me-2"></i><p className='small'>Involves in building SAAS project that involved monitoring revenue & sales dashboard, tracking order and shipment as well as customizing air waybill for currier service provider.</p></div>
                                         </div> : null}
 
                                         {menu === '3' ? <div className='w-75'>
@@ -119,10 +129,10 @@ const Content = () => {
                                                 <div className='shadow-sm rounded d-flex align-items-center overflow-hidden me-3' style={{ width: 50, height: 50 }}><img src={img3} className=" w-100" alt="img1" /></div>
                                                 <div>
                                                     <h6 className='fw-bold mb-1'>Frontend Developer</h6>
-                                                    <p className='small text-muted'>{moment('06-01-2021').format('MMM YYYY')} - {moment('06-01-2021').format('MMM YYYY')}</p>
+                                                    <p className='small text-muted'>{moment('08-01-2018').format('MMM YYYY')} - {moment('09-01-2019').format('MMM YYYY')}</p>
                                                 </div>
                                             </div>
-                                            <div className='d-flex'><i className="ri-arrow-right-line me-2"></i><p>Build landing page for this DT3(Drone, Data, Digital) company portal that include company information (company background, contact us , organization chart.</p></div>
+                                            <div className='d-flex'><i className="ri-arrow-right-line me-2"></i><p className='small'>Build landing page for this DT3(Drone, Data, Digital) company portal that include company information (company background, contact us , organization chart.</p></div>
                                         </div> : null}
 
                                         {menu === '4' ? <div className='w-75'>
@@ -130,14 +140,14 @@ const Content = () => {
                                                 <div className='shadow-sm rounded d-flex align-items-center overflow-hidden me-3' style={{ width: 50, height: 50 }}><img src={img4} className="w-100" alt="img1" /></div>
                                                 <div>
                                                     <h6 className='fw-bold mb-1'>UI Designer</h6>
-                                                    <p className='small text-muted'>{moment('06-01-2021').format('MMM YYYY')} - {moment('06-01-2021').format('MMM YYYY')}</p>
+                                                    <p className='small text-muted'>{moment('01-01-2017').format('MMM YYYY')} - {moment('08-01-2018').format('MMM YYYY')}</p>
                                                 </div>
                                             </div>
-                                            <div className='d-flex'><i className="ri-arrow-right-line me-2"></i><p>Ensured that the visions of the director and designer were carried out through production.</p></div>
-                                            <div className='d-flex'><i className="ri-arrow-right-line me-2"></i><p>Offered design solutions that effectively solved problems and enhanced advertising goals.</p></div>
-                                            <div className='d-flex'><i className="ri-arrow-right-line me-2"></i><p>Assisted with a wide range of design projects and met tight deadlines.</p></div>
-                                            <div className='d-flex'><i className="ri-arrow-right-line me-2"></i><p>Assisted in the creation of graphic materials for the use of the marketing department.</p></div>
-                                            <div className='d-flex'><i className="ri-arrow-right-line me-2"></i><p>Delivered visually compelling animation and graphic elements</p></div>
+                                            <div className='d-flex'><i className="ri-arrow-right-line me-2"></i><p className='small'>Ensured that the visions of the director and designer were carried out through production.</p></div>
+                                            <div className='d-flex'><i className="ri-arrow-right-line me-2"></i><p className='small'>Offered design solutions that effectively solved problems and enhanced advertising goals.</p></div>
+                                            <div className='d-flex'><i className="ri-arrow-right-line me-2"></i><p className='small'>Assisted with a wide range of design projects and met tight deadlines.</p></div>
+                                            <div className='d-flex'><i className="ri-arrow-right-line me-2"></i><p className='small'>Assisted in the creation of graphic materials for the use of the marketing department.</p></div>
+                                            <div className='d-flex'><i className="ri-arrow-right-line me-2"></i><p className='small'>Delivered visually compelling animation and graphic elements</p></div>
                                         </div> : null}
                                     </div>
                                 </div>
@@ -146,11 +156,15 @@ const Content = () => {
                     </div>
                 </div>
 
-                {project ? <div className='container-box position-relative my-5'>
-                    {project === 'ronda' ? <Project1 /> : null}
+                <div className={`container-box position-relative my-5`}>
+                    {/* {project === 'ronda' ? <Project1 /> : null}
                     {project === 'inference' ? <Project2 /> : null}
-                    {project === 'selcare' ? <Project3 /> : null}
-                </div> : null}
+                    {project === 'selcare' ? <Project3 /> : null} */}
+                    <Project1  />
+                    <Project2  />
+                    <Project3  /> 
+                    <Project4  />
+                </div>
             </div>
         </React.Fragment>
     )
