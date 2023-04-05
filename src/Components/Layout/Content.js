@@ -1,4 +1,3 @@
-import moment from 'moment'
 import React, { useState } from 'react'
 import img1 from "../../img/inference-logo.jpeg"
 import img2 from "../../img/delyva-logo.jpeg"
@@ -117,7 +116,7 @@ const Content = () => {
                                             <div className='mb-3'><div className='d-flex'><i className="ri-arrow-right-line me-2"></i><div><p className='mb-2 small'>Develop web company website for Inference Tech .Sdn .Bhd. Easy to navigate, and provided a seamless user experience. while also ensuring that the website met industry standards and best practices</p><button className='btn btn-outline-dark rounded-pill btn-sm' onClick={() => handleViewProject('inference')}>View project</button></div></div></div>
                                         </div> : null}
 
-                                        {menu === '2' ? <div className='w-75'>
+                                        {menu === '2' ? <div className='w-100'>
                                             <div className='d-flex mb-3'>
                                                 <div className='shadow-sm rounded d-flex align-items-center overflow-hidden me-3' style={{ width: 50, height: 50 }}><img src={img2} className="w-100" alt="img1" /></div>
                                                 <div>
@@ -125,21 +124,21 @@ const Content = () => {
                                                     <p className='small text-muted'>Sep 2019 - May 2021</p>
                                                 </div>
                                             </div>
-                                            <div className='d-flex'><i className="ri-arrow-right-line me-2"></i><p className='small'>Played a key role in the development of a SAAS project that included the creation of revenue and sales monitoring dashboards, tracking orders and shipments, and customizing air waybills for courier service providers. This project required expertise in designing and implementing complex data visualization tools, integrating various APIs and technologies, and building secure and scalable web applications. The revenue and sales dashboard enabled clients to track and analyze their business metrics, while the order and shipment tracking feature streamlined logistics processes. Additionally, the air waybill customization allowed clients to brand their shipment documents and improve customer experience. Overall, this project helped clients optimize their operations and achieve better business outcomes.</p></div>
+                                            <div className='mb-3'><div className='d-flex'><i className="ri-arrow-right-line me-2"></i><div><p className='small'>Played a key role in the development of a SAAS project that included the creation of revenue and sales monitoring dashboards, tracking orders and shipments, and customizing air waybills for courier service providers. This project required expertise in designing and implementing complex data visualization tools, integrating various APIs and technologies, and building secure and scalable web applications. The revenue and sales dashboard enabled clients to track and analyze their business metrics, while the order and shipment tracking feature streamlined logistics processes. Additionally, the air waybill customization allowed clients to brand their shipment documents and improve customer experience. Overall, this project helped clients optimize their operations and achieve better business outcomes.</p></div></div></div>
                                         </div> : null}
 
-                                        {menu === '3' ? <div className='w-75'>
+                                        {menu === '3' ? <div className='w-100'>
                                             <div className='d-flex mb-3'>
                                                 <div className='shadow-sm rounded d-flex align-items-center overflow-hidden me-3' style={{ width: 50, height: 50 }}><img src={img3} className=" w-100" alt="img1" /></div>
                                                 <div>
                                                     <h6 className='fw-bold mb-1'>Frontend Developer</h6>
-                                                    <p className='small text-muted'>Aug 2018 - Sep 2021</p>
+                                                    <p className='small text-muted'>Aug 2018 - Sep 2019</p>
                                                 </div>
                                             </div>
                                             <div className='d-flex'><i className="ri-arrow-right-line me-2"></i><p className='small'>Design and maintain a secure web portal for an oil and gas company that manages work records, application requests, and digitizes paperwork. The portal will provide a user-friendly interface that streamlines the process of managing employee records, work applications, and other essential documents. Robust security measures will be implemented to ensure the confidentiality and integrity of the data stored within the portal. Regular maintenance and updates will also be carried out to ensure the portal's smooth operation.</p></div>
                                         </div> : null}
 
-                                        {menu === '4' ? <div className='w-75'>
+                                        {menu === '4' ? <div className='w-100'>
                                             <div className='d-flex mb-3'>
                                                 <div className='shadow-sm rounded d-flex align-items-center overflow-hidden me-3' style={{ width: 50, height: 50 }}><img src={img4} className="w-100" alt="img1" /></div>
                                                 <div>
