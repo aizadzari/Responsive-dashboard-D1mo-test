@@ -53,7 +53,7 @@ const Project1 = () => {
                     </div>
                 </div>
                 <div className='position-relative col-lg-6 col-md-12'>
-                    <p className='text-md-start text-lg-end text-primary mb-1'>Featured Project | <span className='text-muted'>{moment('06-01-2021').format('MMM YYYY')} - {moment('12-01-2021').format('MMM YYYY')}</span></p>
+                    <p className='text-md-start text-lg-end text-primary mb-1'>Featured Project | <span className='text-muted'>{moment('2021-6-1').format('MMM YYYY')} - {moment('2021-12-1').format('MMM YYYY')}</span></p>
                     <p className='text-md-start text-lg-end text-dark fw-bold mb-1 fs-4'>Develop and Mantain Road Management System</p>
 
                     <div className='card-code is-right shadow rounded bg-light p-4 small'>

@@ -35,7 +35,7 @@ const Project2 = () => {
                     </div>
                 </div>
                 <div className='position-relative col-lg-6 col-md-12'>
-                    <p className='text-start text-primary mb-1'>Featured Project | <span className='text-muted'>{moment('6-01-2021').format('MMM YYYY')} - {moment('06-01-2021').format('MMM YYYY')}</span></p>
+                    <p className='text-start text-primary mb-1'>Featured Project | <span className='text-muted'>{moment('2021-6-1').format('MMM YYYY')} - {moment('2021-6-1').format('MMM YYYY')}</span></p>
                     <p className='text-start text-dark fw-bold fs-4'>Develop and Mantain Company Website</p>
 
                     <div className='card-code is-left shadow rounded bg-light p-4 small'>

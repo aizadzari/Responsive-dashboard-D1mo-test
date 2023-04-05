@@ -34,7 +34,7 @@ const Project5 = () => {
                     </div>
                 </div>
                 <div className='position-relative col-lg-6 col-md-12'>
-                    <p className='text-end text-primary mb-1'>Featured Project | <span className='text-muted'>{moment('09-01-2022').format('MMM YYYY')} - {moment('09-01-2022').format('MMM YYYY')}</span></p>
+                    <p className='text-end text-primary mb-1'>Featured Project | <span className='text-muted'>{moment('2022-9-1').format('MMM YYYY')} - {moment('2022-9-1').format('MMM YYYY')}</span></p>
                     <p className='text-end text-dark fw-bold fs-4'>Develop Website for hajj pilgrims organization</p>
 
                     <div className='card-code is-left shadow rounded bg-light p-4 small'>

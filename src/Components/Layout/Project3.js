@@ -56,7 +56,7 @@ const Project3 = () => {
                     </div>
                 </div>
                 <div className='position-relative col-lg-6 col-md-12'>
-                    <p className='text-end text-primary mb-1'>Featured Project | <span className='text-muted'>{moment('12-01-2021').format('MMM YYYY')} - Present</span></p>
+                    <p className='text-end text-primary mb-1'>Featured Project | <span className='text-muted'>{moment('2021-12-1').format('MMM YYYY')} - Present</span></p>
                     <p className='text-end text-dark fw-bold fs-4'>Develop and Mantain Webite for GLC healthcare</p>
 
                     <div className='card-code is-right shadow rounded bg-light p-4 small'>

@@ -41,7 +41,7 @@ const Project4 = () => {
                     </div>
                 </div>
                 <div className='position-relative col-lg-6 col-md-12'>
-                    <p className='text-start text-primary mb-1'>Featured Project | <span className='text-muted'>{moment('08-01-2022').format('MMM YYYY')} - {moment('08-01-2022').format('MMM YYYY')}</span></p>
+                    <p className='text-start text-primary mb-1'>Featured Project | <span className='text-muted'>{moment('2021-8-1').format('MMM YYYY')} - {moment('2021-8-1').format('MMM YYYY')}</span></p>
                     <p className='text-start text-dark fw-bold fs-4'>Telco Service Provider</p>
 
                     <div className='card-code is-left shadow rounded bg-light p-4 small'>
