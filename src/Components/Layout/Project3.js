@@ -41,7 +41,7 @@ const Project3 = () => {
                         </div>
                     </div>
 
-                    <div className='d-flex font-monospace flex-wrap mt-4 w-100 pe-sm-0 pe-lg-5' style={{ paddingRight: "50px !important" }}>
+                    <div className='d-flex font-monospace flex-wrap mt-4 w-100 pe-sm-0 pe-5' style={{ paddingRight: "50px !important" }}>
                         <div className='px-3 py-1 mb-2 border border-secondary rounded-pill me-2 text-secondary fs-10 d-flex align-items-center'>React</div>
                         <div className='px-3 py-1 mb-2 border border-secondary rounded-pill me-2 text-secondary fs-10 d-flex align-items-center'>Redux</div>
                         <div className='px-3 py-1 mb-2 border border-secondary rounded-pill me-2 text-secondary fs-10 d-flex align-items-center'>MSC Trustgate</div>
@@ -55,13 +55,13 @@ const Project3 = () => {
                     </div>
                 </div>
                 <div className='position-relative col-lg-6 col-md-12'>
-                    <p className='text-end text-primary mb-1'>Featured Project | <span className='text-muted'>Dec 2021 - Present</span></p>
-                    <p className='text-end text-dark fw-bold fs-4'>Develop and Mantain Webite for GLC healthcare</p>
+                    <p className='text-start text-lg-end text-primary mb-1'>Featured Project | <span className='text-muted'>Dec 2021 - Present</span></p>
+                    <p className='text-start text-lg-end text-dark fw-bold fs-4'>Develop and Mantain Webite for GLC healthcare</p>
 
                     <div className='card-code is-right shadow rounded bg-light p-4 small'>
                         <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Built a website from Templete using HTML, CSS, JavaScript and Reactjs.</p></div>
                         <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Designed and developed secure user authentication industry-standard encryption algorithms and best practices to ensure data privacy and protect against unauthorized access.</p></div>
-                        <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Utilized Redux Redux to manage the state structure, which simplified state management, improved performance, and provided a consistent state structure.</p></div>
+                        <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Utilized Redux to manage the state structure, which simplified state management, improved performance, and provided a consistent state structure.</p></div>
                         <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Integrated with MSC Trustgate to enhance security and ensure compliance with regulations. This included using their API to establish a secure communication channel and implementing necessary security measures like two-factor authentication.</p></div>
                         <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Implement video call functionality. Agora.io was easy to set up and provided scalability and security features, such as end-to-end encryption and token authentication.</p></div>
                         <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Utilized Socket.io to implement real-time chat functionality.</p></div>

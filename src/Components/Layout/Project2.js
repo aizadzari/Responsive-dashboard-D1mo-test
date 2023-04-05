@@ -25,7 +25,7 @@ const Project2 = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='d-flex font-monospace flex-row-reverse flex-wrap mt-4 w-100 ps-sm-0 ps-lg-5' style={{ paddingLeft: "50px !important" }}>
+                    <div className='d-flex font-monospace flex-row flex-wrap mt-4 w-100 ps-sm-0 ps-lg-5' style={{ paddingLeft: "50px !important" }}>
                         <div className='px-3 py-1 mb-2 border border-secondary rounded-pill me-2 text-secondary fs-10 d-flex align-items-center'>Html</div>
                         <div className='px-3 py-1 mb-2 border border-secondary rounded-pill me-2 text-secondary fs-10 d-flex align-items-center'>Css</div>
                         <div className='px-3 py-1 mb-2 border border-secondary rounded-pill me-2 text-secondary fs-10 d-flex align-items-center'>JavaScript</div>

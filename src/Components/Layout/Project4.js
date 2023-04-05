@@ -30,7 +30,7 @@ const Project4 = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='d-flex flex-row-reverse font-monospace flex-wrap mt-4 w-100 ps-lg-5 ps-sm-0' style={{ paddingLeft: "50px !important" }}>
+                    <div className='d-flex flex-row font-monospace flex-wrap mt-4 w-100 ps-lg-5 ps-sm-0' style={{ paddingLeft: "50px !important" }}>
                         <div className='px-3 py-1 mb-2 border border-secondary rounded-pill me-2 text-secondary fs-10 d-flex align-items-center'>Vue@2</div>
                         <div className='px-3 py-1 mb-2 border border-secondary rounded-pill me-2 text-secondary fs-10 d-flex align-items-center'>Scss</div>
                         <div className='px-3 py-1 mb-2 border border-secondary rounded-pill me-2 text-secondary fs-10 d-flex align-items-center'>Mapbox</div>
