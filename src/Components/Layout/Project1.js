@@ -1,4 +1,3 @@
-import moment from 'moment'
 import React, { useState } from 'react'
 import img1 from '../../img/ronda.png'
 import img2 from '../../img/ronda2.png'
@@ -12,7 +11,7 @@ const Project1 = () => {
         setImg(key)
     }
     return (
-        <div className='project-container d-flex align-items-center mb-sm-5' id='ronda'>
+        <div className='project-container d-flex align-items-center mb-5' id='ronda'>
             <div className=' row'>
                 <div className="position-relative col-lg-6 col-md-12 overflow-hidden rounded mb-4">
                     <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
@@ -53,7 +52,7 @@ const Project1 = () => {
                     </div>
                 </div>
                 <div className='position-relative col-lg-6 col-md-12'>
-                    <p className='text-md-start text-lg-end text-primary mb-1'>Featured Project | <span className='text-muted'>{moment('2021-6-1').format('MMM YYYY')} - {moment('2021-12-1').format('MMM YYYY')}</span></p>
+                    <p className='text-md-start text-lg-end text-primary mb-1'>Featured Project | <span className='text-muted'>Jun 2021 - Dec 2021</span></p>
                     <p className='text-md-start text-lg-end text-dark fw-bold mb-1 fs-4'>Develop and Mantain Road Management System</p>
 
                     <div className='card-code is-right shadow rounded bg-light p-4 small'>

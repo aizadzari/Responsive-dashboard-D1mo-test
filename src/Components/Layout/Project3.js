@@ -4,7 +4,6 @@ import img2 from '../../img/selcare2.png'
 import img3 from '../../img/selcare3.png'
 import img4 from '../../img/selcare4.png'
 import img5 from '../../img/selcare5.png'
-import moment from 'moment'
 
 const Project3 = () => {
     const [img, setImg] = useState('1')
@@ -12,7 +11,7 @@ const Project3 = () => {
         setImg(key)
     }
     return (
-        <div className='project-container d-flex align-items-center mb-sm-5' id='selcare'>
+        <div className='project-container d-flex align-items-center mb-5' id='selcare'>
             <div className='row'>
                 <div className="position-relative col-lg-6 col-md-12 overflow-hidden rounded mb-4">
                     <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
@@ -56,7 +55,7 @@ const Project3 = () => {
                     </div>
                 </div>
                 <div className='position-relative col-lg-6 col-md-12'>
-                    <p className='text-end text-primary mb-1'>Featured Project | <span className='text-muted'>{moment('2021-12-1').format('MMM YYYY')} - Present</span></p>
+                    <p className='text-end text-primary mb-1'>Featured Project | <span className='text-muted'>Dec 2021 - Present</span></p>
                     <p className='text-end text-dark fw-bold fs-4'>Develop and Mantain Webite for GLC healthcare</p>
 
                     <div className='card-code is-right shadow rounded bg-light p-4 small'>

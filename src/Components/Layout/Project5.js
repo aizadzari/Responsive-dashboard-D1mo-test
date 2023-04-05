@@ -1,4 +1,3 @@
-import moment from 'moment'
 import React, { useState } from 'react'
 import img1 from '../../img/th1.png'
 import img2 from '../../img/th2.png'
@@ -9,9 +8,9 @@ const Project5 = () => {
         setImg(key)
     }
     return (
-        <div className='project-container d-flex align-items-center mb-sm-5' id='hajj'>
+        <div className='project-container d-flex align-items-center mb-5' id='hajj'>
             <div className='row'>
-                <div className="position-relative col-lg-6 col-md-12 overflow-hidden rounded mb-4 d-sm-block d-lg-none">
+                <div className="position-relative col-lg-6 col-md-12 overflow-hidden rounded mb-4 d-block d-lg-none">
                     <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
                         <div className="carousel-indicators">
                             <button type="button" onClick={() => handleImgBtn('1')} data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
@@ -34,7 +33,7 @@ const Project5 = () => {
                     </div>
                 </div>
                 <div className='position-relative col-lg-6 col-md-12'>
-                    <p className='text-end text-primary mb-1'>Featured Project | <span className='text-muted'>{moment('2022-9-1').format('MMM YYYY')} - {moment('2022-9-1').format('MMM YYYY')}</span></p>
+                    <p className='text-end text-primary mb-1'>Featured Project | <span className='text-muted'>Sep 2022 - Sep 2022</span></p>
                     <p className='text-end text-dark fw-bold fs-4'>Develop Website for hajj pilgrims organization</p>
 
                     <div className='card-code is-left shadow rounded bg-light p-4 small'>
@@ -43,7 +42,7 @@ const Project5 = () => {
                         <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Deployed the website on Netlify.</p></div>
                     </div>
                 </div>
-                <div className="position-relative col-lg-6 col-md-12 overflow-hidden rounded mb-4 d-sm-none d-lg-block">
+                <div className="position-relative col-lg-6 col-md-12 overflow-hidden rounded mb-4 d-none d-lg-block">
                     <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
                         <div className="carousel-indicators">
                             <button type="button" onClick={() => handleImgBtn('1')} data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
