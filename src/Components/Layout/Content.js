@@ -19,6 +19,9 @@ const Content = () => {
     }
 
     const handleMenu = (key) => {
+        console.log('====================================');
+        console.log(project);
+        console.log('====================================');
         setMenu(key)
     }
 
