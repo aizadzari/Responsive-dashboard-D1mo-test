@@ -12,7 +12,7 @@ const Project3 = () => {
         setImg(key)
     }
     return (
-        <div className='project-container d-flex align-items-center' id='selcare'>
+        <div className='project-container d-flex align-items-center mb-sm-5' id='selcare'>
             <div className='row'>
                 <div className="position-relative col-lg-6 col-md-12 overflow-hidden rounded mb-4">
                     <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
