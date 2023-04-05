@@ -31,8 +31,12 @@ body {
     position: relative;
     display: block;
     min-height: 400px;
-    padding-left: 50px;
-    padding-right: 50px;
+   
+
+    @media (min-width: 990px) {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
     
 }
 

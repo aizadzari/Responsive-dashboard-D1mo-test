@@ -36,7 +36,7 @@ const Content = () => {
     }
     return (
         <React.Fragment>
-            <div className='pb-5'>
+            <div className='pb-lg-5'>
                 <div className='container-box position-relative my-2'>
                     <div className='row h-100'>
                         <div className='col-md-7 mb-3 col-sm-12'>
@@ -48,7 +48,7 @@ const Content = () => {
                                     <p className='small mt-4'>As an experienced software developer, I possess a diverse and promising skillset that enables me to bring forth expertise in designing, developing, and maintaining software systems.</p>
 
                                     <div className='mt-5 bottom-1 left-1'>
-                                        <button className='btn btn-dark rounded-pill me-2'>Contact me</button>
+                                        {/* <button className='btn btn-dark rounded-pill me-2'>Contact me</button> */}
                                         <button className='btn btn-light rounded-pill' onClick={handleLinkedIn}><i className="ri-linkedin-fill align-middle"></i></button>
                                     </div>
                                 </div>
