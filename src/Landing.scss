@@ -100,3 +100,17 @@ body {
         height: 100%;
     }
 }
+
+.carousel {
+    opacity: .7;
+    filter: blur(100);
+    filter: grayscale(10);
+    transform: scale(1.1);
+    transition: 1000ms ease-in-out;
+
+    &:hover {
+        filter: unset;
+        opacity: 1;
+        transform: scale(1);
+    }
+}
