@@ -1,14 +1,16 @@
 @import "./node_modules/bootstrap/scss/functions";
 
-$primary: rgb(177, 39, 177);
+$primary: #6100FF;
 $dark: rgb(30, 23, 30);
 $white: rgb(255, 255, 255);
 $light: rgb(255, 253, 255);
+$secondary: #FF9900;
 
 $theme-colors: (
   "primary": $primary,
   "dark": $dark,
   "light": $light,
+  "secondary": $secondary,
 );
 
 @import "./node_modules/bootstrap/scss/variables";
@@ -86,5 +88,15 @@ body {
         p {
             margin-bottom: .745rem;
         }
+    }
+}
+
+.logo-container {
+    position: relative;
+    height: 30px;
+    width: 30px;
+
+    img {
+        height: 100%;
     }
 }
