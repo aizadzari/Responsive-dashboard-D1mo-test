@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import img1 from '../../img/inference1.png'
 import img2 from '../../img/inference2.png'
+import moment from 'moment'
 
 const Project2 = () => {
     const [img, setImg] = useState('1')
@@ -11,8 +12,8 @@ const Project2 = () => {
         <div className='project-container d-flex align-items-center' id='inference'>
             <div className='row'>
                 <div className='position-relative col-lg-6 col-md-12'>
-                    <p className='text-start text-primary mb-1'>Featured Project</p>
-                    <p className='text-start text-dark fw-bold fs-4'>Company website</p>
+                    <p className='text-start text-primary mb-1'>Featured Project | <span className='text-muted'>{moment('6-01-2021').format('MMM YYYY')} - {moment('06-01-2021').format('MMM YYYY')}</span></p>
+                    <p className='text-start text-dark fw-bold fs-4'>Develop and Mantain Company Website</p>
 
                     <div className='card-code is-left shadow rounded bg-light p-4 small'>
                         <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Built a website from scratch using HTML, CSS and JavaScript.</p></div>

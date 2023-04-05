@@ -4,6 +4,7 @@ import img2 from '../../img/selcare2.png'
 import img3 from '../../img/selcare3.png'
 import img4 from '../../img/selcare4.png'
 import img5 from '../../img/selcare5.png'
+import moment from 'moment'
 
 const Project3 = () => {
     const [img, setImg] = useState('1')
@@ -55,8 +56,8 @@ const Project3 = () => {
                     </div>
                 </div>
                 <div className='position-relative col-lg-6 col-md-12'>
-                    <p className='text-end text-primary mb-1'>Featured Project</p>
-                    <p className='text-end text-dark fw-bold fs-4'>Web portal for GLC healthcare client for admin</p>
+                    <p className='text-end text-primary mb-1'>Featured Project | <span className='text-muted'>{moment('12-01-2021').format('MMM YYYY')} - Present</span></p>
+                    <p className='text-end text-dark fw-bold fs-4'>Develop and Mantain Webite for GLC healthcare</p>
 
                     <div className='card-code is-right shadow rounded bg-light p-4 small'>
                         <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Built a website from Templete using HTML, CSS, JavaScript and Reactjs.</p></div>

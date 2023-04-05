@@ -8,6 +8,7 @@ import Project1 from './Project1'
 import Project2 from './Project2'
 import Project3 from './Project3'
 import Project4 from './Project4'
+import Project5 from './Project5'
 
 const Content = () => {
     const [menu, setMenu] = useState('1')
@@ -106,11 +107,11 @@ const Content = () => {
                                                     <p className='small text-muted'>{moment('06-01-2021').format('MMM YYYY')} - Present</p>
                                                 </div>
                                             </div>
-                                            <div className='mb-3'><div className='d-flex'><i className="ri-arrow-right-line me-2"></i><div><p className='mb-2 small'>Develop web company website for Inference Tech .Sdn .Bhd. Easy to navigate, and provided a seamless user experience. while also ensuring that the website met industry standards and best practices</p><button className='btn btn-outline-dark rounded-pill btn-sm' onClick={() => handleViewProject('inference')}>View project</button></div></div></div>
-                                            <div className='mb-3'><div className='d-flex'><i className="ri-arrow-right-line me-2"></i><div><p className='mb-2 small'>Develop web portal for Malaysian government sector client to manage and monitor real time-based road defect (loophole, faded landmarking) and analyse it using AI technology.</p><button className='btn btn-outline-dark rounded-pill btn-sm' onClick={() => handleViewProject('ronda')}>View project</button></div></div></div>
                                             <div className='mb-3'><div className='d-flex'><i className="ri-arrow-right-line me-2"></i><div><p className='mb-2 small'>Web portal for GLC healthcare client for admin (doctor, pharmacist, participants clinics) and users to carry out telemedicine services that include consultation and prescription services.</p><button className='btn btn-outline-dark rounded-pill btn-sm' onClick={() => handleViewProject('selcare')}>View project</button></div></div></div>
+                                            <div className='mb-3'><div className='d-flex'><i className="ri-arrow-right-line me-2"></i><div><p className='small'>Build a web application for hajj pilgrims organization for their hajj participant preparation before perform pilgrimage, that include ebook for reference and examination to verify their readiness before perform the worship.</p><button className='btn btn-outline-dark rounded-pill btn-sm' onClick={() => handleViewProject('hajj')}>View project</button></div></div></div>
                                             <div className='mb-3'><div className='d-flex'><i className="ri-arrow-right-line me-2"></i><div><p className='small'>Build a dashboard using JavaScript for telco service provider to monitor their project progress that can filter by region and site inventory.</p><button className='btn btn-outline-dark rounded-pill btn-sm' onClick={() => handleViewProject('terra')}>View project</button></div></div></div>
-                                            <div className='d-flex'><i className="ri-arrow-right-line me-2"></i><p className='small'>Build a web application for hajj pilgrims organization for their hajj participant preparation before perform pilgrimage, that include ebook for reference and examination to verify their readiness before perform the worship.</p></div>
+                                            <div className='mb-3'><div className='d-flex'><i className="ri-arrow-right-line me-2"></i><div><p className='mb-2 small'>Develop web portal for Malaysian government sector client to manage and monitor real time-based road defect (loophole, faded landmarking) and analyse it using AI technology.</p><button className='btn btn-outline-dark rounded-pill btn-sm' onClick={() => handleViewProject('ronda')}>View project</button></div></div></div>
+                                            <div className='mb-3'><div className='d-flex'><i className="ri-arrow-right-line me-2"></i><div><p className='mb-2 small'>Develop web company website for Inference Tech .Sdn .Bhd. Easy to navigate, and provided a seamless user experience. while also ensuring that the website met industry standards and best practices</p><button className='btn btn-outline-dark rounded-pill btn-sm' onClick={() => handleViewProject('inference')}>View project</button></div></div></div>
                                         </div> : null}
 
                                         {menu === '2' ? <div className='w-75'>
@@ -121,7 +122,7 @@ const Content = () => {
                                                     <p className='small text-muted'>{moment('09-01-2019').format('MMM YYYY')} - {moment('05-01-2021').format('MMM YYYY')}</p>
                                                 </div>
                                             </div>
-                                            <div className='d-flex'><i className="ri-arrow-right-line me-2"></i><p className='small'>Involves in building SAAS project that involved monitoring revenue & sales dashboard, tracking order and shipment as well as customizing air waybill for currier service provider.</p></div>
+                                            <div className='d-flex'><i className="ri-arrow-right-line me-2"></i><p className='small'>Played a key role in the development of a SAAS project that included the creation of revenue and sales monitoring dashboards, tracking orders and shipments, and customizing air waybills for courier service providers. This project required expertise in designing and implementing complex data visualization tools, integrating various APIs and technologies, and building secure and scalable web applications. The revenue and sales dashboard enabled clients to track and analyze their business metrics, while the order and shipment tracking feature streamlined logistics processes. Additionally, the air waybill customization allowed clients to brand their shipment documents and improve customer experience. Overall, this project helped clients optimize their operations and achieve better business outcomes.</p></div>
                                         </div> : null}
 
                                         {menu === '3' ? <div className='w-75'>
@@ -132,22 +133,19 @@ const Content = () => {
                                                     <p className='small text-muted'>{moment('08-01-2018').format('MMM YYYY')} - {moment('09-01-2019').format('MMM YYYY')}</p>
                                                 </div>
                                             </div>
-                                            <div className='d-flex'><i className="ri-arrow-right-line me-2"></i><p className='small'>Build landing page for this DT3(Drone, Data, Digital) company portal that include company information (company background, contact us , organization chart.</p></div>
+                                            <div className='d-flex'><i className="ri-arrow-right-line me-2"></i><p className='small'>Design and maintain a secure web portal for an oil and gas company that manages work records, application requests, and digitizes paperwork. The portal will provide a user-friendly interface that streamlines the process of managing employee records, work applications, and other essential documents. Robust security measures will be implemented to ensure the confidentiality and integrity of the data stored within the portal. Regular maintenance and updates will also be carried out to ensure the portal's smooth operation.</p></div>
                                         </div> : null}
 
                                         {menu === '4' ? <div className='w-75'>
                                             <div className='d-flex mb-3'>
                                                 <div className='shadow-sm rounded d-flex align-items-center overflow-hidden me-3' style={{ width: 50, height: 50 }}><img src={img4} className="w-100" alt="img1" /></div>
                                                 <div>
-                                                    <h6 className='fw-bold mb-1'>UI Designer</h6>
+                                                    <h6 className='fw-bold mb-1'>Graphic Designer</h6>
                                                     <p className='small text-muted'>{moment('01-01-2017').format('MMM YYYY')} - {moment('08-01-2018').format('MMM YYYY')}</p>
                                                 </div>
                                             </div>
-                                            <div className='d-flex'><i className="ri-arrow-right-line me-2"></i><p className='small'>Ensured that the visions of the director and designer were carried out through production.</p></div>
-                                            <div className='d-flex'><i className="ri-arrow-right-line me-2"></i><p className='small'>Offered design solutions that effectively solved problems and enhanced advertising goals.</p></div>
-                                            <div className='d-flex'><i className="ri-arrow-right-line me-2"></i><p className='small'>Assisted with a wide range of design projects and met tight deadlines.</p></div>
-                                            <div className='d-flex'><i className="ri-arrow-right-line me-2"></i><p className='small'>Assisted in the creation of graphic materials for the use of the marketing department.</p></div>
-                                            <div className='d-flex'><i className="ri-arrow-right-line me-2"></i><p className='small'>Delivered visually compelling animation and graphic elements</p></div>
+                                            <div className='d-flex'><i className="ri-arrow-right-line me-2"></i><p className='small'>Created several mockups and storyboards for the "Finding Your Own Chef" application. The mockups included designs for the user interface, user experience, and overall branding of the application. The storyboards demonstrated how users would interact with the application, and showcased how the different features would work together. The goal was to create a user-friendly and visually appealing application that allowed users to easily find and book a private chef for their special events. By incorporating feedback from stakeholders and utilizing the latest design trends, I ensured that the final product would meet user needs and exceed expectations.</p></div>
+                                            <div className='d-flex'><i className="ri-arrow-right-line me-2"></i><p className='small'>Created a variety of design assets for businesses, including business cards, letterheads, banners, ads, infographics, video animation and logos.</p></div>
                                         </div> : null}
                                     </div>
                                 </div>
@@ -160,10 +158,14 @@ const Content = () => {
                     {/* {project === 'ronda' ? <Project1 /> : null}
                     {project === 'inference' ? <Project2 /> : null}
                     {project === 'selcare' ? <Project3 /> : null} */}
-                    <Project1  />
-                    <Project2  />
-                    <Project3  /> 
-                    <Project4  />
+                    <Project3 />
+                    <Project5 />
+                    <Project4 />
+                    <Project1 />
+                    <Project2 />
+
+
+
                 </div>
             </div>
         </React.Fragment>

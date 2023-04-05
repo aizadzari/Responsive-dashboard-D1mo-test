@@ -1,3 +1,4 @@
+import moment from 'moment'
 import React, { useState } from 'react'
 import img1 from '../../img/terra1.png'
 import img2 from '../../img/terra2.png'
@@ -12,8 +13,8 @@ const Project4 = () => {
         <div className='project-container d-flex align-items-center' id='terra'>
             <div className='row'>
                 <div className='position-relative col-lg-6 col-md-12'>
-                    <p className='text-start text-primary mb-1'>Featured Project</p>
-                    <p className='text-start text-dark fw-bold fs-4'>Company website</p>
+                    <p className='text-start text-primary mb-1'>Featured Project | <span className='text-muted'>{moment('08-01-2022').format('MMM YYYY')} - {moment('08-01-2022').format('MMM YYYY')}</span></p>
+                    <p className='text-start text-dark fw-bold fs-4'>Telco service provider</p>
 
                     <div className='card-code is-left shadow rounded bg-light p-4 small'>
                         <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Built a website from scratch using HTML, CSS, JavaScript and Vue@2.</p></div>
