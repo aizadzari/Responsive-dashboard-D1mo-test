@@ -12,7 +12,7 @@ const Project4 = () => {
     return (
         <div className='project-container d-flex align-items-center mb-sm-5' id='terra'>
             <div className='row'>
-                <div className="position-relative col-lg-6 col-md-12 overflow-hidden rounded mb-4 d-lg-none d-sm-block">
+                <div className="position-relative col-lg-6 col-md-12 overflow-hidden rounded mb-4 d-sm-block d-lg-none">
                     <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
                         <div className="carousel-indicators">
                             <button type="button" onClick={() => handleImgBtn('1')} data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
@@ -41,8 +41,8 @@ const Project4 = () => {
                     </div>
                 </div>
                 <div className='position-relative col-lg-6 col-md-12'>
-                    <p className='text-start text-sm-end text-primary mb-1'>Featured Project | <span className='text-muted'>{moment('08-01-2022').format('MMM YYYY')} - {moment('08-01-2022').format('MMM YYYY')}</span></p>
-                    <p className='text-start text-sm-end text-dark fw-bold fs-4'>Telco service provider</p>
+                    <p className='text-start text-primary mb-1'>Featured Project | <span className='text-muted'>{moment('08-01-2022').format('MMM YYYY')} - {moment('08-01-2022').format('MMM YYYY')}</span></p>
+                    <p className='text-start text-dark fw-bold fs-4'>Telco Service Provider</p>
 
                     <div className='card-code is-left shadow rounded bg-light p-4 small'>
                         <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Built a website from scratch using HTML, CSS, JavaScript and Vue@2.</p></div>
@@ -52,7 +52,7 @@ const Project4 = () => {
                         <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Deployed the website on Netlify.</p></div>
                     </div>
                 </div>
-                <div className="position-relative col-lg-6 col-md-12 overflow-hidden rounded mb-4 d-sm-none d-block-lg">
+                <div className="position-relative col-lg-6 col-md-12 overflow-hidden rounded mb-4 d-sm-none d-lg-block">
                     <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
                         <div className="carousel-indicators">
                             <button type="button" onClick={() => handleImgBtn('1')} data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>

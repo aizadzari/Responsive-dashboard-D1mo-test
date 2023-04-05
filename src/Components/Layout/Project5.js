@@ -37,7 +37,7 @@ const Project5 = () => {
                     <p className='text-end text-primary mb-1'>Featured Project | <span className='text-muted'>{moment('09-01-2022').format('MMM YYYY')} - {moment('09-01-2022').format('MMM YYYY')}</span></p>
                     <p className='text-end text-dark fw-bold fs-4'>Develop Website for hajj pilgrims organization</p>
 
-                    <div className='card-code is-right shadow rounded bg-light p-4 small'>
+                    <div className='card-code is-left shadow rounded bg-light p-4 small'>
                         <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Built a website from scratch using HTML, CSS, JavaScript and Vue@3.</p></div>
                         <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Designed and developed the user interface (UI) for the Hajj application,responsive web development techniques to ensure seamless user experience across a range of devices and screen sizes.</p></div>
                         <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Deployed the website on Netlify.</p></div>
