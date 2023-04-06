@@ -1,13 +1,27 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import img1 from '../../img/terra1.png'
 import img2 from '../../img/terra2.png'
 import img3 from '../../img/terra3.png'
 
-const Project4 = () => {
+const Project4 = ({prevScrollPos}) => {
     const [img, setImg] = useState('1')
     const handleImgBtn = (key) => {
         setImg(key)
     }
+
+    useEffect(() => {
+        const element = document.querySelector("#project4");
+        if (prevScrollPos > 2596 && prevScrollPos < 3400)  {
+            element.classList.remove('animated-out-right')
+            element.classList.add('animated-in-right')
+        }  else if (prevScrollPos > 3800) {
+            element.classList.remove('animated-in-right')
+            element.classList.add('animated-out-right')
+        } else {
+            element.classList.remove('animated-in-right')
+            element.classList.add('animated-out-right')
+        }
+    }, [prevScrollPos])
     return (
         <div className='project-container d-flex align-items-center mb-5' id='terra'>
             <div className='row'>
@@ -43,7 +57,7 @@ const Project4 = () => {
                     <p className='text-start text-lg-end text-primary mb-1'>Featured Project | <span className='text-muted'>Aug 2021- Aug 2021</span></p>
                     <p className='text-start text-lg-end text-dark fw-bold fs-4'>Telco Service Provider</p>
 
-                    <div className='card-code is-right shadow rounded bg-light p-4 small'>
+                    <div className='card-code is-right shadow rounded bg-light p-4 small' id='project4'>
                         <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Built a website from scratch using HTML, CSS, JavaScript and Vue@2.</p></div>
                         <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Developed a dynamic mapping feature using Mapbox technology, leveraging asset data to generate custom markers that provide critical insights into asset locations and performance metrics. The result is a more intuitive and streamlined user experience that enables effective decision-making and optimized asset management.</p></div>
                         <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Developed a customized HTML and CSS layout that adheres to the standard letter format and integrated it with the jsPDF library to enable users to download the document in PDF format.</p></div>

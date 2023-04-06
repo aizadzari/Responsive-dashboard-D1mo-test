@@ -1,12 +1,26 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import img1 from '../../img/inference1.png'
 import img2 from '../../img/inference2.png'
 
-const Project2 = () => {
+const Project2 = ({prevScrollPos}) => {
     const [img, setImg] = useState('1')
     const handleImgBtn = (key) => {
         setImg(key)
     }
+
+    useEffect(() => {
+        const element = document.querySelector("#project5");
+        if (prevScrollPos > 4200 && prevScrollPos < 5000)  {
+            element.classList.remove('animated-out-right')
+            element.classList.add('animated-in-right')
+        }  else if (prevScrollPos > 5000) {
+            element.classList.remove('animated-in-right')
+            element.classList.add('animated-out-right')
+        } else {
+            element.classList.remove('animated-in-right')
+            element.classList.add('animated-out-right')
+        }
+    }, [prevScrollPos])
     return (
         <div className='project-container d-flex align-items-center mb-5' id='inference'>
             <div className='row'>
@@ -34,12 +48,11 @@ const Project2 = () => {
                         <div className='px-3 py-1 mb-2 border border-secondary rounded-pill me-2 text-secondary fs-10 d-flex align-items-center'>Bootstrap</div>
                     </div>
                 </div>
-
                 <div className='position-relative col-lg-6 col-md-12'>
                     <p className='text-start text-lg-end text-primary mb-1'>Featured Project | <span className='text-muted'>Jun 2021 - Jun 2021</span></p>
                     <p className='text-start text-lg-end text-dark fw-bold fs-4'>Develop and Mantain Company Website</p>
 
-                    <div className='card-code is-right shadow rounded bg-light p-4 small'>
+                    <div className='card-code is-right shadow rounded bg-light p-4 small' id='project5'>
                         <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Built a website from scratch using HTML, CSS and JavaScript.</p></div>
                         <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Designed a custom UI layout using the versatile Bootstrap framework.</p></div>
                         <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Integrated Mapbox API into the application, including the placement of a custom marker at the organization's headquarters.</p></div>

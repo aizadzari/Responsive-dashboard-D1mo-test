@@ -1,15 +1,29 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import img1 from '../../img/selcare1.png'
 import img2 from '../../img/selcare2.png'
 import img3 from '../../img/selcare3.png'
 import img4 from '../../img/selcare4.png'
 import img5 from '../../img/selcare5.png'
 
-const Project3 = () => {
+const Project3 = ({ prevScrollPos }) => {
     const [img, setImg] = useState('1')
     const handleImgBtn = (key) => {
         setImg(key)
     }
+
+    useEffect(() => {
+        const element = document.querySelector("#project1");
+        if (prevScrollPos > 900 && prevScrollPos < 2070) {
+            element.classList.remove('animated-out-right')
+            element.classList.add('animated-in-right')
+        } else if (prevScrollPos > 2070) {
+            element.classList.remove('animated-in-right')
+            element.classList.add('animated-out-right')
+        } else {
+            element.classList.remove('animated-in-right')
+            element.classList.add('animated-out-right')
+        }
+    }, [prevScrollPos])
     return (
         <div className='project-container d-flex align-items-center mb-5' id='selcare'>
             <div className='row'>
@@ -58,7 +72,7 @@ const Project3 = () => {
                     <p className='text-start text-lg-end text-primary mb-1'>Featured Project | <span className='text-muted'>Dec 2021 - Present</span></p>
                     <p className='text-start text-lg-end text-dark fw-bold fs-4'>Develop and Mantain Webite for GLC healthcare</p>
 
-                    <div className='card-code is-right shadow rounded bg-light p-4 small'>
+                    <div className='card-code is-right shadow rounded bg-light p-4 small' id='project1'>
                         <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Built a website from Templete using HTML, CSS, JavaScript and Reactjs.</p></div>
                         <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Designed and developed secure user authentication industry-standard encryption algorithms and best practices to ensure data privacy and protect against unauthorized access.</p></div>
                         <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Utilized Redux to manage the state structure, which simplified state management, improved performance, and provided a consistent state structure.</p></div>

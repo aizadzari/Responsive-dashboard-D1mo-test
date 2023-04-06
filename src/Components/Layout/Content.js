@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import img1 from "../../img/inference-logo.jpeg"
 import img2 from "../../img/delyva-logo.jpeg"
 import img3 from "../../img/AD-logo.jpeg"
@@ -13,6 +13,21 @@ import Project6 from './Project6'
 const Content = () => {
     const [menu, setMenu] = useState('1')
     const [project, setProject] = useState('')
+    const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollPos = window.pageYOffset;
+            setPrevScrollPos(currentScrollPos);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, [prevScrollPos]);
+
 
     const handleLinkedIn = () => {
         window.open('https://www.linkedin.com/in/aizad-zari-3b6026157/')
@@ -36,7 +51,7 @@ const Content = () => {
     }
     return (
         <React.Fragment>
-            <div className='pb-lg-5'>
+            <div className='pb-lg-5 content-animated'>
                 <div className='container-box position-relative my-2'>
                     <div className='row h-100'>
                         <div className='col-md-7 mb-3 col-sm-12'>
@@ -161,12 +176,12 @@ const Content = () => {
                     {/* {project === 'ronda' ? <Project1 /> : null}
                     {project === 'inference' ? <Project2 /> : null}
                     {project === 'selcare' ? <Project3 /> : null} */}
-                    <Project3 />
-                    <Project5 />
-                    <Project4 />
-                    <Project1 />
-                    <Project2 />
-                    <Project6 />
+                    <Project3 prevScrollPos={prevScrollPos} />
+                    <Project5 prevScrollPos={prevScrollPos} />
+                    <Project4 prevScrollPos={prevScrollPos} />
+                    <Project1 prevScrollPos={prevScrollPos} />
+                    <Project2 prevScrollPos={prevScrollPos} />
+                    <Project6 prevScrollPos={prevScrollPos} />
 
 
                 </div>
