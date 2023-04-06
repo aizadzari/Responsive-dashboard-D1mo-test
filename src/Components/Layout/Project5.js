@@ -33,8 +33,8 @@ const Project5 = () => {
                     </div>
                 </div>
                 <div className='position-relative col-lg-6 col-md-12'>
-                    <p className='text-start text-lg-end text-primary mb-1'>Featured Project | <span className='text-muted'>Sep 2022 - Sep 2022</span></p>
-                    <p className='text-start text-lg-end text-dark fw-bold fs-4'>Develop Website for hajj pilgrims organization</p>
+                    <p className='text-start  text-primary mb-1'>Featured Project | <span className='text-muted'>Sep 2022 - Sep 2022</span></p>
+                    <p className='text-start  text-dark fw-bold fs-4'>Develop Website for hajj pilgrims organization</p>
 
                     <div className='card-code is-left shadow rounded bg-light p-4 small'>
                         <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Built a website from scratch using HTML, CSS, JavaScript and Vue@3.</p></div>
@@ -57,7 +57,7 @@ const Project5 = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='d-flex font-monospace flex-row flex-wrap mt-4 w-100 pe-sm-0 pe-lg-5' style={{ paddingLeft: "50px !important" }}>
+                    <div className='d-flex font-monospace flex-row-reverse flex-wrap mt-4 w-100 ps-sm-0 ps-lg-5' style={{ paddingLeft: "50px !important" }}>
                         <div className='px-3 py-1 mb-2 border border-secondary rounded-pill me-2 text-secondary fs-10 d-flex align-items-center'>Vue@3</div>
                         <div className='px-3 py-1 mb-2 border border-secondary rounded-pill me-2 text-secondary fs-10 d-flex align-items-center'>Scss</div>
                         <div className='px-3 py-1 mb-2 border border-secondary rounded-pill me-2 text-secondary fs-10 d-flex align-items-center'>JavaScript</div>
