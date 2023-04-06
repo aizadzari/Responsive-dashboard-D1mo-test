@@ -8,6 +8,7 @@ import Project2 from './Project2'
 import Project3 from './Project3'
 import Project4 from './Project4'
 import Project5 from './Project5'
+import Project6 from './Project6'
 
 const Content = () => {
     const [menu, setMenu] = useState('1')
@@ -124,7 +125,7 @@ const Content = () => {
                                                     <p className='small text-muted'>Sep 2019 - May 2021</p>
                                                 </div>
                                             </div>
-                                            <div className='mb-3'><div className='d-flex'><i className="ri-arrow-right-line me-2"></i><div><p className='small'>Played a key role in the development of a SAAS project that included the creation of revenue and sales monitoring dashboards, tracking orders and shipments, and customizing air waybills for courier service providers. This project required expertise in designing and implementing complex data visualization tools, integrating various APIs and technologies, and building secure and scalable web applications. The revenue and sales dashboard enabled clients to track and analyze their business metrics, while the order and shipment tracking feature streamlined logistics processes. Additionally, the air waybill customization allowed clients to brand their shipment documents and improve customer experience. Overall, this project helped clients optimize their operations and achieve better business outcomes.</p></div></div></div>
+                                            <div className='mb-3'><div className='d-flex'><i className="ri-arrow-right-line me-2"></i><div><p className='small'>Played a key role in the development of a SAAS project that included the creation of revenue and sales monitoring dashboards, tracking orders and shipments, and customizing air waybills for courier service providers. This project required expertise in designing and implementing complex data visualization tools, integrating various APIs and technologies, and building secure and scalable web applications. The revenue and sales dashboard enabled clients to track and analyze their business metrics, while the order and shipment tracking feature streamlined logistics processes. Additionally, the air waybill customization allowed clients to brand their shipment documents and improve customer experience. Overall, this project helped clients optimize their operations and achieve better business outcomes.</p><button className='btn btn-outline-dark rounded-pill btn-sm' onClick={() => handleViewProject('delyva')}>View project</button></div></div></div>
                                         </div> : null}
 
                                         {menu === '3' ? <div className='w-100'>
@@ -165,7 +166,7 @@ const Content = () => {
                     <Project4 />
                     <Project1 />
                     <Project2 />
-
+                    <Project6 />
 
 
                 </div>
