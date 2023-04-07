@@ -12,17 +12,17 @@ const Project1 = ({prevScrollPos}) => {
     }
 
     useEffect(() => {
-        const element = document.querySelector("#project2");
-        if (prevScrollPos > 3000 && prevScrollPos < 4200)  {
-            element.classList.remove('animated-out-left')
-            element.classList.add('animated-in-left')
-        }  else if (prevScrollPos > 4200) {
-            element.classList.remove('animated-in-left')
-            element.classList.add('animated-out-left')
-        } else {
-            element.classList.remove('animated-in-left')
-            element.classList.add('animated-out-left')
-        }
+        // const element = document.querySelector("#project2");
+        // if (prevScrollPos > 3000 && prevScrollPos < 4900)  {
+        //     element.classList.remove('animated-out-left')
+        //     element.classList.add('animated-in-left')
+        // }  else if (prevScrollPos > 4900) {
+        //     element.classList.remove('animated-in-left')
+        //     element.classList.add('animated-out-left')
+        // } else {
+        //     element.classList.remove('animated-in-left')
+        //     element.classList.add('animated-out-left')
+        // }
     }, [prevScrollPos])
     return (
         <div className='project-container d-flex align-items-center mb-5' id='ronda'>

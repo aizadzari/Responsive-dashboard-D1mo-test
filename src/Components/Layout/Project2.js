@@ -9,17 +9,17 @@ const Project2 = ({prevScrollPos}) => {
     }
 
     useEffect(() => {
-        const element = document.querySelector("#project5");
-        if (prevScrollPos > 4200 && prevScrollPos < 5000)  {
-            element.classList.remove('animated-out-right')
-            element.classList.add('animated-in-right')
-        }  else if (prevScrollPos > 5000) {
-            element.classList.remove('animated-in-right')
-            element.classList.add('animated-out-right')
-        } else {
-            element.classList.remove('animated-in-right')
-            element.classList.add('animated-out-right')
-        }
+        // const element = document.querySelector("#project5");
+        // if (prevScrollPos > 4900 && prevScrollPos < 5700)  {
+        //     element.classList.remove('animated-out-right')
+        //     element.classList.add('animated-in-right')
+        // }  else if (prevScrollPos > 5700) {
+        //     element.classList.remove('animated-in-right')
+        //     element.classList.add('animated-out-right')
+        // } else {
+        //     element.classList.remove('animated-in-right')
+        //     element.classList.add('animated-out-right')
+        // }
     }, [prevScrollPos])
     return (
         <div className='project-container d-flex align-items-center mb-5' id='inference'>

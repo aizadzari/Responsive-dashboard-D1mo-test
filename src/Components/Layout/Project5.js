@@ -9,17 +9,17 @@ const Project5 = ({prevScrollPos}) => {
     }
 
     useEffect(() => {
-        const element = document.querySelector("#project3");
-        if (prevScrollPos > 1760 && prevScrollPos < 3000)  {
-            element.classList.remove('animated-out-left')
-            element.classList.add('animated-in-left')
-        }  else if (prevScrollPos > 3000) {
-            element.classList.remove('animated-in-left')
-            element.classList.add('animated-out-left')
-        } else {
-            element.classList.remove('animated-in-left')
-            element.classList.add('animated-out-left')
-        }
+        // const element = document.querySelector("#project3");
+        // if (prevScrollPos > 1760 && prevScrollPos < 3000)  {
+        //     element.classList.remove('animated-out-left')
+        //     element.classList.add('animated-in-left')
+        // }  else if (prevScrollPos > 3000) {
+        //     element.classList.remove('animated-in-left')
+        //     element.classList.add('animated-out-left')
+        // } else {
+        //     element.classList.remove('animated-in-left')
+        //     element.classList.add('animated-out-left')
+        // }
     }, [prevScrollPos])
     return (
         <div className='project-container d-flex align-items-center mb-5' id='hajj'>

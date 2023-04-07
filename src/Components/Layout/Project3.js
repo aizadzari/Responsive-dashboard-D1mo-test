@@ -12,17 +12,17 @@ const Project3 = ({ prevScrollPos }) => {
     }
 
     useEffect(() => {
-        const element = document.querySelector("#project1");
-        if (prevScrollPos > 900 && prevScrollPos < 2070) {
-            element.classList.remove('animated-out-right')
-            element.classList.add('animated-in-right')
-        } else if (prevScrollPos > 2070) {
-            element.classList.remove('animated-in-right')
-            element.classList.add('animated-out-right')
-        } else {
-            element.classList.remove('animated-in-right')
-            element.classList.add('animated-out-right')
-        }
+        // const element = document.querySelector("#project1");
+        // if (prevScrollPos > 900 && prevScrollPos < 2070) {
+        //     element.classList.remove('animated-out-right')
+        //     element.classList.add('animated-in-right')
+        // } else if (prevScrollPos > 2070) {
+        //     element.classList.remove('animated-in-right')
+        //     element.classList.add('animated-out-right')
+        // } else {
+        //     element.classList.remove('animated-in-right')
+        //     element.classList.add('animated-out-right')
+        // }
     }, [prevScrollPos])
     return (
         <div className='project-container d-flex align-items-center mb-5' id='selcare'>

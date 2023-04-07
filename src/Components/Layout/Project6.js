@@ -10,17 +10,17 @@ const Project6 = ({ prevScrollPos }) => {
     }
 
     useEffect(() => {
-        const element = document.querySelector("#project6");
-        if (prevScrollPos > 5000 && prevScrollPos < 9000) {
-            element.classList.remove('animated-out-right')
-            element.classList.add('animated-in-right')
-        } else if (prevScrollPos > 9000) {
-            element.classList.remove('animated-in-right')
-            element.classList.add('animated-out-right')
-        } else {
-            element.classList.remove('animated-in-right')
-            element.classList.add('animated-out-right')
-        }
+        // const element = document.querySelector("#project6");
+        // if (prevScrollPos > 5500 && prevScrollPos < 9000) {
+        //     element.classList.remove('animated-out-right')
+        //     element.classList.add('animated-in-right')
+        // } else if (prevScrollPos > 9000) {
+        //     element.classList.remove('animated-in-right')
+        //     element.classList.add('animated-out-right')
+        // } else {
+        //     element.classList.remove('animated-in-right')
+        //     element.classList.add('animated-out-right')
+        // }
     }, [prevScrollPos])
     return (
         <div className='project-container d-flex align-items-center mb-5' id='delyva'>
