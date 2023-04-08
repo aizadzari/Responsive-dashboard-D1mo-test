@@ -20,6 +20,7 @@ const Content = () => {
             const currentScrollPos = window.pageYOffset;
             setPrevScrollPos(currentScrollPos);
         };
+        
 
         window.addEventListener("scroll", handleScroll);
 

@@ -3,24 +3,36 @@ import img1 from '../../img/terra1.png'
 import img2 from '../../img/terra2.png'
 import img3 from '../../img/terra3.png'
 
-const Project4 = ({prevScrollPos}) => {
+const Project4 = ({ prevScrollPos }) => {
     const [img, setImg] = useState('1')
     const handleImgBtn = (key) => {
         setImg(key)
     }
 
     useEffect(() => {
-        // const element = document.querySelector("#project4");
-        // if (prevScrollPos > 2596 && prevScrollPos < 3400)  {
-        //     element.classList.remove('animated-out-right')
-        //     element.classList.add('animated-in-right')
-        // }  else if (prevScrollPos > 3800) {
-        //     element.classList.remove('animated-in-right')
-        //     element.classList.add('animated-out-right')
-        // } else {
-        //     element.classList.remove('animated-in-right')
-        //     element.classList.add('animated-out-right')
-        // }
+        const base = 215;
+        const selcare = document.querySelector("#selcare")
+        const hajj = document.querySelector("#hajj")
+        const terra = document.querySelector("#terra")
+        const ronda = document.querySelector("#ronda")
+
+        const element = document.querySelector("#project4");
+
+
+
+        const moreThan = base + selcare.scrollHeight + hajj.scrollHeight
+        const lessThan = base + selcare.scrollHeight + hajj.scrollHeight + terra.scrollHeight + ronda.scrollHeight + (ronda.scrollHeight / 3);
+
+        if (prevScrollPos > moreThan && prevScrollPos < lessThan) {
+            element.classList.remove('animated-out-right')
+            element.classList.add('animated-in-right')
+        } else if (prevScrollPos > lessThan) {
+            element.classList.add('animated-out-right')
+            element.classList.remove('animated-in-right')
+        } else {
+            element.classList.add('animated-out-right')
+            element.classList.remove('animated-in-right')
+        }
     }, [prevScrollPos])
     return (
         <div className='project-container d-flex align-items-center mb-5' id='terra'>

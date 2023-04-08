@@ -12,17 +12,27 @@ const Project3 = ({ prevScrollPos }) => {
     }
 
     useEffect(() => {
-        // const element = document.querySelector("#project1");
-        // if (prevScrollPos > 900 && prevScrollPos < 2070) {
-        //     element.classList.remove('animated-out-right')
-        //     element.classList.add('animated-in-right')
-        // } else if (prevScrollPos > 2070) {
-        //     element.classList.remove('animated-in-right')
-        //     element.classList.add('animated-out-right')
-        // } else {
-        //     element.classList.remove('animated-in-right')
-        //     element.classList.add('animated-out-right')
-        // }
+        const base = 215;
+        const selcare = document.querySelector("#selcare")
+        const hajj = document.querySelector("#hajj")
+
+        const element = document.querySelector("#project3");
+
+
+
+        const moreThan = base + selcare.scrollHeight
+        const lessThan = base + selcare.scrollHeight + hajj.scrollHeight + (hajj.scrollHeight / 3);
+
+        if (prevScrollPos > moreThan && prevScrollPos < lessThan) {
+            element.classList.remove('animated-out-right')
+            element.classList.add('animated-in-right')
+        }  else if (prevScrollPos > lessThan) {
+            element.classList.add('animated-out-right')
+            element.classList.remove('animated-in-right')
+        } else {
+            element.classList.add('animated-out-right')
+            element.classList.remove('animated-in-right')
+        }
     }, [prevScrollPos])
     return (
         <div className='project-container d-flex align-items-center mb-5' id='selcare'>
@@ -72,7 +82,7 @@ const Project3 = ({ prevScrollPos }) => {
                     <p className='text-start text-lg-end text-primary mb-1'>Featured Project | <span className='text-muted'>Dec 2021 - Present</span></p>
                     <p className='text-start text-lg-end text-dark fw-bold fs-4'>Develop and Mantain Webite for GLC healthcare</p>
 
-                    <div className='card-code is-right shadow rounded bg-light p-4 small' id='project1'>
+                    <div className='card-code is-right shadow rounded bg-light p-4 small' id='project3'>
                         <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Built a website from Templete using HTML, CSS, JavaScript and Reactjs.</p></div>
                         <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Designed and developed secure user authentication industry-standard encryption algorithms and best practices to ensure data privacy and protect against unauthorized access.</p></div>
                         <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Utilized Redux to manage the state structure, which simplified state management, improved performance, and provided a consistent state structure.</p></div>

@@ -2,24 +2,35 @@ import React, { useEffect, useState } from 'react'
 import img1 from '../../img/th1.png'
 import img2 from '../../img/th2.png'
 
-const Project5 = ({prevScrollPos}) => {
+const Project5 = ({ prevScrollPos }) => {
     const [img, setImg] = useState('1')
     const handleImgBtn = (key) => {
         setImg(key)
     }
 
     useEffect(() => {
-        // const element = document.querySelector("#project3");
-        // if (prevScrollPos > 1760 && prevScrollPos < 3000)  {
-        //     element.classList.remove('animated-out-left')
-        //     element.classList.add('animated-in-left')
-        // }  else if (prevScrollPos > 3000) {
-        //     element.classList.remove('animated-in-left')
-        //     element.classList.add('animated-out-left')
-        // } else {
-        //     element.classList.remove('animated-in-left')
-        //     element.classList.add('animated-out-left')
-        // }
+        const base = 215;
+        const selcare = document.querySelector("#selcare")
+        const hajj = document.querySelector("#hajj")
+        const terra = document.querySelector("#terra")
+
+        const element = document.querySelector("#project5");
+
+
+
+        const moreThan = base + selcare.scrollHeight + terra.scrollHeight
+        const lessThan = base + selcare.scrollHeight + hajj.scrollHeight + terra.scrollHeight + (terra.scrollHeight / 3);
+
+        if (prevScrollPos > moreThan && prevScrollPos < lessThan) {
+            element.classList.remove('animated-out-left')
+            element.classList.add('animated-in-left')
+        } else if (prevScrollPos > lessThan) {
+            element.classList.add('animated-out-left')
+            element.classList.remove('animated-in-left')
+        } else {
+            element.classList.add('animated-out-left')
+            element.classList.remove('animated-in-left')
+        }
     }, [prevScrollPos])
     return (
         <div className='project-container d-flex align-items-center mb-5' id='hajj'>
@@ -50,7 +61,7 @@ const Project5 = ({prevScrollPos}) => {
                     <p className='text-start  text-primary mb-1'>Featured Project | <span className='text-muted'>Sep 2022 - Sep 2022</span></p>
                     <p className='text-start  text-dark fw-bold fs-4'>Develop Website for hajj pilgrims organization</p>
 
-                    <div className='card-code is-left shadow rounded bg-light p-4 small' id='project3'>
+                    <div className='card-code is-left shadow rounded bg-light p-4 small' id='project5'>
                         <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Built a website from scratch using HTML, CSS, JavaScript and Vue@3.</p></div>
                         <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Designed and developed the user interface (UI) for the Hajj application,responsive web development techniques to ensure seamless user experience across a range of devices and screen sizes.</p></div>
                         <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Deployed the website on Netlify.</p></div>
