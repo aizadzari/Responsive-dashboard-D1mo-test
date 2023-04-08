@@ -80,25 +80,25 @@ body {
             &.animated-in-right {
                 opacity: 1;
                 transform: translateX(-50px);
-                animation: slide-in 2000ms ease-in;
+                animation: slide-in 500ms ease-in;
             }
 
             &.animated-out-right {
                 opacity: 0;
                 transform: translateX(0px);
-                animation: slide-out 2000ms ease-out;
+                animation: slide-out 1000ms ease-out;
             }
 
             &.animated-in-left {
                 opacity: 1;
                 transform: translateX(0px);
-                animation: slide-in-left 2000ms ease-in;
+                animation: slide-in-left 500ms ease-in;
             }
 
             &.animated-out-left {
                 opacity: 0;
                 transform: translateX(-50px);
-                animation: slide-out-left 2000ms ease-out;
+                animation: slide-out-left 1000ms ease-out;
             }
 
             @keyframes slide-in {
@@ -172,8 +172,9 @@ body {
         opacity: .7;
         filter: blur(100);
         filter: grayscale(10);
-        transform: scale(1.1);
+        // transform: scale(1.1);
         transition: 1000ms ease-in-out;
+        overflow: hidden;
 
         &:hover {
             filter: unset;
