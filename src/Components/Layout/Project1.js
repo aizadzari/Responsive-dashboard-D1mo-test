@@ -22,22 +22,23 @@ const Project1 = ({ prevScrollPos }) => {
         const element = document.querySelector("#project1");
 
 
-        const moreThan = base + selcare.scrollHeight + hajj.scrollHeight + terra.scrollHeight + ronda.scrollHeight;
+        const moreThan = base + selcare.scrollHeight + hajj.scrollHeight + terra.scrollHeight + ronda.scrollHeight + (ronda.scrollHeight / 3);
         const lessThan = base + selcare.scrollHeight + hajj.scrollHeight + terra.scrollHeight + ronda.scrollHeight + inference.scrollHeight + (inference.scrollHeight / 3);
 
         if (prevScrollPos > moreThan && prevScrollPos < lessThan) {
             element.classList.remove('animated-out-left')
             element.classList.add('animated-in-left')
-        } else if (prevScrollPos > lessThan) {
-            element.classList.add('animated-out-left')
-            element.classList.remove('animated-in-left')
-        } else {
-            element.classList.add('animated-out-left')
-            element.classList.remove('animated-in-left')
-        }
+        } 
+        // else if (prevScrollPos > lessThan) {
+        //     element.classList.add('animated-out-left')
+        //     element.classList.remove('animated-in-left')
+        // } else {
+        //     element.classList.add('animated-out-left')
+        //     element.classList.remove('animated-in-left')
+        // }
     }, [prevScrollPos])
     return (
-        <div className='project-container d-flex align-items-center mb-5' id='ronda'>
+        <div className='project-container d-flex align-items-center mb-5 py-5' id='ronda'>
             <div className=' row'>
                 <div className="position-relative col-lg-6 col-md-12 overflow-hidden rounded mb-4 d-block d-lg-none" style={{ zIndex: 1 }}>
                     <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
