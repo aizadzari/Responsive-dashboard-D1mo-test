@@ -24,6 +24,11 @@ const Content = () => {
         const element1 = document.querySelector('.animate-box-1');
         const element2 = document.querySelector('.animate-box-2');
         const element3 = document.querySelector('.animate-box-3');
+        const element4 = document.querySelector('.animate-box-4');
+        const element5 = document.querySelector('.animate-box-5');
+        const element6 = document.querySelector('.animate-box-6');
+        const element7 = document.querySelector('.animate-box-7');
+        const element8 = document.querySelector('.animate-box-8');
 
         if (elementbg1) elementbg1.classList.add('animation-bg-faded')
         if (elementbg2) elementbg2.classList.add('animation-bg-faded')
@@ -33,6 +38,11 @@ const Content = () => {
         if (element1) element1.classList.add('animation-faded')
         if (element2) element2.classList.add('animation-faded')
         if (element3) element3.classList.add('animation-faded')
+        if (element4) element4.classList.add('animation-faded')
+        if (element5) element5.classList.add('animation-faded')
+        if (element6) element6.classList.add('animation-faded')
+        if (element7) element7.classList.add('animation-faded')
+        if (element8) element8.classList.add('animation-faded')
     }, [])
 
     useEffect(() => {
@@ -106,12 +116,12 @@ const Content = () => {
                             <div className='col-lg-5 col-md-12 mb-3 animate-bg-3' style={{ transitionDelay: '500ms' }}>
                                 <div className='card shadow border-0 '>
                                     <div className='card-body p-5'>
-                                        <h4 className='mb-4'>About me</h4>
-                                        <p className='small'>Hello there! My name is Aizad and I have a passion for crafting compelling digital experiences that thrive on the internet. My interest in web development began in 2016 when I had the opportunity to experiment with building a custom website using HTML, CSS, and JavaScript. This allowed me to gain a deeper understanding of web development and improve my skills in these technologies.</p>
-                                        <p className='small'>I quickly realized my love for this field and decided to pursue it further. Since then, I have been fortunate enough to work with a start-up, where I have gained valuable experience in building accessible and inclusive products for diverse clients. My primary focus now is to continue honing my skills in web development and creating exceptional digital experiences that meet the highest standards of quality and user satisfaction.</p>
-                                        <p className='small mb-4'>Here are a few technologies I’ve been working with recently:</p>
+                                        <h4 className='mb-4 animate-box-4' style={{ transitionDelay: '700ms' }}>About me</h4>
+                                        <p className='small animate-box-5' style={{ transitionDelay: '800ms' }}>Hello there! My name is Aizad and I have a passion for crafting compelling digital experiences that thrive on the internet. My interest in web development began in 2016 when I had the opportunity to experiment with building a custom website using HTML, CSS, and JavaScript. This allowed me to gain a deeper understanding of web development and improve my skills in these technologies.</p>
+                                        <p className='small animate-box-6' style={{ transitionDelay: '900ms' }}>I quickly realized my love for this field and decided to pursue it further. Since then, I have been fortunate enough to work with a start-up, where I have gained valuable experience in building accessible and inclusive products for diverse clients. My primary focus now is to continue honing my skills in web development and creating exceptional digital experiences that meet the highest standards of quality and user satisfaction.</p>
+                                        <p className='small mb-4 animate-box-7' style={{ transitionDelay: '1000ms' }}>Here are a few technologies I’ve been working with recently:</p>
 
-                                        <div className='d-flex justify-content-evenly flex-md-wrap'>
+                                        <div className='d-flex justify-content-evenly flex-md-wrap animate-box-8'>
                                             <div><i className="ri-javascript-fill ri-2x"></i></div>
                                             <div><i className="ri-css3-fill ri-2x"></i></div>
                                             <div><i className="ri-reactjs-fill ri-2x"></i></div>

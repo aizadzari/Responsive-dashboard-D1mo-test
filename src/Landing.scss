@@ -32,30 +32,44 @@ body {
 .animate-bg-2,
 .animate-bg-3,
 .animate-bg-4,
+.animate-bg-5,
 .animate-logo-1 {
-    margin-top: 50px;
+    // margin-top: 50px;
     opacity: 0;
 
     &.animation-bg-faded {
         opacity: 1;
-        margin-top: 0px;
-        transition: 2000ms cubic-bezier(0.075, 0.82, 0.165, 1);
+        // margin-top: 0px;
         transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+        transition: opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s, transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;
+        transition-duration: 0.5s, 0.5s;
+        transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1), cubic-bezier(0.645, 0.045, 0.355, 1);
+        transition-delay: 0.2s, 0.2s;
+        transition-property: opacity, transform;
     }
 }
 
 
 .animate-box-1,
 .animate-box-2,
-.animate-box-3 {
+.animate-box-3,
+.animate-box-4,
+.animate-box-5,
+.animate-box-6,
+.animate-box-7,
+.animate-box-8 {
     opacity: 0;
-    margin-top: 50px;
+    margin-top: 10px;
 
     &.animation-faded {
         opacity: 1;
         margin-top: 0px;
-        transition: 1500ms cubic-bezier(0.075, 0.82, 0.165, 1);
         transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+        transition: opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s, transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;
+        transition-duration: 0.5s, 0.5s;
+        transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1), cubic-bezier(0.645, 0.045, 0.355, 1);
+        transition-delay: 0.2s, 0.2s;
+        transition-property: opacity, transform, margin-top;
     }
 }
 
