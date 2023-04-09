@@ -121,7 +121,7 @@ const Content = () => {
                                         <p className='small animate-box-6' style={{ transitionDelay: '900ms' }}>I quickly realized my love for this field and decided to pursue it further. Since then, I have been fortunate enough to work with a start-up, where I have gained valuable experience in building accessible and inclusive products for diverse clients. My primary focus now is to continue honing my skills in web development and creating exceptional digital experiences that meet the highest standards of quality and user satisfaction.</p>
                                         <p className='small mb-4 animate-box-7' style={{ transitionDelay: '1000ms' }}>Here are a few technologies I’ve been working with recently:</p>
 
-                                        <div className='d-flex justify-content-evenly flex-md-wrap animate-box-8'>
+                                        <div className='d-flex justify-content-evenly flex-md-wrap animate-box-8' style={{ transitionDelay: '1100ms' }}>
                                             <div><i className="ri-javascript-fill ri-2x"></i></div>
                                             <div><i className="ri-css3-fill ri-2x"></i></div>
                                             <div><i className="ri-reactjs-fill ri-2x"></i></div>
@@ -134,7 +134,7 @@ const Content = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className='col-lg-7 col-md-12 mb-3 animate-bg-4' style={{ transitionDelay: '500ms' }}>
+                            <div className='col-lg-7 col-md-12 mb-3 animate-bg-4' style={{ transitionDelay: '600ms' }}>
                                 <div className='card shadow border-0 h-100 '>
                                     <div className='card-body p-5'>
                                         <h4 className='mb-2'>Experience</h4>
