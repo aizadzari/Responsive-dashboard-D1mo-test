@@ -38,7 +38,7 @@ const Project3 = ({ prevScrollPos }) => {
         <div className='project-container d-flex align-items-center mb-5' id='selcare'>
             <div className='row'>
                 <div className="position-relative col-lg-6 col-md-12 overflow-hidden rounded mb-4">
-                    <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel" style={{ height: 320}}>
+                    <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
                         <div className="carousel-indicators">
                             <button type="button" onClick={() => handleImgBtn('1')} data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
                             <button type="button" onClick={() => handleImgBtn('2')} data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>

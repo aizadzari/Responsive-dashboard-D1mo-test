@@ -64,9 +64,11 @@ body {
         z-index: 10;
         min-height: 100px;
         font-size: .8rem;
-        opacity: 0;
+       
 
         @media (min-width: 990px) {
+            opacity: 0;
+            
             &.is-right {
                 left: -60px;
                 width: calc(100% + 60px);
