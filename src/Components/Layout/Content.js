@@ -16,29 +16,23 @@ const Content = () => {
     const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset);
 
     useEffect(() => {
-        document.addEventListener("DOMContentLoaded", function (event) {
-            // code to run when the page is fully loaded
-            if (!event.isTrusted) return
+        const elementbg1 = document.querySelector('.animate-bg-1');
+        const elementbg2 = document.querySelector('.animate-bg-2');
+        const elementbg3 = document.querySelector('.animate-bg-3');
+        const elementbg4 = document.querySelector('.animate-bg-4');
 
-            const elementbg1 = document.querySelector('.animate-bg-1');
-            const elementbg2 = document.querySelector('.animate-bg-2');
-            const elementbg3 = document.querySelector('.animate-bg-3');
-            const elementbg4 = document.querySelector('.animate-bg-4');
+        const element1 = document.querySelector('.animate-box-1');
+        const element2 = document.querySelector('.animate-box-2');
+        const element3 = document.querySelector('.animate-box-3');
 
-            const element1 = document.querySelector('.animate-box-1');
-            const element2 = document.querySelector('.animate-box-2');
-            const element3 = document.querySelector('.animate-box-3');
+        if (elementbg1) elementbg1.classList.add('animation-bg-faded')
+        if (elementbg2) elementbg2.classList.add('animation-bg-faded')
+        if (elementbg3) elementbg3.classList.add('animation-bg-faded')
+        if (elementbg4) elementbg4.classList.add('animation-bg-faded')
 
-            if (elementbg1) elementbg1.classList.add('animation-bg-faded')
-            if (elementbg2) elementbg2.classList.add('animation-bg-faded')
-            if (elementbg3) elementbg3.classList.add('animation-bg-faded')
-            if (elementbg4) elementbg4.classList.add('animation-bg-faded')
-
-            if (element1) element1.classList.add('animation-faded')
-            if (element2) element2.classList.add('animation-faded')
-            if (element3) element3.classList.add('animation-faded')
-
-        });
+        if (element1) element1.classList.add('animation-faded')
+        if (element2) element2.classList.add('animation-faded')
+        if (element3) element3.classList.add('animation-faded')
     }, [])
 
     useEffect(() => {

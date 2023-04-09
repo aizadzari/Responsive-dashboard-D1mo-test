@@ -4,14 +4,9 @@ import img from "../../img/logo.png"
 
 const Navbar = () => {
     useEffect(() => {
-        document.addEventListener("DOMContentLoaded", function (event) {
-            // code to run when the page is fully loaded
-            if (!event.isTrusted) return
+        const element1 = document.querySelector('.animate-logo-1');
 
-            const element1 = document.querySelector('.animate-logo-1');
-
-            if (element1) element1.classList.add('animation-bg-faded')
-        });
+        if (element1) element1.classList.add('animation-bg-faded')
     }, [])
     return (
         <React.Fragment>
