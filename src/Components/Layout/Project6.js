@@ -10,20 +10,19 @@ const Project6 = ({ prevScrollPos }) => {
     }
 
     useEffect(() => {
-        const base = 215;
+        const base = 812;
         const container = document.getElementById("delyva")
         const selcare = document.querySelector("#selcare")
         const hajj = document.querySelector("#hajj")
         const terra = document.querySelector("#terra")
         const ronda = document.querySelector("#ronda")
         const inference = document.querySelector("#inference")
-        const delyva = document.querySelector("#delyva")
 
         const element = document.querySelector("#project6");
         const elementTitle = container.querySelector('.title')
         const elementDesc = container.querySelector('.desc')
 
-        const moreThan = base + selcare.scrollHeight + hajj.scrollHeight + terra.scrollHeight + ronda.scrollHeight + inference.scrollHeight + delyva.scrollHeight  + (delyva.scrollHeight / 3);
+        const moreThan = base + selcare.scrollHeight + hajj.scrollHeight + terra.scrollHeight + ronda.scrollHeight + inference.scrollHeight;
 
         if (prevScrollPos > moreThan) {
             element.classList.remove('animated-out-left')

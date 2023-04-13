@@ -9,7 +9,7 @@ const Project2 = ({ prevScrollPos }) => {
     }
 
     useEffect(() => {
-        const base = 215;
+        const base = 812;
         const container = document.getElementById('inference');
         const selcare = document.querySelector("#selcare")
         const hajj = document.querySelector("#hajj")
@@ -22,7 +22,7 @@ const Project2 = ({ prevScrollPos }) => {
         const elementTitle = container.querySelector('.title')
         const elementDesc = container.querySelector('.desc')
 
-        const moreThan = base + selcare.scrollHeight + hajj.scrollHeight + terra.scrollHeight + ronda.scrollHeight + inference.scrollHeight  + (inference.scrollHeight / 3);
+        const moreThan = base + selcare.scrollHeight + hajj.scrollHeight + terra.scrollHeight + ronda.scrollHeight;
         const lessThan = base + selcare.scrollHeight + hajj.scrollHeight + terra.scrollHeight + ronda.scrollHeight + inference.scrollHeight + delyva.scrollHeight + (delyva.scrollHeight / 3);
 
         if (prevScrollPos > moreThan && prevScrollPos < lessThan) {

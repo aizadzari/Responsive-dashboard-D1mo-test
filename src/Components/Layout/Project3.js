@@ -12,7 +12,7 @@ const Project3 = ({ prevScrollPos }) => {
     }
 
     useEffect(() => {
-        const base = 215;
+        const base = 812;
         const selcare = document.querySelector("#selcare")
         const hajj = document.querySelector("#hajj")
 
@@ -23,9 +23,8 @@ const Project3 = ({ prevScrollPos }) => {
 
 
 
-        const moreThan = base + selcare.scrollHeight + (hajj.scrollHeight / 3);
+        const moreThan = base;
         const lessThan = base + selcare.scrollHeight + hajj.scrollHeight + (hajj.scrollHeight / 3);
-
         if (prevScrollPos > moreThan && prevScrollPos < lessThan) {
             element.classList.remove('animated-out-right')
             element.classList.add('animated-in-right')
