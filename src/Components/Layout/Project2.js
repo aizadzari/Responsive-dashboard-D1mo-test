@@ -71,10 +71,10 @@ const Project2 = ({ prevScrollPos }) => {
                     <p className='text-start text-lg-end text-dark fw-bold fs-4 desc' style={{ transitionDelay: '200ms' }}>Develop and Mantain Company Website</p>
 
                     <div className='card-code is-right shadow rounded bg-light p-4 small' id='project2'>
-                        <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Built a website from scratch using HTML, CSS and JavaScript.</p></div>
-                        <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Designed a custom UI layout using the versatile Bootstrap framework.</p></div>
-                        <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Integrated Mapbox API into the application, including the placement of a custom marker at the organization's headquarters.</p></div>
-                        <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Deployed the website on Netlify.</p></div>
+                        <div className='d-flex'><i className="ri-terminal-line me-2 text-primary fw-bold"></i><p className='text-dark font-monospace'>Built a website from scratch using HTML, CSS and JavaScript.</p></div>
+                        <div className='d-flex'><i className="ri-terminal-line me-2 text-primary fw-bold"></i><p className='text-dark font-monospace'>Designed a custom UI layout using the versatile Bootstrap framework.</p></div>
+                        <div className='d-flex'><i className="ri-terminal-line me-2 text-primary fw-bold"></i><p className='text-dark font-monospace'>Integrated Mapbox API into the application, including the placement of a custom marker at the organization's headquarters.</p></div>
+                        <div className='d-flex'><i className="ri-terminal-line me-2 text-primary fw-bold"></i><p className='text-dark font-monospace'>Deployed the website on Netlify.</p></div>
                     </div>
                 </div>
             </div>

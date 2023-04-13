@@ -60,9 +60,9 @@ const Project5 = ({ prevScrollPos }) => {
                     <p className='text-start  text-dark fw-bold fs-4 desc' style={{ transitionDelay: '100ms' }}>Develop Website for hajj pilgrims organization</p>
 
                     <div className='card-code is-left shadow rounded bg-light p-4 small' id='project5'>
-                        <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Built a website from scratch using HTML, CSS, JavaScript and Vue@3.</p></div>
-                        <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Designed and developed the user interface (UI) for the Hajj application,responsive web development techniques to ensure seamless user experience across a range of devices and screen sizes.</p></div>
-                        <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Deployed the website on Netlify.</p></div>
+                        <div className='d-flex'><i className="ri-terminal-line me-2 text-primary fw-bold"></i><p className='text-dark font-monospace'>Built a website from scratch using HTML, CSS, JavaScript and Vue@3.</p></div>
+                        <div className='d-flex'><i className="ri-terminal-line me-2 text-primary fw-bold"></i><p className='text-dark font-monospace'>Designed and developed the user interface (UI) for the Hajj application,responsive web development techniques to ensure seamless user experience across a range of devices and screen sizes.</p></div>
+                        <div className='d-flex'><i className="ri-terminal-line me-2 text-primary fw-bold"></i><p className='text-dark font-monospace'>Deployed the website on Netlify.</p></div>
                     </div>
                 </div>
                 <div className="position-relative col-lg-6 col-md-12 overflow-hidden rounded mb-4 d-none d-lg-block" style={{ zIndex: 1 }}>
