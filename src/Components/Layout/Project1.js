@@ -12,7 +12,7 @@ const Project1 = ({ prevScrollPos }) => {
     }
 
     useEffect(() => {
-        const base = 812;
+        const base = 1212;
         const container = document.getElementById('ronda');
         const elementTitle = container.querySelector('.title')
         const elementDesc = container.querySelector('.desc')

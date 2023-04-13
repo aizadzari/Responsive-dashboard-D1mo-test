@@ -22,6 +22,7 @@ const Content = () => {
         const elementbg3 = document.querySelector('.animate-bg-3');
         const elementbg4 = document.querySelector('.animate-bg-4');
 
+
         const element1 = document.querySelector('.animate-box-1');
         const element2 = document.querySelector('.animate-box-2');
         const element3 = document.querySelector('.animate-box-3');
@@ -35,6 +36,7 @@ const Content = () => {
         if (elementbg2) elementbg2.classList.add('animation-bg-faded')
         if (elementbg3) elementbg3.classList.add('animation-bg-faded')
         if (elementbg4) elementbg4.classList.add('animation-bg-faded')
+
 
         if (element1) element1.classList.add('animation-faded')
         if (element2) element2.classList.add('animation-faded')
@@ -54,6 +56,11 @@ const Content = () => {
 
 
         window.addEventListener("scroll", handleScroll);
+
+        if (prevScrollPos > 1000) {
+            const element9 = document.querySelector('.animate-box-9');
+            if (element9) element9.classList.add('animation-faded')
+        }
 
         return () => {
             window.removeEventListener("scroll", handleScroll);
@@ -90,8 +97,8 @@ const Content = () => {
                             <div className='col-md-8 mb-3 col-sm-12 animate-bg-1'>
                                 <div className='card shadow border-0 bg-custom-1 text-white h-100'>
                                     <div className='card-body p-5'>
-                                        <h1 className='animate-box-1' style={{ transitionDelay: "300ms" }}>Hey, I'm Aizad,</h1>
-                                        <h2 className='animate-box-2' style={{ transitionDelay: "400ms" }}>a Frontend Developer with 5 years of experience</h2>
+                                        <h1 className='animate-box-1 fw-bold' style={{ transitionDelay: "300ms" }}>Hey, I'm Aizad,</h1>
+                                        <h1 className='animate-box-2 fw-bold' style={{ transitionDelay: "400ms" }}>a <span className='text-secondary'>Frontend Developer</span> with <span className='text-secondary'>5 years</span> <br /> of experience</h1>
 
                                         <p className='small mt-4 animate-box-3' style={{ transitionDelay: "500ms" }}>As an experienced software developer, I possess a diverse and promising skillset that enables me to bring forth expertise in designing, developing, and maintaining software systems.</p>
 
@@ -117,7 +124,7 @@ const Content = () => {
                             <div className='col-lg-5 col-md-12 mb-3 animate-bg-3' style={{ transitionDelay: '500ms' }}>
                                 <div className='card shadow border-0 '>
                                     <div className='card-body p-5'>
-                                        <h4 className='mb-4 animate-box-4' style={{ transitionDelay: '700ms' }}>About me</h4>
+                                        <h4 className='mb-4 animate-box-4 fw-bold' style={{ transitionDelay: '700ms' }}>About me</h4>
                                         <p className='small animate-box-5' style={{ transitionDelay: '800ms' }}>Hello there! My name is Aizad and I have a passion for crafting compelling digital experiences that thrive on the internet. My interest in web development began in 2016 when I had the opportunity to experiment with building a custom website using HTML, CSS, and JavaScript. This allowed me to gain a deeper understanding of web development and improve my skills in these technologies.</p>
                                         <p className='small animate-box-6' style={{ transitionDelay: '900ms' }}>I quickly realized my love for this field and decided to pursue it further. Since then, I have been fortunate enough to work with a start-up, where I have gained valuable experience in building accessible and inclusive products for diverse clients. My primary focus now is to continue honing my skills in web development and creating exceptional digital experiences that meet the highest standards of quality and user satisfaction.</p>
                                         <p className='small mb-4 animate-box-7' style={{ transitionDelay: '1000ms' }}>Here are a few technologies I’ve been working with recently:</p>
@@ -138,7 +145,7 @@ const Content = () => {
                             <div className='col-lg-7 col-md-12 mb-3 animate-bg-4' style={{ transitionDelay: '600ms' }}>
                                 <div className='card shadow border-0 h-100 '>
                                     <div className='card-body p-5'>
-                                        <h4 className='mb-2'>Experience</h4>
+                                        <h4 className='mb-2 fw-bold'>Experience</h4>
 
                                         <div className='d-flex flex-column'>
                                             <div className='w-100 mb-4 overflow-scroll'>
@@ -206,7 +213,12 @@ const Content = () => {
                     </div>
                 </div>
 
-                <div className={`container-box position-relative my-5`}>
+                <div className='divider-text animate-box-9' style={{ transitionDelay: '100ms' }}>
+                    <h1 className='fw-bolder'>Some Things I’ve Built</h1>
+                    <div className='line' />
+                </div>
+
+                <div className={`container-box position-relative my-5`} style={{ transitionDelay: '200ms' }}>
                     <Project3 prevScrollPos={prevScrollPos} />
                     <Project5 prevScrollPos={prevScrollPos} />
                     <Project4 prevScrollPos={prevScrollPos} />

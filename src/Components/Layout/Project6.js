@@ -10,7 +10,7 @@ const Project6 = ({ prevScrollPos }) => {
     }
 
     useEffect(() => {
-        const base = 812;
+        const base = 1212;
         const container = document.getElementById("delyva")
         const selcare = document.querySelector("#selcare")
         const hajj = document.querySelector("#hajj")

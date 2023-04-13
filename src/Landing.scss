@@ -5,12 +5,13 @@ $dark: rgb(30, 23, 30);
 $white: rgb(255, 255, 255);
 $light: rgb(255, 253, 255);
 $secondary: #FF9900;
+$muted: rgb(125, 125, 133);
 
 $theme-colors: (
     "primary": $primary,
     "dark": $dark,
     "light": $light,
-    "secondary": $secondary,
+    "secondary": $secondary
 );
 
 @import "./node_modules/bootstrap/scss/variables";
@@ -24,8 +25,32 @@ body {
     background: rgb(237, 241, 247);
 }
 
+
 .bg-custom-1 {
     background-image: linear-gradient(45deg, rgb(73 0 191) 10%, #6100FF);
+}
+
+.text-muted {
+    color: $muted !important;
+}
+
+.divider-text {
+    height: 300px;
+
+    @extend .mt-5;
+    @extend .p-5;
+    @extend .d-flex;
+    @extend .justify-content-start;
+    @extend .align-items-center;
+
+    .line {
+        width: 300px;
+        background-color: $muted;
+        height: 1px;
+
+        @extend .ms-4;
+        @extend .text-muted;
+    }
 }
 
 .animate-bg-1,
@@ -50,6 +75,7 @@ body {
 }
 
 
+.animate-box-9,
 .animate-box-1,
 .animate-box-2,
 .animate-box-3,

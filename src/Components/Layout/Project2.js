@@ -9,7 +9,7 @@ const Project2 = ({ prevScrollPos }) => {
     }
 
     useEffect(() => {
-        const base = 812;
+        const base = 1212;
         const container = document.getElementById('inference');
         const selcare = document.querySelector("#selcare")
         const hajj = document.querySelector("#hajj")

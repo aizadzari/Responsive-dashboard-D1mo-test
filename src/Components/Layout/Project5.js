@@ -9,7 +9,7 @@ const Project5 = ({ prevScrollPos }) => {
     }
 
     useEffect(() => {
-        const base = 812;
+        const base = 1212;
         const selcare = document.querySelector("#selcare")
         const hajj = document.querySelector("#hajj")
         const terra = document.querySelector("#terra")
