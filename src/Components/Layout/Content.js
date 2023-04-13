@@ -9,6 +9,7 @@ import Project3 from './Project3'
 import Project4 from './Project4'
 import Project5 from './Project5'
 import Project6 from './Project6'
+import pdfFile from '../../resume.pdf'
 
 const Content = () => {
     const [menu, setMenu] = useState('1')
@@ -95,7 +96,7 @@ const Content = () => {
                                         <p className='small mt-4 animate-box-3' style={{ transitionDelay: "500ms" }}>As an experienced software developer, I possess a diverse and promising skillset that enables me to bring forth expertise in designing, developing, and maintaining software systems.</p>
 
                                         <div className='mt-5 bottom-1 left-1'>
-                                            {/* <button className='btn btn-dark rounded-pill me-2'>Contact me</button> */}
+                                            <button className='btn btn-dark rounded-pill me-2' onClick={() => window.open(pdfFile)}>CV</button>
                                             <button className='btn btn-light rounded-pill' onClick={handleLinkedIn}><i className="ri-linkedin-fill align-middle"></i></button>
                                         </div>
                                     </div>
