@@ -207,9 +207,6 @@ const Content = () => {
                 </div>
 
                 <div className={`container-box position-relative my-5`}>
-                    {/* {project === 'ronda' ? <Project1 /> : null}
-                    {project === 'inference' ? <Project2 /> : null}
-                    {project === 'selcare' ? <Project3 /> : null} */}
                     <Project3 prevScrollPos={prevScrollPos} />
                     <Project5 prevScrollPos={prevScrollPos} />
                     <Project4 prevScrollPos={prevScrollPos} />

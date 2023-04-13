@@ -14,8 +14,10 @@ const Project5 = ({ prevScrollPos }) => {
         const hajj = document.querySelector("#hajj")
         const terra = document.querySelector("#terra")
 
+        const container = document.getElementById('hajj');
         const element = document.querySelector("#project5");
-
+        const elementTitle = container.querySelector('.title')
+        const elementDesc = container.querySelector('.desc')
 
 
         const moreThan = base + selcare.scrollHeight + terra.scrollHeight + (terra.scrollHeight / 3);
@@ -24,14 +26,9 @@ const Project5 = ({ prevScrollPos }) => {
         if (prevScrollPos > moreThan && prevScrollPos < lessThan) {
             element.classList.remove('animated-out-left')
             element.classList.add('animated-in-left')
+            elementTitle.classList.add('animation-faded')
+            elementDesc.classList.add('animation-faded')
         }
-        //  else if (prevScrollPos > lessThan) {
-        //     element.classList.add('animated-out-left')
-        //     element.classList.remove('animated-in-left')
-        // } else {
-        //     element.classList.add('animated-out-left')
-        //     element.classList.remove('animated-in-left')
-        // }
     }, [prevScrollPos])
     return (
         <div className='project-container d-flex align-items-center mb-5 py-5' id='hajj'>
@@ -59,8 +56,8 @@ const Project5 = ({ prevScrollPos }) => {
                     </div>
                 </div>
                 <div className='position-relative col-lg-6 col-md-12' style={{ zIndex: 2 }}>
-                    <p className='text-start  text-primary mb-1'>Featured Project | <span className='text-muted'>Sep 2022 - Sep 2022</span></p>
-                    <p className='text-start  text-dark fw-bold fs-4'>Develop Website for hajj pilgrims organization</p>
+                    <p className='text-start  text-primary mb-1 title' style={{ transitionDelay: '100ms' }}>Featured Project | <span className='text-muted'>Sep 2022 - Sep 2022</span></p>
+                    <p className='text-start  text-dark fw-bold fs-4 desc' style={{ transitionDelay: '100ms' }}>Develop Website for hajj pilgrims organization</p>
 
                     <div className='card-code is-left shadow rounded bg-light p-4 small' id='project5'>
                         <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Built a website from scratch using HTML, CSS, JavaScript and Vue@3.</p></div>

@@ -16,7 +16,10 @@ const Project3 = ({ prevScrollPos }) => {
         const selcare = document.querySelector("#selcare")
         const hajj = document.querySelector("#hajj")
 
+        const container = document.getElementById('selcare');
         const element = document.querySelector("#project3");
+        const elementTitle = container.querySelector('.title')
+        const elementDesc = container.querySelector('.desc')
 
 
 
@@ -26,14 +29,10 @@ const Project3 = ({ prevScrollPos }) => {
         if (prevScrollPos > moreThan && prevScrollPos < lessThan) {
             element.classList.remove('animated-out-right')
             element.classList.add('animated-in-right')
+            elementTitle.classList.add('animation-faded')
+            elementDesc.classList.add('animation-faded')
         }
-        //  else if (prevScrollPos > lessThan) {
-        //     element.classList.add('animated-out-right')
-        //     element.classList.remove('animated-in-right')
-        // } else {
-        //     element.classList.add('animated-out-right')
-        //     element.classList.remove('animated-in-right')
-        // }
+
     }, [prevScrollPos])
     return (
         <div className='project-container d-flex align-items-center mb-5 py-5' id='selcare'>
@@ -80,8 +79,8 @@ const Project3 = ({ prevScrollPos }) => {
                     </div>
                 </div>
                 <div className='position-relative col-lg-6 col-md-12'>
-                    <p className='text-start text-lg-end text-primary mb-1'>Featured Project | <span className='text-muted'>Dec 2021 - Present</span></p>
-                    <p className='text-start text-lg-end text-dark fw-bold fs-4'>Develop and Mantain Webite for GLC healthcare</p>
+                    <p className='text-start text-lg-end text-primary mb-1 title' style={{ transitionDelay: '100ms' }}>Featured Project | <span className='text-muted'>Dec 2021 - Present</span></p>
+                    <p className='text-start text-lg-end text-dark fw-bold fs-4 desc' style={{ transitionDelay: '200ms' }}>Develop and Mantain Webite for GLC healthcare</p>
 
                     <div className='card-code is-right shadow rounded bg-light p-4 small' id='project3'>
                         <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Built a website from Templete using HTML, CSS, JavaScript and Reactjs.</p></div>

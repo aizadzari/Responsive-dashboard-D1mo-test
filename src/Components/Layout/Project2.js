@@ -10,6 +10,7 @@ const Project2 = ({ prevScrollPos }) => {
 
     useEffect(() => {
         const base = 215;
+        const container = document.getElementById('inference');
         const selcare = document.querySelector("#selcare")
         const hajj = document.querySelector("#hajj")
         const terra = document.querySelector("#terra")
@@ -18,7 +19,8 @@ const Project2 = ({ prevScrollPos }) => {
         const delyva = document.querySelector("#delyva")
 
         const element = document.querySelector("#project2");
-
+        const elementTitle = container.querySelector('.title')
+        const elementDesc = container.querySelector('.desc')
 
         const moreThan = base + selcare.scrollHeight + hajj.scrollHeight + terra.scrollHeight + ronda.scrollHeight + inference.scrollHeight  + (inference.scrollHeight / 3);
         const lessThan = base + selcare.scrollHeight + hajj.scrollHeight + terra.scrollHeight + ronda.scrollHeight + inference.scrollHeight + delyva.scrollHeight + (delyva.scrollHeight / 3);
@@ -26,6 +28,8 @@ const Project2 = ({ prevScrollPos }) => {
         if (prevScrollPos > moreThan && prevScrollPos < lessThan) {
             element.classList.remove('animated-out-right')
             element.classList.add('animated-in-right')
+            elementTitle.classList.add('animation-faded')
+            elementDesc.classList.add('animation-faded')
         } 
         // else if (prevScrollPos > lessThan) {
         //     element.classList.add('animated-out-right')
@@ -63,8 +67,8 @@ const Project2 = ({ prevScrollPos }) => {
                     </div>
                 </div>
                 <div className='position-relative col-lg-6 col-md-12'>
-                    <p className='text-start text-lg-end text-primary mb-1'>Featured Project | <span className='text-muted'>Jun 2021 - Jun 2021</span></p>
-                    <p className='text-start text-lg-end text-dark fw-bold fs-4'>Develop and Mantain Company Website</p>
+                    <p className='text-start text-lg-end text-primary mb-1 title' style={{ transitionDelay: '100ms' }}>Featured Project | <span className='text-muted'>Jun 2021 - Jun 2021</span></p>
+                    <p className='text-start text-lg-end text-dark fw-bold fs-4 desc' style={{ transitionDelay: '200ms' }}>Develop and Mantain Company Website</p>
 
                     <div className='card-code is-right shadow rounded bg-light p-4 small' id='project2'>
                         <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Built a website from scratch using HTML, CSS and JavaScript.</p></div>

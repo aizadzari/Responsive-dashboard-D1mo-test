@@ -11,22 +11,25 @@ const Project4 = ({ prevScrollPos }) => {
 
     useEffect(() => {
         const base = 215;
+        const container = document.getElementById('terra');
         const selcare = document.querySelector("#selcare")
         const hajj = document.querySelector("#hajj")
         const terra = document.querySelector("#terra")
-        const ronda = document.querySelector("#ronda")
+        // const ronda = document.querySelector("#ronda")
 
         const element = document.querySelector("#project4");
+        const elementTitle = container.querySelector('.title')
+        const elementDesc = container.querySelector('.desc')
 
-
-
-        const moreThan = base + selcare.scrollHeight + hajj.scrollHeight + (hajj.scrollHeight / 3);
-        const lessThan = base + selcare.scrollHeight + hajj.scrollHeight + terra.scrollHeight + ronda.scrollHeight + (ronda.scrollHeight / 3);
+        const moreThan = base + selcare.scrollHeight + hajj.scrollHeight + terra.scrollHeight + 150;
+        const lessThan = base + selcare.scrollHeight + hajj.scrollHeight + terra.scrollHeight + (terra.scrollHeight / 3);
 
         if (prevScrollPos > moreThan && prevScrollPos < lessThan) {
             element.classList.remove('animated-out-right')
             element.classList.add('animated-in-right')
-        } 
+            elementTitle.classList.add('animation-faded')
+            elementDesc.classList.add('animation-faded')
+        }
         // else if (prevScrollPos > lessThan) {
         //     element.classList.add('animated-out-right')
         //     element.classList.remove('animated-in-right')
@@ -67,8 +70,8 @@ const Project4 = ({ prevScrollPos }) => {
                     </div>
                 </div>
                 <div className='position-relative col-lg-6 col-md-12'>
-                    <p className='text-start text-lg-end text-primary mb-1'>Featured Project | <span className='text-muted'>Aug 2021- Aug 2021</span></p>
-                    <p className='text-start text-lg-end text-dark fw-bold fs-4'>Telco Service Provider</p>
+                    <p className='text-start text-lg-end text-primary mb-1 title' style={{ transitionDelay: '100ms' }}>Featured Project | <span className='text-muted'>Aug 2021- Aug 2021</span></p>
+                    <p className='text-start text-lg-end text-dark fw-bold fs-4 desc' style={{ transitionDelay: '200ms' }}>Telco Service Provider</p>
 
                     <div className='card-code is-right shadow rounded bg-light p-4 small' id='project4'>
                         <div className='d-flex'><i className="ri-arrow-right-s-line me-2"></i><p className='text-dark font-monospace'>Built a website from scratch using HTML, CSS, JavaScript and Vue@2.</p></div>
