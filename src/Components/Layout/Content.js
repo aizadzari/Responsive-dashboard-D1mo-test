@@ -31,6 +31,8 @@ const Content = () => {
         const element6 = document.querySelector('.animate-box-6');
         const element7 = document.querySelector('.animate-box-7');
         const element8 = document.querySelector('.animate-box-8');
+        const element9 = document.querySelector('.animate-box-10');
+        const element10 = document.querySelector('.animate-box-11');
 
         if (elementbg1) elementbg1.classList.add('animation-bg-faded')
         if (elementbg2) elementbg2.classList.add('animation-bg-faded')
@@ -46,6 +48,8 @@ const Content = () => {
         if (element6) element6.classList.add('animation-faded')
         if (element7) element7.classList.add('animation-faded')
         if (element8) element8.classList.add('animation-faded')
+        if (element9) element9.classList.add('animation-faded')
+        if (element10) element10.classList.add('animation-faded')
     }, [])
 
     useEffect(() => {
@@ -123,13 +127,13 @@ const Content = () => {
                         <div className='row'>
                             <div className='col-lg-5 col-md-12 mb-3 animate-bg-3' style={{ transitionDelay: '500ms' }}>
                                 <div className='card shadow border-0 '>
-                                    <div className='card-body p-5'>
+                                    <div className='card-body p-5' id='about-me'>
                                         <h4 className='mb-4 animate-box-4 fw-bold' style={{ transitionDelay: '700ms' }}>About me</h4>
                                         <p className='small animate-box-5' style={{ transitionDelay: '800ms' }}>Hello there! My name is Aizad and I have a passion for crafting compelling digital experiences that thrive on the internet. My interest in web development began in 2016 when I had the opportunity to experiment with building a custom website using HTML, CSS, and JavaScript. This allowed me to gain a deeper understanding of web development and improve my skills in these technologies.</p>
                                         <p className='small animate-box-6' style={{ transitionDelay: '900ms' }}>I quickly realized my love for this field and decided to pursue it further. Since then, I have been fortunate enough to work with a start-up, where I have gained valuable experience in building accessible and inclusive products for diverse clients.</p>
-                                        <p className='small animate-box-6' style={{ transitionDelay: '900ms' }}>My primary focus now is to expand my knowledge and expertise in the realm of Web3 technology. This involves delving deeper into the underlying concepts, protocols, and applications that comprise the decentralized web ecosystem. It is important to stay abreast of the latest developments in Web3 and to continue building my skills and understanding of this exciting new frontier in technology</p>
+                                        <p className='small animate-box-10' style={{ transitionDelay: '1000ms' }}>My primary focus now is to expand my knowledge and expertise in the realm of Web 3.0 technology. This involves delving deeper into the underlying concepts, protocols, and applications that comprise the decentralized web ecosystem. It is important to stay abreast of the latest developments in Web 3.0 and to continue building my skills and understanding of this exciting new frontier in technology</p>
                                         {/* <p className='small mb-4 animate-box-7' style={{ transitionDelay: '1000ms' }}>Here are a few technologies I’ve been working with recently:</p> */}
-                                        <p className='small animate-box-6' style={{ transitionDelay: '900ms' }}>Here are a few technologies I’ve been working with recently:</p>
+                                        <p className='small animate-box-11' style={{ transitionDelay: '1100ms' }}>Here are a few technologies I’ve been working with recently:</p>
 
                                         <div className='d-flex justify-content-evenly flex-md-wrap animate-box-8' style={{ transitionDelay: '1100ms' }}>
                                             <div><i className="ri-javascript-fill ri-2x"></i></div>
