@@ -96,7 +96,7 @@ const Content = () => {
         <React.Fragment>
             <div className='pb-lg-5 content-animated'>
                 <div>
-                    <div className='container-box position-relative my-2' >
+                    <div className='container-box position-relative my-2 overflow-hidden' >
                         <div className='row'>
                             <div className='col-md-8 mb-3 col-sm-12 animate-bg-1'>
                                 <div className='card shadow border-0 bg-custom-1 text-white h-100'>
