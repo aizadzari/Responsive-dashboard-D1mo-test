@@ -76,6 +76,10 @@ const Content = () => {
         window.open('https://www.linkedin.com/in/aizad-zari-3b6026157/')
     }
 
+    const handleGithub = () => {
+        window.open('https://github.com/aizadzari')
+    }
+
     const handleMenu = (key) => {
         console.log('====================================');
         console.log(project);
@@ -108,7 +112,8 @@ const Content = () => {
 
                                         <div className='mt-5 bottom-1 left-1'>
                                             <button className='btn btn-dark rounded-pill me-2' onClick={() => window.open(pdfFile)}>CV</button>
-                                            <button className='btn btn-light rounded-pill' onClick={handleLinkedIn}><i className="ri-linkedin-fill align-middle"></i></button>
+                                            <button className='btn btn-light rounded-pill me-2' onClick={handleLinkedIn}><i className="ri-linkedin-fill align-middle"></i></button>
+                                            <button className='btn btn-light rounded-pill' onClick={handleGithub}><i class="ri-github-fill"></i></button>
                                         </div>
                                     </div>
                                 </div>
