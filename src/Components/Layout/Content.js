@@ -96,6 +96,8 @@ const Content = () => {
             targetElement.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" })
         }, 100);
     }
+
+    // onClick={() => window.open(pdfFile)}
     return (
         <React.Fragment>
             <div className='pb-lg-5 content-animated'>
@@ -111,7 +113,7 @@ const Content = () => {
                                         <p className='small mt-4 animate-box-3' style={{ transitionDelay: "500ms" }}>As an experienced software developer, I possess a diverse and promising skillset that enables me to bring forth expertise in designing, developing, and maintaining software systems.</p>
 
                                         <div className='mt-5 bottom-1 left-1'>
-                                            <button className='btn btn-dark rounded-pill me-2' onClick={() => window.open(pdfFile)}>CV</button>
+                                            <button className='btn btn-dark rounded-pill me-2'>CV</button>
                                             <button className='btn btn-light rounded-pill me-2' onClick={handleLinkedIn}><i className="ri-linkedin-fill align-middle"></i></button>
                                             <button className='btn btn-light rounded-pill' onClick={handleGithub}><i class="ri-github-fill"></i></button>
                                         </div>
