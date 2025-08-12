@@ -9,7 +9,7 @@ import Project3 from './Project3'
 import Project4 from './Project4'
 import Project5 from './Project5'
 import Project6 from './Project6'
-import pdfFile from '../../resume.pdf'
+// import pdfFile from '../../resume.pdf'
 
 const Content = () => {
     const [menu, setMenu] = useState('1')
