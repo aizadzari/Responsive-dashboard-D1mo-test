@@ -54,7 +54,7 @@ const Project5 = () => {
         <div className='project-container d-flex align-items-center py-5' id='hajj' ref={containerRef}>
             <div className='row'>
                 <div className="position-relative col-lg-6 col-md-12 overflow-hidden rounded mb-4 d-block d-lg-none" style={{ zIndex: 1 }}>
-                    <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
+                    <div id="carouselExampleCaptions" className="carousel slide shadow border border-white rounded overflow-hidden" data-bs-ride="carousel">
                         <div className="carousel-indicators">
                             <button type="button" onClick={() => handleImgBtn('1')} data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
                             <button type="button" onClick={() => handleImgBtn('2')} data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -86,7 +86,7 @@ const Project5 = () => {
                     </div>
                 </div>
                 <div className="position-relative col-lg-6 col-md-12 overflow-hidden rounded mb-4 d-none d-lg-block" style={{ zIndex: 1 }}>
-                    <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
+                    <div id="carouselExampleCaptions" className="carousel slide shadow border border-white rounded overflow-hidden" data-bs-ride="carousel">
                         <div className="carousel-indicators">
                             <button type="button" onClick={() => handleImgBtn('1')} data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
                             <button type="button" onClick={() => handleImgBtn('2')} data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
