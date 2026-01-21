@@ -1,40 +1,60 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import img1 from '../../img/selcare1.png'
 import img2 from '../../img/selcare2.png'
 import img3 from '../../img/selcare3.png'
 import img4 from '../../img/selcare4.png'
 import img5 from '../../img/selcare5.png'
 
-const Project3 = ({ prevScrollPos }) => {
+const Project3 = () => {
     const [img, setImg] = useState('1')
+    const containerRef = useRef(null)
+    const cardRef = useRef(null)
+    const titleRef = useRef(null)
+    const descRef = useRef(null)
+
     const handleImgBtn = (key) => {
         setImg(key)
     }
 
     useEffect(() => {
-        const base = 1212;
-        const selcare = document.querySelector("#selcare")
-        const hajj = document.querySelector("#hajj")
+        const container = containerRef.current
+        const card = cardRef.current
+        const title = titleRef.current
+        const desc = descRef.current
 
-        const container = document.getElementById('selcare');
-        const element = document.querySelector("#project3");
-        const elementTitle = container.querySelector('.title')
-        const elementDesc = container.querySelector('.desc')
+        if (!container || !card || !title || !desc) return
 
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        card.classList.remove('animated-out-right')
+                        card.classList.add('animated-in-right')
+                        title.classList.add('animation-faded')
+                        desc.classList.add('animation-faded')
+                    } else {
+                        card.classList.add('animated-out-right')
+                        card.classList.remove('animated-in-right')
+                        title.classList.remove('animation-faded')
+                        desc.classList.remove('animation-faded')
+                    }
+                })
+            },
+            {
+                threshold: 0.3,
+                rootMargin: '-10% 0px -10% 0px'
+            }
+        )
 
+        observer.observe(container)
 
-        const moreThan = base;
-        const lessThan = base + selcare.scrollHeight + hajj.scrollHeight + (hajj.scrollHeight / 3);
-        if (prevScrollPos > moreThan && prevScrollPos < lessThan) {
-            element.classList.remove('animated-out-right')
-            element.classList.add('animated-in-right')
-            elementTitle.classList.add('animation-faded')
-            elementDesc.classList.add('animation-faded')
+        return () => {
+            observer.disconnect()
         }
+    }, [])
 
-    }, [prevScrollPos])
     return (
-        <div className='project-container d-flex align-items-center mb-5 py-5' id='selcare'>
+        <div className='project-container d-flex align-items-center py-5' id='selcare' ref={containerRef}>
             <div className='row'>
                 <div className="position-relative col-lg-6 col-md-12 overflow-hidden rounded mb-4">
                     <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
@@ -78,10 +98,10 @@ const Project3 = ({ prevScrollPos }) => {
                     </div>
                 </div>
                 <div className='position-relative col-lg-6 col-md-12'>
-                    <p className='text-start text-lg-end text-primary mb-1 title' style={{ transitionDelay: '100ms' }}>Featured Project | <span className='text-muted'>Dec 2021 - Present</span></p>
-                    <p className='text-start text-lg-end text-dark fw-bold fs-4 desc' style={{ transitionDelay: '200ms' }}>Develop and Mantain Webite for GLC healthcare</p>
+                    <p className='text-start text-lg-end text-primary mb-1 title' ref={titleRef} style={{ transitionDelay: '100ms' }}>Featured Project | <span className='text-muted'>Dec 2021 - Present</span></p>
+                    <p className='text-start text-lg-end text-dark fw-bold fs-4 desc' ref={descRef} style={{ transitionDelay: '200ms' }}>Develop and Mantain Webite for GLC healthcare</p>
 
-                    <div className='card-code is-right shadow rounded bg-light p-4 small' id='project3'>
+                    <div className='card-code is-right shadow rounded bg-light p-4 small' id='project3' ref={cardRef}>
                         <div className='d-flex'><i className="ri-terminal-line me-2 text-primary fw-bold"></i><p className='text-dark font-monospace'>Built a website from Templete using HTML, CSS, JavaScript and Reactjs.</p></div>
                         <div className='d-flex'><i className="ri-terminal-line me-2 text-primary fw-bold"></i><p className='text-dark font-monospace'>Designed and developed secure user authentication industry-standard encryption algorithms and best practices to ensure data privacy and protect against unauthorized access.</p></div>
                         <div className='d-flex'><i className="ri-terminal-line me-2 text-primary fw-bold"></i><p className='text-dark font-monospace'>Utilized Redux to manage the state structure, which simplified state management, improved performance, and provided a consistent state structure.</p></div>

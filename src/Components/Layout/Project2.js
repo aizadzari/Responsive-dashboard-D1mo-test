@@ -1,46 +1,57 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import img1 from '../../img/inference1.png'
 import img2 from '../../img/inference2.png'
 
-const Project2 = ({ prevScrollPos }) => {
+const Project2 = () => {
     const [img, setImg] = useState('1')
+    const containerRef = useRef(null)
+    const cardRef = useRef(null)
+    const titleRef = useRef(null)
+    const descRef = useRef(null)
+
     const handleImgBtn = (key) => {
         setImg(key)
     }
 
     useEffect(() => {
-        const base = 1212;
-        const container = document.getElementById('inference');
-        const selcare = document.querySelector("#selcare")
-        const hajj = document.querySelector("#hajj")
-        const terra = document.querySelector("#terra")
-        const ronda = document.querySelector("#ronda")
-        const inference = document.querySelector("#inference")
-        const delyva = document.querySelector("#delyva")
+        const container = containerRef.current
+        const card = cardRef.current
+        const title = titleRef.current
+        const desc = descRef.current
 
-        const element = document.querySelector("#project2");
-        const elementTitle = container.querySelector('.title')
-        const elementDesc = container.querySelector('.desc')
+        if (!container || !card || !title || !desc) return
 
-        const moreThan = base + selcare.scrollHeight + hajj.scrollHeight + terra.scrollHeight + ronda.scrollHeight;
-        const lessThan = base + selcare.scrollHeight + hajj.scrollHeight + terra.scrollHeight + ronda.scrollHeight + inference.scrollHeight + delyva.scrollHeight + (delyva.scrollHeight / 3);
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        card.classList.remove('animated-out-right')
+                        card.classList.add('animated-in-right')
+                        title.classList.add('animation-faded')
+                        desc.classList.add('animation-faded')
+                    } else {
+                        card.classList.add('animated-out-right')
+                        card.classList.remove('animated-in-right')
+                        title.classList.remove('animation-faded')
+                        desc.classList.remove('animation-faded')
+                    }
+                })
+            },
+            {
+                threshold: 0.3,
+                rootMargin: '-10% 0px -10% 0px'
+            }
+        )
 
-        if (prevScrollPos > moreThan && prevScrollPos < lessThan) {
-            element.classList.remove('animated-out-right')
-            element.classList.add('animated-in-right')
-            elementTitle.classList.add('animation-faded')
-            elementDesc.classList.add('animation-faded')
-        } 
-        // else if (prevScrollPos > lessThan) {
-        //     element.classList.add('animated-out-right')
-        //     element.classList.remove('animated-in-right')
-        // } else {
-        //     element.classList.add('animated-out-right')
-        //     element.classList.remove('animated-in-right')
-        // }
-    }, [prevScrollPos])
+        observer.observe(container)
+
+        return () => {
+            observer.disconnect()
+        }
+    }, [])
+
     return (
-        <div className='project-container d-flex align-items-center mb-5 py-5' id='inference'>
+        <div className='project-container d-flex align-items-center py-5' id='inference' ref={containerRef}>
             <div className='row'>
                 <div className="position-relative col-lg-6 col-md-12 overflow-hidden rounded mb-4">
                     <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
@@ -67,10 +78,10 @@ const Project2 = ({ prevScrollPos }) => {
                     </div>
                 </div>
                 <div className='position-relative col-lg-6 col-md-12'>
-                    <p className='text-start text-lg-end text-primary mb-1 title' style={{ transitionDelay: '100ms' }}>Featured Project | <span className='text-muted'>Jun 2021 - Jun 2021</span></p>
-                    <p className='text-start text-lg-end text-dark fw-bold fs-4 desc' style={{ transitionDelay: '200ms' }}>Develop and Mantain Company Website</p>
+                    <p className='text-start text-lg-end text-primary mb-1 title' ref={titleRef} style={{ transitionDelay: '100ms' }}>Featured Project | <span className='text-muted'>Jun 2021 - Jun 2021</span></p>
+                    <p className='text-start text-lg-end text-dark fw-bold fs-4 desc' ref={descRef} style={{ transitionDelay: '200ms' }}>Develop and Mantain Company Website</p>
 
-                    <div className='card-code is-right shadow rounded bg-light p-4 small' id='project2'>
+                    <div className='card-code is-right shadow rounded bg-light p-4 small' id='project2' ref={cardRef}>
                         <div className='d-flex'><i className="ri-terminal-line me-2 text-primary fw-bold"></i><p className='text-dark font-monospace'>Built a website from scratch using HTML, CSS and JavaScript.</p></div>
                         <div className='d-flex'><i className="ri-terminal-line me-2 text-primary fw-bold"></i><p className='text-dark font-monospace'>Designed a custom UI layout using the versatile Bootstrap framework.</p></div>
                         <div className='d-flex'><i className="ri-terminal-line me-2 text-primary fw-bold"></i><p className='text-dark font-monospace'>Integrated Mapbox API into the application, including the placement of a custom marker at the organization's headquarters.</p></div>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef, useCallback } from 'react'
 import img1 from "../../img/inference-logo.jpeg"
 import img2 from "../../img/delyva-logo.jpeg"
 import img3 from "../../img/AD-logo.jpeg"
@@ -9,94 +9,80 @@ import Project3 from './Project3'
 import Project4 from './Project4'
 import Project5 from './Project5'
 import Project6 from './Project6'
-// import pdfFile from '../../resume.pdf'
 
 const Content = () => {
     const [menu, setMenu] = useState('1')
-    const [project, setProject] = useState('')
     const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset);
 
+    // Refs for animated background elements
+    const bgRefs = useRef([])
+    // Refs for animated box elements
+    const boxRefs = useRef([])
+    // Ref for the divider element (animate-box-9)
+    const dividerRef = useRef(null)
+
+    // Initial animation on mount
     useEffect(() => {
-        const elementbg1 = document.querySelector('.animate-bg-1');
-        const elementbg2 = document.querySelector('.animate-bg-2');
-        const elementbg3 = document.querySelector('.animate-bg-3');
-        const elementbg4 = document.querySelector('.animate-bg-4');
+        // Add animation classes to background elements
+        bgRefs.current.forEach((ref) => {
+            if (ref) ref.classList.add('animation-bg-faded')
+        })
 
-
-        const element1 = document.querySelector('.animate-box-1');
-        const element2 = document.querySelector('.animate-box-2');
-        const element3 = document.querySelector('.animate-box-3');
-        const element4 = document.querySelector('.animate-box-4');
-        const element5 = document.querySelector('.animate-box-5');
-        const element6 = document.querySelector('.animate-box-6');
-        const element7 = document.querySelector('.animate-box-7');
-        const element8 = document.querySelector('.animate-box-8');
-        const element9 = document.querySelector('.animate-box-10');
-        const element10 = document.querySelector('.animate-box-11');
-
-        if (elementbg1) elementbg1.classList.add('animation-bg-faded')
-        if (elementbg2) elementbg2.classList.add('animation-bg-faded')
-        if (elementbg3) elementbg3.classList.add('animation-bg-faded')
-        if (elementbg4) elementbg4.classList.add('animation-bg-faded')
-
-
-        if (element1) element1.classList.add('animation-faded')
-        if (element2) element2.classList.add('animation-faded')
-        if (element3) element3.classList.add('animation-faded')
-        if (element4) element4.classList.add('animation-faded')
-        if (element5) element5.classList.add('animation-faded')
-        if (element6) element6.classList.add('animation-faded')
-        if (element7) element7.classList.add('animation-faded')
-        if (element8) element8.classList.add('animation-faded')
-        if (element9) element9.classList.add('animation-faded')
-        if (element10) element10.classList.add('animation-faded')
+        // Add animation classes to box elements
+        boxRefs.current.forEach((ref) => {
+            if (ref) ref.classList.add('animation-faded')
+        })
     }, [])
 
+    // Scroll handler
+    const handleScroll = useCallback(() => {
+        const currentScrollPos = window.pageYOffset;
+        setPrevScrollPos(currentScrollPos);
+    }, [])
+
+    // Set up scroll listener (only once)
     useEffect(() => {
-        const handleScroll = () => {
-            const currentScrollPos = window.pageYOffset;
-            setPrevScrollPos(currentScrollPos);
-        };
-
-
         window.addEventListener("scroll", handleScroll);
-
-        if (prevScrollPos > 1000) {
-            const element9 = document.querySelector('.animate-box-9');
-            if (element9) element9.classList.add('animation-faded')
-        }
-
         return () => {
             window.removeEventListener("scroll", handleScroll);
         };
+    }, [handleScroll]);
+
+    // Handle scroll-based animation for divider
+    useEffect(() => {
+        if (prevScrollPos > 1000 && dividerRef.current) {
+            dividerRef.current.classList.add('animation-faded')
+        }
     }, [prevScrollPos]);
 
-
-    const handleLinkedIn = () => {
+    const handleLinkedIn = useCallback(() => {
         window.open('https://www.linkedin.com/in/aizad-zari-3b6026157/')
-    }
+    }, [])
 
-    const handleGithub = () => {
+    const handleGithub = useCallback(() => {
         window.open('https://github.com/aizadzari')
-    }
+    }, [])
 
-    const handleMenu = (key) => {
-        console.log('====================================');
-        console.log(project);
-        console.log('====================================');
+    const handleMenu = useCallback((key) => {
         setMenu(key)
-    }
+    }, [])
 
-    const handleViewProject = key => {
-        setProject(key)
-
+    const handleViewProject = useCallback((key) => {
         setTimeout(() => {
             const targetElement = document.getElementById(key);
             if (!targetElement) return;
             targetElement.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" })
         }, 100);
+    }, [])
+
+    // Helper to assign refs to arrays
+    const setBgRef = (index) => (el) => {
+        bgRefs.current[index] = el
     }
 
+    const setBoxRef = (index) => (el) => {
+        boxRefs.current[index] = el
+    }
 
     return (
         <React.Fragment>
@@ -104,23 +90,22 @@ const Content = () => {
                 <div>
                     <div className='container-box position-relative my-2 overflow-hidden' >
                         <div className='row'>
-                            <div className='col-md-8 mb-3 col-sm-12 animate-bg-1'>
+                            <div className='col-md-8 mb-3 col-sm-12 animate-bg-1' ref={setBgRef(0)}>
                                 <div className='card shadow border-0 bg-custom-1 text-white h-100'>
                                     <div className='card-body p-5'>
-                                        <h1 className='animate-box-1 fw-bold' style={{ transitionDelay: "300ms" }}>Hey, I'm Aizad,</h1>
-                                        <h1 className='animate-box-2 fw-bold' style={{ transitionDelay: "400ms" }}>a <span className='text-secondary'>Frontend Developer</span> with <span className='text-secondary'>5 years</span> <br /> of experience</h1>
+                                        <h1 className='animate-box-1 fw-bold' ref={setBoxRef(0)} style={{ transitionDelay: "300ms" }}>Hey, I'm Aizad,</h1>
+                                        <h1 className='animate-box-2 fw-bold' ref={setBoxRef(1)} style={{ transitionDelay: "400ms" }}>a <span className='text-secondary'>Frontend Developer</span> with <span className='text-secondary'>5 years</span> <br /> of experience</h1>
 
-                                        <p className='small mt-4 animate-box-3' style={{ transitionDelay: "500ms" }}>As an experienced software developer, I possess a diverse and promising skillset that enables me to bring forth expertise in designing, developing, and maintaining software systems.</p>
+                                        <p className='small mt-4 animate-box-3' ref={setBoxRef(2)} style={{ transitionDelay: "500ms" }}>As an experienced software developer, I possess a diverse and promising skillset that enables me to bring forth expertise in designing, developing, and maintaining software systems.</p>
 
                                         <div className='mt-5 bottom-1 left-1'>
-                                            {/* <button className='btn btn-dark rounded-pill me-2' onClick={() => window.open(pdfFile)}>CV</button> */}
                                             <button className='btn btn-light rounded-pill me-2' onClick={handleLinkedIn}><i className="ri-linkedin-fill align-middle"></i></button>
-                                            <button className='btn btn-light rounded-pill' onClick={handleGithub}><i class="ri-github-fill"></i></button>
+                                            <button className='btn btn-light rounded-pill' onClick={handleGithub}><i className="ri-github-fill"></i></button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div className='col-md-4 mb-3 d-block d-md-block d-lg-block d-sm-none animate-bg-2'>
+                            <div className='col-md-4 mb-3 d-block d-md-block d-lg-block d-sm-none animate-bg-2' ref={setBgRef(1)}>
                                 <div className='card overflow-hidden shadow border-0 h-100 '>
                                     <div className='card-body p-0'>
                                         <div className='bg-img' />
@@ -132,17 +117,16 @@ const Content = () => {
 
                     <div className='container-box position-relative my-2'>
                         <div className='row'>
-                            <div className='col-lg-5 col-md-12 mb-3 animate-bg-3' style={{ transitionDelay: '500ms' }}>
+                            <div className='col-lg-5 col-md-12 mb-3 animate-bg-3' ref={setBgRef(2)} style={{ transitionDelay: '500ms' }}>
                                 <div className='card shadow border-0 '>
                                     <div className='card-body p-5' id='about-me'>
-                                        <h4 className='mb-4 animate-box-4 fw-bold' style={{ transitionDelay: '700ms' }}>About me</h4>
-                                        <p className='small animate-box-5' style={{ transitionDelay: '800ms' }}>Hello there! My name is Aizad and I have a passion for crafting compelling digital experiences that thrive on the internet. My interest in web development began in 2016 when I had the opportunity to experiment with building a custom website using HTML, CSS, and JavaScript. This allowed me to gain a deeper understanding of web development and improve my skills in these technologies.</p>
-                                        <p className='small animate-box-6' style={{ transitionDelay: '900ms' }}>I quickly realized my love for this field and decided to pursue it further. Since then, I have been fortunate enough to work with a start-up, where I have gained valuable experience in building accessible and inclusive products for diverse clients.</p>
-                                        <p className='small animate-box-10' style={{ transitionDelay: '1000ms' }}>My primary focus now is to expand my knowledge and expertise in the realm of Web 3.0 technology. This involves delving deeper into the underlying concepts, protocols, and applications that comprise the decentralized web ecosystem. It is important to stay abreast of the latest developments in Web 3.0 and to continue building my skills and understanding of this exciting new frontier in technology</p>
-                                        {/* <p className='small mb-4 animate-box-7' style={{ transitionDelay: '1000ms' }}>Here are a few technologies I’ve been working with recently:</p> */}
-                                        <p className='small animate-box-11' style={{ transitionDelay: '1100ms' }}>Here are a few technologies I’ve been working with recently:</p>
+                                        <h4 className='mb-4 animate-box-4 fw-bold' ref={setBoxRef(3)} style={{ transitionDelay: '700ms' }}>About me</h4>
+                                        <p className='small animate-box-5' ref={setBoxRef(4)} style={{ transitionDelay: '800ms' }}>Hello there! My name is Aizad and I have a passion for crafting compelling digital experiences that thrive on the internet. My interest in web development began in 2016 when I had the opportunity to experiment with building a custom website using HTML, CSS, and JavaScript. This allowed me to gain a deeper understanding of web development and improve my skills in these technologies.</p>
+                                        <p className='small animate-box-6' ref={setBoxRef(5)} style={{ transitionDelay: '900ms' }}>I quickly realized my love for this field and decided to pursue it further. Since then, I have been fortunate enough to work with a start-up, where I have gained valuable experience in building accessible and inclusive products for diverse clients.</p>
+                                        <p className='small animate-box-10' ref={setBoxRef(6)} style={{ transitionDelay: '1000ms' }}>My primary focus now is to expand my knowledge and expertise in the realm of Web 3.0 technology. This involves delving deeper into the underlying concepts, protocols, and applications that comprise the decentralized web ecosystem. It is important to stay abreast of the latest developments in Web 3.0 and to continue building my skills and understanding of this exciting new frontier in technology</p>
+                                        <p className='small animate-box-11' ref={setBoxRef(7)} style={{ transitionDelay: '1100ms' }}>Here are a few technologies I've been working with recently:</p>
 
-                                        <div className='d-flex justify-content-evenly flex-md-wrap animate-box-8' style={{ transitionDelay: '1100ms' }}>
+                                        <div className='d-flex justify-content-evenly flex-md-wrap animate-box-8' ref={setBoxRef(8)} style={{ transitionDelay: '1100ms' }}>
                                             <div><i className="ri-javascript-fill ri-2x"></i></div>
                                             <div><i className="ri-css3-fill ri-2x"></i></div>
                                             <div><i className="ri-reactjs-fill ri-2x"></i></div>
@@ -155,7 +139,7 @@ const Content = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className='col-lg-7 col-md-12 mb-3 animate-bg-4' style={{ transitionDelay: '600ms' }}>
+                            <div className='col-lg-7 col-md-12 mb-3 animate-bg-4' ref={setBgRef(3)} style={{ transitionDelay: '600ms' }}>
                                 <div className='card shadow border-0 h-100 '>
                                     <div className='card-body p-5'>
                                         <h4 className='mb-2 fw-bold'>Experience</h4>
@@ -172,7 +156,7 @@ const Content = () => {
 
                                             {menu === '1' ? <div className='w-100'>
                                                 <div className='d-flex mb-3'>
-                                                    <div className='shadow-sm rounded d-flex align-items-center overflow-hidden me-3' style={{ width: 50, height: 50 }}><img src={img1} className="w-100" alt="img1" /></div>
+                                                    <div className='shadow-sm rounded d-flex align-items-center overflow-hidden me-3' style={{ width: 50, height: 50 }}><img src={img1} className="w-100" alt="Inference logo" /></div>
                                                     <div>
                                                         <h6 className='fw-bold mb-1'>Web Developer</h6>
                                                         <p className='small text-muted'>Jun 2021 - Present</p>
@@ -187,7 +171,7 @@ const Content = () => {
 
                                             {menu === '2' ? <div className='w-100'>
                                                 <div className='d-flex mb-3'>
-                                                    <div className='shadow-sm rounded d-flex align-items-center overflow-hidden me-3' style={{ width: 50, height: 50 }}><img src={img2} className="w-100" alt="img1" /></div>
+                                                    <div className='shadow-sm rounded d-flex align-items-center overflow-hidden me-3' style={{ width: 50, height: 50 }}><img src={img2} className="w-100" alt="Delyva logo" /></div>
                                                     <div>
                                                         <h6 className='fw-bold mb-1'>Frontend Developer</h6>
                                                         <p className='small text-muted'>Sep 2019 - May 2021</p>
@@ -198,7 +182,7 @@ const Content = () => {
 
                                             {menu === '3' ? <div className='w-100'>
                                                 <div className='d-flex mb-3'>
-                                                    <div className='shadow-sm rounded d-flex align-items-center overflow-hidden me-3' style={{ width: 50, height: 50 }}><img src={img3} className=" w-100" alt="img1" /></div>
+                                                    <div className='shadow-sm rounded d-flex align-items-center overflow-hidden me-3' style={{ width: 50, height: 50 }}><img src={img3} className=" w-100" alt="Aerodyne logo" /></div>
                                                     <div>
                                                         <h6 className='fw-bold mb-1'>Frontend Developer</h6>
                                                         <p className='small text-muted'>Aug 2018 - Sep 2019</p>
@@ -209,7 +193,7 @@ const Content = () => {
 
                                             {menu === '4' ? <div className='w-100'>
                                                 <div className='d-flex mb-3'>
-                                                    <div className='shadow-sm rounded d-flex align-items-center overflow-hidden me-3' style={{ width: 50, height: 50 }}><img src={img4} className="w-100" alt="img1" /></div>
+                                                    <div className='shadow-sm rounded d-flex align-items-center overflow-hidden me-3' style={{ width: 50, height: 50 }}><img src={img4} className="w-100" alt="Iridea logo" /></div>
                                                     <div>
                                                         <h6 className='fw-bold mb-1'>Graphic Designer</h6>
                                                         <p className='small text-muted'>Jan 2017 - Aug 2018</p>
@@ -226,20 +210,18 @@ const Content = () => {
                     </div>
                 </div>
 
-                <div className='divider-text animate-box-9' style={{ transitionDelay: '100ms' }}>
-                    <h1 className='fw-bolder'>Some Things I’ve Built</h1>
+                <div className='divider-text animate-box-9' ref={dividerRef} style={{ transitionDelay: '100ms' }}>
+                    <h1 className='fw-bolder'>Some Things I've Built</h1>
                     <div className='line' />
                 </div>
 
-                <div className={`container-box position-relative my-5`} style={{ transitionDelay: '200ms' }}>
-                    <Project3 prevScrollPos={prevScrollPos} />
-                    <Project5 prevScrollPos={prevScrollPos} />
-                    <Project4 prevScrollPos={prevScrollPos} />
-                    <Project1 prevScrollPos={prevScrollPos} />
-                    <Project2 prevScrollPos={prevScrollPos} />
-                    <Project6 prevScrollPos={prevScrollPos} />
-
-
+                <div className='container-box position-relative my-5' style={{ transitionDelay: '200ms' }}>
+                    <Project3 />
+                    <Project5 />
+                    <Project4 />
+                    <Project1 />
+                    <Project2 />
+                    <Project6 />
                 </div>
             </div>
         </React.Fragment>

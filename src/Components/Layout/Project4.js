@@ -1,45 +1,58 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import img1 from '../../img/terra1.png'
 import img2 from '../../img/terra2.png'
 import img3 from '../../img/terra3.png'
 
-const Project4 = ({ prevScrollPos }) => {
+const Project4 = () => {
     const [img, setImg] = useState('1')
+    const containerRef = useRef(null)
+    const cardRef = useRef(null)
+    const titleRef = useRef(null)
+    const descRef = useRef(null)
+
     const handleImgBtn = (key) => {
         setImg(key)
     }
 
     useEffect(() => {
-        const base = 1212;
-        const container = document.getElementById('terra');
-        const selcare = document.querySelector("#selcare")
-        const hajj = document.querySelector("#hajj")
-        const terra = document.querySelector("#terra")
-        // const ronda = document.querySelector("#ronda")
+        const container = containerRef.current
+        const card = cardRef.current
+        const title = titleRef.current
+        const desc = descRef.current
 
-        const element = document.querySelector("#project4");
-        const elementTitle = container.querySelector('.title')
-        const elementDesc = container.querySelector('.desc')
+        if (!container || !card || !title || !desc) return
 
-        const moreThan = base + selcare.scrollHeight + hajj.scrollHeight;
-        const lessThan = base + selcare.scrollHeight + hajj.scrollHeight + terra.scrollHeight + (terra.scrollHeight / 3);
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        card.classList.remove('animated-out-right')
+                        card.classList.add('animated-in-right')
+                        title.classList.add('animation-faded')
+                        desc.classList.add('animation-faded')
+                    } else {
+                        card.classList.add('animated-out-right')
+                        card.classList.remove('animated-in-right')
+                        title.classList.remove('animation-faded')
+                        desc.classList.remove('animation-faded')
+                    }
+                })
+            },
+            {
+                threshold: 0.3,
+                rootMargin: '-10% 0px -10% 0px'
+            }
+        )
 
-        if (prevScrollPos > moreThan && prevScrollPos < lessThan) {
-            element.classList.remove('animated-out-right')
-            element.classList.add('animated-in-right')
-            elementTitle.classList.add('animation-faded')
-            elementDesc.classList.add('animation-faded')
+        observer.observe(container)
+
+        return () => {
+            observer.disconnect()
         }
-        // else if (prevScrollPos > lessThan) {
-        //     element.classList.add('animated-out-right')
-        //     element.classList.remove('animated-in-right')
-        // } else {
-        //     element.classList.add('animated-out-right')
-        //     element.classList.remove('animated-in-right')
-        // }
-    }, [prevScrollPos])
+    }, [])
+
     return (
-        <div className='project-container d-flex align-items-center mb-5 py-5' id='terra'>
+        <div className='project-container d-flex align-items-center py-5' id='terra' ref={containerRef}>
             <div className='row'>
                 <div className="position-relative col-lg-6 col-md-12 overflow-hidden rounded mb-4 d-block">
                     <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
@@ -70,10 +83,10 @@ const Project4 = ({ prevScrollPos }) => {
                     </div>
                 </div>
                 <div className='position-relative col-lg-6 col-md-12'>
-                    <p className='text-start text-lg-end text-primary mb-1 title' style={{ transitionDelay: '100ms' }}>Featured Project | <span className='text-muted'>Aug 2021- Aug 2021</span></p>
-                    <p className='text-start text-lg-end text-dark fw-bold fs-4 desc' style={{ transitionDelay: '200ms' }}>Telco Service Provider</p>
+                    <p className='text-start text-lg-end text-primary mb-1 title' ref={titleRef} style={{ transitionDelay: '100ms' }}>Featured Project | <span className='text-muted'>Aug 2021- Aug 2021</span></p>
+                    <p className='text-start text-lg-end text-dark fw-bold fs-4 desc' ref={descRef} style={{ transitionDelay: '200ms' }}>Telco Service Provider</p>
 
-                    <div className='card-code is-right shadow rounded bg-light p-4 small' id='project4'>
+                    <div className='card-code is-right shadow rounded bg-light p-4 small' id='project4' ref={cardRef}>
                         <div className='d-flex'><i className="ri-terminal-line me-2 text-primary fw-bold"></i><p className='text-dark font-monospace'>Built a website from scratch using HTML, CSS, JavaScript and Vue@2.</p></div>
                         <div className='d-flex'><i className="ri-terminal-line me-2 text-primary fw-bold"></i><p className='text-dark font-monospace'>Developed a dynamic mapping feature using Mapbox technology, leveraging asset data to generate custom markers that provide critical insights into asset locations and performance metrics. The result is a more intuitive and streamlined user experience that enables effective decision-making and optimized asset management.</p></div>
                         <div className='d-flex'><i className="ri-terminal-line me-2 text-primary fw-bold"></i><p className='text-dark font-monospace'>Developed a customized HTML and CSS layout that adheres to the standard letter format and integrated it with the jsPDF library to enable users to download the document in PDF format.</p></div>

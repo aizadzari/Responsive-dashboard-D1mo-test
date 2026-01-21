@@ -1,42 +1,58 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import img1 from '../../img/delyva1.png'
 import img2 from '../../img/delyva2.png'
 import img3 from '../../img/delyva3.png'
 
-const Project6 = ({ prevScrollPos }) => {
+const Project6 = () => {
     const [img, setImg] = useState('1')
+    const containerRef = useRef(null)
+    const cardRef = useRef(null)
+    const titleRef = useRef(null)
+    const descRef = useRef(null)
+
     const handleImgBtn = (key) => {
         setImg(key)
     }
 
     useEffect(() => {
-        const base = 1212;
-        const container = document.getElementById("delyva")
-        const selcare = document.querySelector("#selcare")
-        const hajj = document.querySelector("#hajj")
-        const terra = document.querySelector("#terra")
-        const ronda = document.querySelector("#ronda")
-        const inference = document.querySelector("#inference")
+        const container = containerRef.current
+        const card = cardRef.current
+        const title = titleRef.current
+        const desc = descRef.current
 
-        const element = document.querySelector("#project6");
-        const elementTitle = container.querySelector('.title')
-        const elementDesc = container.querySelector('.desc')
+        if (!container || !card || !title || !desc) return
 
-        const moreThan = base + selcare.scrollHeight + hajj.scrollHeight + terra.scrollHeight + ronda.scrollHeight + inference.scrollHeight;
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        card.classList.remove('animated-out-left')
+                        card.classList.add('animated-in-left')
+                        title.classList.add('animation-faded')
+                        desc.classList.add('animation-faded')
+                    } else {
+                        card.classList.add('animated-out-left')
+                        card.classList.remove('animated-in-left')
+                        title.classList.remove('animation-faded')
+                        desc.classList.remove('animation-faded')
+                    }
+                })
+            },
+            {
+                threshold: 0.3,
+                rootMargin: '-10% 0px -10% 0px'
+            }
+        )
 
-        if (prevScrollPos > moreThan) {
-            element.classList.remove('animated-out-left')
-            element.classList.add('animated-in-left')
-            elementTitle.classList.add('animation-faded')
-            elementDesc.classList.add('animation-faded')
+        observer.observe(container)
+
+        return () => {
+            observer.disconnect()
         }
-        //  else {
-        //     element.classList.add('animated-out-left')
-        //     element.classList.remove('animated-in-right')
-        // }
-    }, [prevScrollPos])
+    }, [])
+
     return (
-        <div className='project-container d-flex align-items-center mb-5 py-5' id='delyva'>
+        <div className='project-container d-flex align-items-center py-5' id='delyva' ref={containerRef}>
             <div className='row'>
                 <div className="position-relative col-lg-6 col-md-12 overflow-hidden rounded mb-4 d-block d-lg-none">
                     <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
@@ -70,10 +86,10 @@ const Project6 = ({ prevScrollPos }) => {
                     </div>
                 </div>
                 <div className='position-relative col-lg-6 col-md-12' style={{ zIndex: 2 }}>
-                    <p className='text-start text-primary mb-1 title' style={{ transitionDelay: '100ms' }}>Featured Project | <span className='text-muted'>Sep 2019 - May 2021</span></p>
-                    <p className='text-start text-dark fw-bold fs-4 desc' style={{ transitionDelay: '200ms' }}>Delyva Now</p>
+                    <p className='text-start text-primary mb-1 title' ref={titleRef} style={{ transitionDelay: '100ms' }}>Featured Project | <span className='text-muted'>Sep 2019 - May 2021</span></p>
+                    <p className='text-start text-dark fw-bold fs-4 desc' ref={descRef} style={{ transitionDelay: '200ms' }}>Delyva Now</p>
 
-                    <div className='card-code is-left shadow rounded bg-light p-4 small' id='project6'>
+                    <div className='card-code is-left shadow rounded bg-light p-4 small' id='project6' ref={cardRef}>
                         <div className='d-flex'><i className="ri-terminal-line me-2 text-primary fw-bold"></i><p className='text-dark font-monospace'>Built a website from scratch using HTML, CSS, JavaScript and Reactjs.</p></div>
                         <div className='d-flex'><i className="ri-terminal-line me-2 text-primary fw-bold"></i><p className='text-dark font-monospace'>Created a web application from scratch, utilizing my expertise in custom layout design and the Ant Design framework. By working closely with the designer, I created a user-friendly, visually appealing interface that met their specific needs.</p></div>
                         <div className='d-flex'><i className="ri-terminal-line me-2 text-primary fw-bold"></i><p className='text-dark font-monospace'>Created an order page that includes an interactive map to help end-users visualize and navigate their location and set their delivery point. By leveraging Mapbox technology, users can easily identify their location on the map and set the delivery point accurately. The map is also used to calculate the distance, which in turn is used to calculate the cost of deliveries based on courier service rates.</p></div>

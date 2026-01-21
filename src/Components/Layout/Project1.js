@@ -1,49 +1,60 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import img1 from '../../img/ronda.png'
 import img2 from '../../img/ronda2.png'
 import img3 from '../../img/ronda3.png'
 import img4 from '../../img/ronda4.png'
 import img5 from '../../img/ronda5.png'
 
-const Project1 = ({ prevScrollPos }) => {
+const Project1 = () => {
     const [img, setImg] = useState('1')
+    const containerRef = useRef(null)
+    const cardRef = useRef(null)
+    const titleRef = useRef(null)
+    const descRef = useRef(null)
+
     const handleImgBtn = (key) => {
         setImg(key)
     }
 
     useEffect(() => {
-        const base = 1212;
-        const container = document.getElementById('ronda');
-        const elementTitle = container.querySelector('.title')
-        const elementDesc = container.querySelector('.desc')
-        const selcare = document.querySelector("#selcare")
-        const hajj = document.querySelector("#hajj")
-        const terra = document.querySelector("#terra")
-        const ronda = document.querySelector("#ronda")
-        const inference = document.querySelector("#inference")
+        const container = containerRef.current
+        const card = cardRef.current
+        const title = titleRef.current
+        const desc = descRef.current
 
-        const element = document.querySelector("#project1");
+        if (!container || !card || !title || !desc) return
 
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        card.classList.remove('animated-out-left')
+                        card.classList.add('animated-in-left')
+                        title.classList.add('animation-faded')
+                        desc.classList.add('animation-faded')
+                    } else {
+                        card.classList.add('animated-out-left')
+                        card.classList.remove('animated-in-left')
+                        title.classList.remove('animation-faded')
+                        desc.classList.remove('animation-faded')
+                    }
+                })
+            },
+            {
+                threshold: 0.3,
+                rootMargin: '-10% 0px -10% 0px'
+            }
+        )
 
-        const moreThan = base + selcare.scrollHeight + hajj.scrollHeight + terra.scrollHeight;
-        const lessThan = base + selcare.scrollHeight + hajj.scrollHeight + terra.scrollHeight + ronda.scrollHeight + inference.scrollHeight + (inference.scrollHeight / 3);
+        observer.observe(container)
 
-        if (prevScrollPos > moreThan && prevScrollPos < lessThan) {
-            element.classList.remove('animated-out-left')
-            element.classList.add('animated-in-left')
-            elementTitle.classList.add('animation-faded')
-            elementDesc.classList.add('animation-faded')
-        } 
-        // else if (prevScrollPos > lessThan) {
-        //     element.classList.add('animated-out-left')
-        //     element.classList.remove('animated-in-left')
-        // } else {
-        //     element.classList.add('animated-out-left')
-        //     element.classList.remove('animated-in-left')
-        // }
-    }, [prevScrollPos])
+        return () => {
+            observer.disconnect()
+        }
+    }, [])
+
     return (
-        <div className='project-container d-flex align-items-center mb-5 py-5' id='ronda'>
+        <div className='project-container d-flex align-items-center py-5' id='ronda' ref={containerRef}>
             <div className=' row'>
                 <div className="position-relative col-lg-6 col-md-12 overflow-hidden rounded mb-4 d-block d-lg-none" style={{ zIndex: 1 }}>
                     <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
@@ -84,10 +95,10 @@ const Project1 = ({ prevScrollPos }) => {
                     </div>
                 </div>
                 <div className='position-relative col-lg-6 col-md-12' style={{ zIndex: 2 }}>
-                    <p className='text-start text-primary mb-1 title' style={{ transitionDelay: '100ms' }}> Featured Project | <span className='text-muted'>Jun 2021 - Dec 2021</span></p>
-                    <p className='text-start text-dark fw-bold fs-4 desc' style={{ transitionDelay: '200ms' }}>Develop and Mantain Road Management System</p>
+                    <p className='text-start text-primary mb-1 title' ref={titleRef} style={{ transitionDelay: '100ms' }}> Featured Project | <span className='text-muted'>Jun 2021 - Dec 2021</span></p>
+                    <p className='text-start text-dark fw-bold fs-4 desc' ref={descRef} style={{ transitionDelay: '200ms' }}>Develop and Mantain Road Management System</p>
 
-                    <div className='card-code is-left shadow rounded bg-light p-4 small' id='project1'>
+                    <div className='card-code is-left shadow rounded bg-light p-4 small' id='project1' ref={cardRef}>
                         <div className='d-flex'><i className="ri-terminal-line me-2 text-primary fw-bold"></i><p className='text-dark font-monospace'>Built a website from scratch using HTML, CSS, JavaScript, and Vue@2.</p></div>
                         <div className='d-flex'><i className="ri-terminal-line me-2 text-primary fw-bold"></i><p className='text-dark font-monospace'>Developed a dedicated page for managing users that can only be accessed by the superadmin. The webpage will allow the superadmin to easily create, edit, and delete user accounts, manage passwords, and see important data. To keep data secure, the webpage will have multiple security measures like passwords and encryption. This will help the superadmin manage user accounts more efficiently and have better control over user permissions.</p></div>
                         <div className='d-flex'><i className="ri-terminal-line me-2 text-primary fw-bold"></i><p className='text-dark font-monospace'>Developed a dynamic mapping feature using Mapbox technology, leveraging asset data to generate custom markers that provide critical insights into asset locations and performance metrics. The result is a more intuitive and streamlined user experience that enables effective decision-making and optimized asset management.</p></div>
