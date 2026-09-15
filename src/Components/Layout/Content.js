@@ -97,7 +97,7 @@ const Content = () => {
                                         <h1 className='animate-box-2 fw-bold' ref={setBoxRef(1)} style={{ transitionDelay: "400ms" }}>a <span className='text-secondary'>Frontend Developer</span> with <span className='text-secondary'>7+ years</span> <br /> of experience</h1>
 
                                         {/* <p className='small mt-4 animate-box-3' ref={setBoxRef(2)} style={{ transitionDelay: "500ms" }}>As an experienced frontend developer, I possess a diverse and promising skillset that enables me to bring forth expertise in designing, developing, and maintaining software systems.</p> */}
-<p className='small mt-4 animate-box-3' ref={setBoxRef(2)} style={{ transitionDelay: "500ms" }}>Experience designing and building scalable web applications, digital
+<p className='small mt-4 animate-box-3' ref={setBoxRef(2)} style={{ transitionDelay: "500ms" }}>Designing and building scalable web applications, digital
 platforms, and user-centered interfaces. Proven expertise in frontend and backend development, UI/UX design,
 and digital transformation projects. Skilled in translating complex requirements into intuitive, accessible, and
 visually compelling applications for diverse industries including healthcare, logistics, oil & gas, and government
