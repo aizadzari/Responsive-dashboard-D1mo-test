@@ -94,7 +94,7 @@ const Content = () => {
                                 <div className='card shadow border-0 bg-custom-1 text-white h-100'>
                                     <div className='card-body p-5'>
                                         <h1 className='animate-box-1 fw-bold' ref={setBoxRef(0)} style={{ transitionDelay: "300ms" }}>Hey, I'm Aizad,</h1>
-                                        <h1 className='animate-box-2 fw-bold' ref={setBoxRef(1)} style={{ transitionDelay: "400ms" }}>a <span className='text-secondary'>Frontend Developer</span> with <span className='text-secondary'>5 years</span> <br /> of experience</h1>
+                                        <h1 className='animate-box-2 fw-bold' ref={setBoxRef(1)} style={{ transitionDelay: "400ms" }}>a <span className='text-secondary'>Frontend Developer</span> with <span className='text-secondary'>7+ years</span> <br /> of experience</h1>
 
                                         <p className='small mt-4 animate-box-3' ref={setBoxRef(2)} style={{ transitionDelay: "500ms" }}>As an experienced software developer, I possess a diverse and promising skillset that enables me to bring forth expertise in designing, developing, and maintaining software systems.</p>
 
